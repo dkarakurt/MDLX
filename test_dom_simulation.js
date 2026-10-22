@@ -30,7 +30,12 @@ const idsQueried = [
   'qvExitBtnText',
   'footNavNewIn', 'footNavBlazers', 'footNavClothing', 'footNavCollections', 'footNavEditorial', 'footNavAbout', 'footNavContact',
   'footLegalTerms', 'footLegalPreInfo', 'footLegalKvkk', 'footLegalCookies', 'footLegalReturns', 'footLegalShipping',
-  'footerCopyright'
+  'footerCopyright',
+  // Phase 4 Size Guide & Trust Badges
+  'sizeGuideModal', 'sgBadge', 'sgTitle', 'sgSubtitle',
+  'thSizeEu', 'thSizeTr', 'thSizeUk', 'thSizeUs', 'thBust', 'thWaist', 'thHips', 'thLength',
+  'sgMeasureTitle', 'sgBustTitle', 'sgBustDesc', 'sgWaistTitle', 'sgWaistDesc', 'sgHipsTitle', 'sgHipsDesc', 'sgFitTitle', 'sgFitDesc',
+  'trustSslText', 'trustAuthText', 'trustReturnText', 'trustShipText'
 ];
 
 let missing = 0;

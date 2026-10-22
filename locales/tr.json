@@ -146,5 +146,34 @@
   "search": {
     "placeholder": "Koleksiyonda ara (Blazer, Yün, Pantolon...)",
     "noResults": "Aramanızla eşleşen ürün bulunamadı."
+  },
+  "sizeGuide": {
+    "badge": "ATELIER KESİM REHBERİ",
+    "title": "KADIN BEDEN ÖLÇÜ TABLOSU",
+    "subtitle": "Tüm ölçüler standart santimetre (cm) bazındadır. Rahat ve kusursuz terzilik silüeti için tasarlanmıştır.",
+    "button": "Beden Rehberi",
+    "thSizeEu": "Beden (EU)",
+    "thSizeTr": "TR / FR",
+    "thSizeUk": "UK",
+    "thSizeUs": "US",
+    "thBust": "Göğüs (cm)",
+    "thWaist": "Bel (cm)",
+    "thHips": "Basen (cm)",
+    "thLength": "Ceket Boyu (cm)",
+    "measureTitle": "DOĞRU BEDEN NASIL ÖLÇÜLÜR?",
+    "bustTitle": "1. Göğüs Ölçüsü:",
+    "bustDesc": "Mezurayı sırtınızdan öne doğru, göğsünüzün en dolgun noktasından geçirerek yere paralel tutarak ölçünüz.",
+    "waistTitle": "2. Bel Ölçüsü:",
+    "waistDesc": "Doğal bel kıvrımınızın en dar noktasından, mezurayı aşırı sıkmadan ve gevşetmeden ölçünüz.",
+    "hipsTitle": "3. Basen Ölçüsü:",
+    "hipsDesc": "Ayaklarınız bitişik vaziyette dururken, kalçanızın en geniş ve dolgun noktasından çevre ölçüsü alınız.",
+    "fitTitle": "4. Terzilik & Kalıp Notu:",
+    "fitDesc": "Blazer ceketlerimiz İtalyan mimari omuz vatkalı kesime sahiptir. İki beden arasında kaldığınızda ceketlerde bir üst bedeni tercih etmeniz önerilir."
+  },
+  "trust": {
+    "ssl": "256-Bit SSL Güvenli Ödeme",
+    "auth": "Orijinal Atelier İşçiliği",
+    "returns": "14 Gün Koşulsuz İade",
+    "shipping": "Global Ekspres Kurye"
   }
 }

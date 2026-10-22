@@ -44,7 +44,11 @@ const PRODUCTS_DATA = [
     ],
     "detailsTr": [
       "Maison De Loup Atelier özel üretimi"
-    ]
+    ],
+    "lining": "100% Cupro Silk & Italian Canvas Structured Lining",
+    "liningTr": "%100 Cupro İpek & İtalyan Telalı Astar",
+    "care": "Specialist dry clean only. Cool iron on reverse.",
+    "careTr": "Yalnızca uzman kuru temizleme. Düşük ısıda tersten ütüleyiniz."
   },
   {
     "id": "mdl-prod-1791792518739",
@@ -90,7 +94,11 @@ const PRODUCTS_DATA = [
     ],
     "detailsTr": [
       "Maison De Loup Atelier özel üretimi"
-    ]
+    ],
+    "lining": "Pocket and inner waistband cupro lining",
+    "liningTr": "Ceplik ve bel içi cupro terzi astarı",
+    "care": "Specialist dry clean recommended. Cool iron.",
+    "careTr": "Kuru temizleme önerilir. Düşük ısıda ütüleyiniz."
   },
   {
     "id": "mdl-prod-1791792265725",
@@ -136,7 +144,11 @@ const PRODUCTS_DATA = [
     ],
     "detailsTr": [
       "Maison De Loup Atelier özel üretimi"
-    ]
+    ],
+    "lining": "100% Habotai Silk Breathable Lining",
+    "liningTr": "%100 Habotai İpek Nefes Alan Astar",
+    "care": "Gentle hand wash at 30°C or dry clean.",
+    "careTr": "30°C hassas elde yıkama veya kuru temizleme."
   },
   {
     "id": "mdl-prod-1791785220112",
@@ -182,7 +194,11 @@ const PRODUCTS_DATA = [
       "assets/images/uploaded_1791786965063_Screenshot_31.jpg",
       "assets/images/uploaded_1791786969864_Screenshot_32.jpg",
       "assets/images/uploaded_1791792329245_Screenshot_29.jpg"
-    ]
+    ],
+    "lining": "100% Bemberg Cupro Silk Monogram Lining",
+    "liningTr": "%100 Bemberg Cupro İpek Jakarlı Astar",
+    "care": "Specialist dry clean only. Steam iron.",
+    "careTr": "Yalnızca uzman kuru temizleme. Buharlı ütüleme önerilir."
   },
   {
     "id": "mdl-blz-01",
@@ -231,7 +247,11 @@ const PRODUCTS_DATA = [
       "MDL monogram işlemeli kemik düğmeler",
       "İç cep detayı ve kapaklı yan cepler",
       "Yalnızca özel kuru temizleme"
-    ]
+    ],
+    "lining": "100% Bemberg Cupro Silk Italian Canvassed Lining",
+    "liningTr": "%100 Bemberg Cupro İpek & İtalyan Telalı Astar",
+    "care": "Specialist dry clean only. Cool iron on reverse.",
+    "careTr": "Yalnızca uzman kuru temizleme. Düşük ısıda tersten ütüleyiniz."
   },
   {
     "id": "mdl-blz-02",
@@ -279,7 +299,11 @@ const PRODUCTS_DATA = [
       "Özel desenli reçine düğmeler",
       "Rahat hareket sağlayan çift arka yırtmaç",
       "İstanbul atölyelerinde üretilmiştir"
-    ]
+    ],
+    "lining": "100% Fine Viscose Tailored Breathable Lining",
+    "liningTr": "%100 İnce Viskon Terzilik Astarı",
+    "care": "Specialist dry clean only. Cool iron on reverse.",
+    "careTr": "Yalnızca uzman kuru temizleme. Düşük ısıda tersten ütüleyiniz."
   },
   {
     "id": "mdl-blz-03",
@@ -328,7 +352,11 @@ const PRODUCTS_DATA = [
       "El dikimi doğal boynuz düğmeler",
       "Açılabilir fonksiyonel kol düğmeleri",
       "İç cep astarında gizli kurt arması işlemesi"
-    ]
+    ],
+    "lining": "100% Bemberg Cupro Silk Half-Canvassed Lining",
+    "liningTr": "%100 Bemberg Cupro İpek & Yarı Telalı Terzi Astarı",
+    "care": "Specialist dry clean only. Do not wash.",
+    "careTr": "Yalnızca uzman kuru temizleme. Su ile temas ettirmeyiniz."
   },
   {
     "id": "mdl-blz-04",
@@ -372,7 +400,11 @@ const PRODUCTS_DATA = [
       "Saten kaplama düğmeler",
       "Vücudu şekillendiren mimari prenses dikişleri",
       "Tok duruş sağlayan çift kat astar"
-    ]
+    ],
+    "lining": "100% Mulberry Silk Habotai Lining",
+    "liningTr": "%100 Saf Dut İpeği Habotai Astar",
+    "care": "Specialist dry clean only. Cool iron on reverse.",
+    "careTr": "Yalnızca uzman kuru temizleme. Düşük ısıda tersten ütüleyiniz."
   },
   {
     "id": "mdl-trs-01",
@@ -421,7 +453,11 @@ const PRODUCTS_DATA = [
       "Kemer köprüleri ve yan cepler",
       "Kaymayı önleyen terzi tipi iç bel kuşağı",
       "Kuru temizleme önerilir"
-    ]
+    ],
+    "lining": "Half-lined to the knee with 100% Cupro",
+    "liningTr": "Dize kadar %100 Cupro yarım astar",
+    "care": "Specialist dry clean only. Medium iron with press cloth.",
+    "careTr": "Yalnızca uzman kuru temizleme. Ütü bezi ile orta ısıda ütüleyiniz."
   },
   {
     "id": "mdl-shr-01",
@@ -469,7 +505,11 @@ const PRODUCTS_DATA = [
       "Gizli ön ilikleme patı",
       "Geniş mimari manşetler",
       "Etek ucu kavisli rahat form"
-    ]
+    ],
+    "lining": "Unlined bespoke single-needle construction",
+    "liningTr": "Astarsız, tek iğne ince terzi dikişi",
+    "care": "Delicate wash at 30°C or dry clean. Hang dry.",
+    "careTr": "30°C hassas yıkama veya kuru temizleme. Asarak kurutunuz."
   },
   {
     "id": "mdl-top-01",
@@ -517,7 +557,11 @@ const PRODUCTS_DATA = [
       "İnce ribanalı manşetler",
       "Kaşındırmayan yumuşak tuşe",
       "Elde soğuk yıkama veya kuru temizleme"
-    ]
+    ],
+    "lining": "Unlined seamless fine luxury knitwear",
+    "liningTr": "Astarsız, dikişsiz ekstra ince lüks triko dokuma",
+    "care": "Gentle hand wash cold with wool detergent. Dry flat.",
+    "careTr": "Soğuk suda yün şampuanı ile elde nazikçe yıkayınız. Sererek kurutunuz."
   },
   {
     "id": "mdl-skt-01",
@@ -561,22 +605,79 @@ const PRODUCTS_DATA = [
       "Deri detaylı formlu bel bandı",
       "Gizli yan fermuar",
       "Kuru temizleme"
-    ]
+    ],
+    "lining": "100% Breathable Silk-Feel Viscose Slip Lining",
+    "liningTr": "%100 İpek Dokulu Nefes Alan Viskon İç Astar",
+    "care": "Specialist dry clean recommended. Cool iron.",
+    "careTr": "Uzman kuru temizleme önerilir. Düşük ısıda ütüleyiniz."
   }
 ];
 
 const CATEGORIES_DATA = [
-  { id: "blazers", name: "BLAZERS", nameTr: "BLAZER CEKET", image: "assets/images/cat_blazers.jpg", count: 4, isHero: true },
-  { id: "trousers", name: "TROUSERS", nameTr: "PANTOLON", image: "assets/images/cat_trousers.jpg", count: 2 },
-  { id: "shirts", name: "SHIRTS", nameTr: "GÖMLEK", image: "assets/images/cat_shirts.jpg", count: 2 },
-  { id: "tops", name: "KNITWEAR & TOPS", nameTr: "TRİKO & ÜST", image: "assets/images/cat_tops.jpg", count: 2 },
-  { id: "dresses", name: "DRESSES", nameTr: "ELBİSE", image: "assets/images/cat_dresses.jpg", count: 2 },
-  { id: "skirts", name: "SKIRTS", nameTr: "ETEK", image: "assets/images/cat_skirts.jpg", count: 2 }
+  {
+    "id": "blazers",
+    "name": "BLAZERS",
+    "nameTr": "BLAZER CEKET",
+    "image": "assets/images/cat_blazers.jpg",
+    "count": 4,
+    "isHero": true
+  },
+  {
+    "id": "trousers",
+    "name": "TROUSERS",
+    "nameTr": "PANTOLON",
+    "image": "assets/images/cat_trousers.jpg",
+    "count": 2
+  },
+  {
+    "id": "shirts",
+    "name": "SHIRTS",
+    "nameTr": "GÖMLEK",
+    "image": "assets/images/cat_shirts.jpg",
+    "count": 2
+  },
+  {
+    "id": "tops",
+    "name": "KNITWEAR & TOPS",
+    "nameTr": "TRİKO & ÜST",
+    "image": "assets/images/cat_tops.jpg",
+    "count": 2
+  },
+  {
+    "id": "dresses",
+    "name": "DRESSES",
+    "nameTr": "ELBİSE",
+    "image": "assets/images/cat_dresses.jpg",
+    "count": 2
+  },
+  {
+    "id": "skirts",
+    "name": "SKIRTS",
+    "nameTr": "ETEK",
+    "image": "assets/images/cat_skirts.jpg",
+    "count": 2
+  }
 ];
 
 const CURRENCY_RATES = {
-  TRY: { symbol: "₺", rate: 1, position: "after" },
-  EUR: { symbol: "€", rate: 0.0265, position: "before" },
-  USD: { symbol: "$", rate: 0.0289, position: "before" },
-  GBP: { symbol: "£", rate: 0.0228, position: "before" }
+  "TRY": {
+    "symbol": "₺",
+    "rate": 1,
+    "position": "after"
+  },
+  "EUR": {
+    "symbol": "€",
+    "rate": 0.0265,
+    "position": "before"
+  },
+  "USD": {
+    "symbol": "$",
+    "rate": 0.0289,
+    "position": "before"
+  },
+  "GBP": {
+    "symbol": "£",
+    "rate": 0.0228,
+    "position": "before"
+  }
 };

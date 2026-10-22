@@ -223,6 +223,35 @@ const TRANSLATIONS = {
         returns: "İade & Değişim",
         shipping: "Kargo & Teslimat"
       }
+    },
+    sizeGuide: {
+      badge: "ATELIER KESİM REHBERİ",
+      title: "KADIN BEDEN ÖLÇÜ TABLOSU",
+      subtitle: "Tüm ölçüler standart santimetre (cm) bazındadır. Rahat ve kusursuz terzilik silüeti için tasarlanmıştır.",
+      button: "Beden Rehberi",
+      thSizeEu: "Beden (EU)",
+      thSizeTr: "TR / FR",
+      thSizeUk: "UK",
+      thSizeUs: "US",
+      thBust: "Göğüs (cm)",
+      thWaist: "Bel (cm)",
+      thHips: "Basen (cm)",
+      thLength: "Ceket Boyu (cm)",
+      measureTitle: "DOĞRU BEDEN NASIL ÖLÇÜLÜR?",
+      bustTitle: "1. Göğüs Ölçüsü:",
+      bustDesc: "Mezurayı sırtınızdan öne doğru, göğsünüzün en dolgun noktasından geçirerek yere paralel tutarak ölçünüz.",
+      waistTitle: "2. Bel Ölçüsü:",
+      waistDesc: "Doğal bel kıvrımınızın en dar noktasından, mezurayı aşırı sıkmadan ve gevşetmeden ölçünüz.",
+      hipsTitle: "3. Basen Ölçüsü:",
+      hipsDesc: "Ayaklarınız bitişik vaziyette dururken, kalçanızın en geniş ve dolgun noktasından çevre ölçüsü alınız.",
+      fitTitle: "4. Terzilik & Kalıp Notu:",
+      fitDesc: "Blazer ceketlerimiz İtalyan mimari omuz vatkalı kesime sahiptir. İki beden arasında kaldığınızda ceketlerde bir üst bedeni tercih etmeniz önerilir."
+    },
+    trust: {
+      ssl: "256-Bit SSL Güvenli Ödeme",
+      auth: "Orijinal Atelier İşçiliği",
+      returns: "14 Gün Koşulsuz İade",
+      shipping: "Global Ekspres Kurye"
     }
   },
   EN: {
@@ -329,6 +358,35 @@ const TRANSLATIONS = {
         returns: "Returns & Exchanges",
         shipping: "Shipping & Delivery"
       }
+    },
+    sizeGuide: {
+      badge: "ATELIER SIZING ADVISORY",
+      title: "WOMEN'S SIZE & FIT CHART",
+      subtitle: "All measurements are in standard centimeters (cm). Engineered for an architectural, commanding silhouette.",
+      button: "Size Guide",
+      thSizeEu: "Size (EU)",
+      thSizeTr: "TR / FR",
+      thSizeUk: "UK",
+      thSizeUs: "US",
+      thBust: "Bust (cm)",
+      thWaist: "Waist (cm)",
+      thHips: "Hips (cm)",
+      thLength: "Blazer Length (cm)",
+      measureTitle: "HOW TO MEASURE YOUR BODY",
+      bustTitle: "1. Bust Measurement:",
+      bustDesc: "Measure around the fullest part of your bust, keeping the measuring tape horizontal and parallel to the floor.",
+      waistTitle: "2. Waist Measurement:",
+      waistDesc: "Measure around your natural waistline at the narrowest point, keeping the tape comfortably loose.",
+      hipsTitle: "3. Hips Measurement:",
+      hipsDesc: "Stand with feet together and measure around the fullest part of your hips and rear.",
+      fitTitle: "4. Tailoring & Fit Note:",
+      fitDesc: "Our blazers feature structured Italian shoulder canvassing. If in between sizes, choosing the next size up is recommended."
+    },
+    trust: {
+      ssl: "256-Bit SSL Encrypted Checkout",
+      auth: "100% Authentic Atelier Craft",
+      returns: "14-Day Complimentary Returns",
+      shipping: "Worldwide Express Delivery"
     }
   }
 };
@@ -341,6 +399,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   initHeaderScroll();
   initHeroSlider();
   initCurrencyAndLang();
+  initUrlState();
   applyLanguage();
   renderProducts();
   updateCartBadge();
@@ -674,6 +733,17 @@ function initHeroSlider() {
 }
 
 // ==========================================================================
+// MULTI-CURRENCY SHIPPING THRESHOLDS (PHASE 4)
+// ==========================================================================
+const SHIPPING_THRESHOLDS = {
+  TRY: 8000,
+  EUR: 250,
+  USD: 270,
+  GBP: 220
+};
+window.SHIPPING_THRESHOLDS = SHIPPING_THRESHOLDS;
+
+// ==========================================================================
 // CURRENCY & LANGUAGE CONTROLLER
 // ==========================================================================
 function initCurrencyAndLang() {
@@ -926,12 +996,97 @@ function applyLanguage() {
 
   const footCopy = document.getElementById('footerCopyright');
   if (footCopy) footCopy.innerText = t.footer.copyright;
+
+  // 16. Size Guide Modal (Phase 4)
+  const sg = t.sizeGuide;
+  if (sg) {
+    const sgBadge = document.getElementById('sgBadge');
+    if (sgBadge) sgBadge.innerText = sg.badge;
+    const sgTitle = document.getElementById('sgTitle');
+    if (sgTitle) sgTitle.innerText = sg.title;
+    const sgSubtitle = document.getElementById('sgSubtitle');
+    if (sgSubtitle) sgSubtitle.innerText = sg.subtitle;
+
+    const thMap = {
+      thSizeEu: sg.thSizeEu,
+      thSizeTr: sg.thSizeTr,
+      thSizeUk: sg.thSizeUk,
+      thSizeUs: sg.thSizeUs,
+      thBust: sg.thBust,
+      thWaist: sg.thWaist,
+      thHips: sg.thHips,
+      thLength: sg.thLength,
+      sgMeasureTitle: sg.measureTitle,
+      sgBustTitle: sg.bustTitle,
+      sgBustDesc: sg.bustDesc,
+      sgWaistTitle: sg.waistTitle,
+      sgWaistDesc: sg.waistDesc,
+      sgHipsTitle: sg.hipsTitle,
+      sgHipsDesc: sg.hipsDesc,
+      sgFitTitle: sg.fitTitle,
+      sgFitDesc: sg.fitDesc
+    };
+    Object.keys(thMap).forEach(id => {
+      const el = document.getElementById(id);
+      if (el) el.innerText = thMap[id];
+    });
+  }
+
+  // 17. Trust Badges in Cart Drawer (Phase 4)
+  const trst = t.trust;
+  if (trst) {
+    const sslEl = document.getElementById('trustSslText');
+    if (sslEl) sslEl.innerText = trst.ssl;
+    const authEl = document.getElementById('trustAuthText');
+    if (authEl) authEl.innerText = trst.auth;
+    const retEl = document.getElementById('trustReturnText');
+    if (retEl) retEl.innerText = trst.returns;
+    const shipEl = document.getElementById('trustShipText');
+    if (shipEl) shipEl.innerText = trst.shipping;
+  }
 }
 
 // ==========================================================================
 // PRODUCT CATALOG RENDERING & FILTERING
 // ==========================================================================
-function filterCatalog(category) {
+function updateUrlParams(category, sort, replace = false) {
+  try {
+    const url = new URL(window.location.href);
+    if (category && category !== 'all') {
+      url.searchParams.set('kategori', category);
+    } else {
+      url.searchParams.delete('kategori');
+    }
+
+    if (sort && sort !== 'featured') {
+      url.searchParams.set('sirala', sort);
+    } else {
+      url.searchParams.delete('sirala');
+    }
+
+    const newSearch = url.searchParams.toString();
+    const newRelative = url.pathname + (newSearch ? '?' + newSearch : '') + url.hash;
+
+    if (replace) {
+      window.history.replaceState({ category, sort }, '', newRelative);
+    } else {
+      if (window.location.search !== (newSearch ? '?' + newSearch : '')) {
+        window.history.pushState({ category, sort }, '', newRelative);
+      }
+    }
+  } catch (err) {}
+}
+window.updateUrlParams = updateUrlParams;
+
+function handleSortChange() {
+  const sortSelect = document.getElementById('sortSelect');
+  const sortVal = sortSelect ? sortSelect.value : 'featured';
+  updateUrlParams(STATE.currentCategory, sortVal, false);
+  renderProducts();
+}
+window.handleSortChange = handleSortChange;
+
+function filterCatalog(category, shouldScroll = true, updateUrl = true) {
   STATE.currentCategory = category;
 
   // Update filter pills
@@ -940,14 +1095,53 @@ function filterCatalog(category) {
     b.classList.toggle('active', b.getAttribute('data-filter') === category);
   });
 
+  const sortSelect = document.getElementById('sortSelect');
+  const currentSort = sortSelect ? sortSelect.value : 'featured';
+
+  if (updateUrl) {
+    updateUrlParams(category, currentSort, false);
+  }
+
   renderProducts();
 
   // Scroll smoothly to catalog
-  const catalogEl = document.getElementById('catalog');
-  if (catalogEl) {
-    catalogEl.scrollIntoView({ behavior: 'smooth' });
+  if (shouldScroll) {
+    const catalogEl = document.getElementById('catalog');
+    if (catalogEl) {
+      catalogEl.scrollIntoView({ behavior: 'smooth' });
+    }
   }
 }
+window.filterCatalog = filterCatalog;
+
+function initUrlState() {
+  try {
+    const params = new URLSearchParams(window.location.search);
+    const kat = params.get('kategori');
+    const sirala = params.get('sirala');
+
+    const validCategories = ['all', 'blazers', 'trousers', 'shirts', 'tops', 'dresses', 'skirts'];
+    if (kat && validCategories.includes(kat)) {
+      STATE.currentCategory = kat;
+      const buttons = document.querySelectorAll('.filter-btn');
+      buttons.forEach(b => {
+        b.classList.toggle('active', b.getAttribute('data-filter') === kat);
+      });
+    }
+
+    const sortSelect = document.getElementById('sortSelect');
+    const validSorts = ['featured', 'price-asc', 'price-desc', 'new'];
+    if (sirala && validSorts.includes(sirala) && sortSelect) {
+      sortSelect.value = sirala;
+    }
+  } catch (err) {}
+}
+window.initUrlState = initUrlState;
+
+window.addEventListener('popstate', () => {
+  initUrlState();
+  renderProducts();
+});
 
 function renderProducts() {
   const grid = document.getElementById('productGrid');
@@ -1062,12 +1256,17 @@ function openQuickView(productId, initialImageIndex = 0) {
   qvActiveImageIndex = initialImageIndex;
   currentSelectedSize = (product.sizes && product.sizes[0]) || "36";
 
-  const title = STATE.currentLang === 'TR' ? (product.nameTr || product.name) : product.name;
-  const desc = STATE.currentLang === 'TR' ? (product.descriptionTr || product.description) : product.description;
-  const fabric = STATE.currentLang === 'TR' ? (product.fabricTr || product.fabric) : product.fabric;
-  const fit = STATE.currentLang === 'TR' ? (product.fitTr || product.fit) : product.fit;
+  const isTr = STATE.currentLang === 'TR';
+  const t = TRANSLATIONS[STATE.currentLang] || TRANSLATIONS.TR;
+  const title = isTr ? (product.nameTr || product.name) : product.name;
+  const desc = isTr ? (product.descriptionTr || product.description) : product.description;
+  const fabric = isTr ? (product.fabricTr || product.fabric || 'Saf Yün Dokuma') : (product.fabric || '100% Virgin Wool');
+  const fit = isTr ? (product.fitTr || product.fit || 'Mimari Kalıp') : (product.fit || 'Architectural Fit');
+  const lining = isTr ? (product.liningTr || product.lining || '%100 Jakar Cupro Astar') : (product.lining || '100% Jacquard Cupro Lining');
+  const care = isTr ? (product.careTr || product.care || 'Sadece Kuru Temizleme') : (product.care || 'Dry Clean Only');
+
   const categoryObj = CATEGORIES_DATA.find(c => c.id === product.category);
-  const categoryName = STATE.currentLang === 'TR' 
+  const categoryName = isTr 
     ? (categoryObj?.nameTr || 'BLAZER & KOLEKSİYON') 
     : (categoryObj?.name || 'COLLECTION');
   const badgeText = BADGE_MAP[STATE.currentLang]?.[product.badge] || product.badge || 'ATELIER';
@@ -1083,7 +1282,7 @@ function openQuickView(productId, initialImageIndex = 0) {
         <svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/>
         </svg>
-        <span>${STATE.currentLang === 'TR' ? 'ANA SAYFAYA DÖN' : 'BACK TO HOME'}</span>
+        <span>${isTr ? 'ANA SAYFAYA DÖN' : 'BACK TO HOME'}</span>
       </button>
 
       <div class="qv-bar-title">
@@ -1095,7 +1294,7 @@ function openQuickView(productId, initialImageIndex = 0) {
       </div>
 
       <button class="qv-bar-close-btn" onclick="closeQuickViewModal(false)" title="İncelemeden Çık (ESC)">
-        <span>${STATE.currentLang === 'TR' ? 'ÇIKIŞ' : 'EXIT'}</span>
+        <span>${isTr ? 'ÇIKIŞ' : 'EXIT'}</span>
         <span class="qv-esc-tag">ESC</span>
         <span class="qv-bar-x">&times;</span>
       </button>
@@ -1124,7 +1323,7 @@ function openQuickView(productId, initialImageIndex = 0) {
           <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/>
           </svg>
-          <span>${STATE.currentLang === 'TR' ? 'Ana Sayfa' : 'Home'}</span>
+          <span>${isTr ? 'Ana Sayfa' : 'Home'}</span>
         </button>
 
         <!-- Navigation Arrows -->
@@ -1149,7 +1348,7 @@ function openQuickView(productId, initialImageIndex = 0) {
           <svg width="12" height="12" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7"/>
           </svg>
-          ${STATE.currentLang === 'TR' ? '5 FOTOĞRAF &bull; TERZİ DETAYI' : '5 ANGLES &bull; TAILORING'}
+          ${isTr ? '5 FOTOĞRAF &bull; TERZİ DETAYI' : '5 ANGLES &bull; TAILORING'}
         </div>
       </div>
     </div>
@@ -1163,16 +1362,45 @@ function openQuickView(productId, initialImageIndex = 0) {
             <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/>
             </svg>
-            <span>${STATE.currentLang === 'TR' ? 'Ana Sayfaya Dön' : 'Back to Home'}</span>
+            <span>${isTr ? 'Ana Sayfaya Dön' : 'Back to Home'}</span>
           </button>
         </div>
         <h2 class="qv-title">${title}</h2>
         <div class="qv-price">${formatPrice(product.priceTRY)}</div>
-        <p class="qv-desc" style="margin-top: 16px;">${desc || (STATE.currentLang === 'TR' ? 'Maison De Loup Atelier özel tasarımı.' : 'Maison De Loup Atelier bespoke design.')}</p>
+        <p class="qv-desc" style="margin-top: 16px;">${desc || (isTr ? 'Maison De Loup Atelier özel tasarımı.' : 'Maison De Loup Atelier bespoke design.')}</p>
       </div>
 
+      <!-- 4 Product Attributes (Phase 4) -->
+      <div class="qv-specs-grid">
+        <div class="qv-spec-item">
+          <span class="qv-spec-label">${isTr ? 'KUMAŞ' : 'FABRIC'}</span>
+          <span class="qv-spec-val">${fabric}</span>
+        </div>
+        <div class="qv-spec-item">
+          <span class="qv-spec-label">${isTr ? 'KALIP' : 'FIT'}</span>
+          <span class="qv-spec-val">${fit}</span>
+        </div>
+        <div class="qv-spec-item">
+          <span class="qv-spec-label">${isTr ? 'ASTAR' : 'LINING'}</span>
+          <span class="qv-spec-val">${lining}</span>
+        </div>
+        <div class="qv-spec-item">
+          <span class="qv-spec-label">${isTr ? 'BAKIM' : 'CARE'}</span>
+          <span class="qv-spec-val">${care}</span>
+        </div>
+      </div>
+
+      <!-- Size Selection & Size Guide Trigger Button -->
       <div>
-        <div class="qv-section-label">${STATE.currentLang === 'TR' ? 'BEDEN SEÇİMİ (EU)' : 'SELECT SIZE (EU)'}</div>
+        <div class="qv-size-header-row">
+          <div class="qv-section-label">${isTr ? 'BEDEN SEÇİMİ (EU)' : 'SELECT SIZE (EU)'}</div>
+          <button type="button" class="qv-size-guide-btn" onclick="openSizeGuideModal()">
+            <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2zM7 7h10M7 11h6M7 15h4"/>
+            </svg>
+            <span>${t.sizeGuide?.button || (isTr ? 'Beden Rehberi' : 'Size Guide')}</span>
+          </button>
+        </div>
         <div class="qv-sizes" id="qvSizesContainer">
           ${(product.sizes || ["36"]).map((s, idx) => `
             <button class="qv-size-btn ${idx === 0 ? 'selected' : ''}" onclick="selectQvSize('${s}', this)">${s}</button>
@@ -1180,15 +1408,11 @@ function openQuickView(productId, initialImageIndex = 0) {
         </div>
       </div>
 
-      <div style="font-size: 0.75rem; color: #a1a1aa; line-height: 1.8;">
-        <div><strong>${STATE.currentLang === 'TR' ? 'Kumaş:' : 'Fabric:'}</strong> ${fabric}</div>
-        <div><strong>${STATE.currentLang === 'TR' ? 'Kalıp:' : 'Fit:'}</strong> ${fit}</div>
-      </div>
-
+      <!-- Actions Row & Trust Badges -->
       <div>
         <div class="qv-actions-row">
           <button class="qv-add-to-cart" onclick="addToCart('${product.id}', currentSelectedSize); closeQuickViewModal(false);">
-            ${STATE.currentLang === 'TR' ? 'ÇANTAYA EKLE' : 'ADD TO BAG'} &bull; ${formatPrice(product.priceTRY)}
+            ${isTr ? 'ÇANTAYA EKLE' : 'ADD TO BAG'} &bull; ${formatPrice(product.priceTRY)}
           </button>
           <button class="qv-wishlist-toggle" onclick="toggleWishlist('${product.id}')" aria-label="Favorilere ekle">
             <svg width="20" height="20" fill="${STATE.wishlist.includes(product.id) ? '#e11d48' : 'none'}" viewBox="0 0 24 24" stroke="currentColor">
@@ -1197,13 +1421,33 @@ function openQuickView(productId, initialImageIndex = 0) {
           </button>
         </div>
 
+        <!-- Atelier Trust Badges (Phase 4) -->
+        <div class="atelier-trust-badges">
+          <div class="trust-badge-item">
+            <svg width="15" height="15" fill="none" viewBox="0 0 24 24" stroke="#c5a880"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg>
+            <span>${t.trust?.ssl || '256-Bit SSL Güvenli Ödeme'}</span>
+          </div>
+          <div class="trust-badge-item">
+            <svg width="15" height="15" fill="none" viewBox="0 0 24 24" stroke="#c5a880"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/></svg>
+            <span>${t.trust?.auth || 'Orijinal Atelier İşçiliği'}</span>
+          </div>
+          <div class="trust-badge-item">
+            <svg width="15" height="15" fill="none" viewBox="0 0 24 24" stroke="#c5a880"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/></svg>
+            <span>${t.trust?.returns || '14 Gün Koşulsuz İade'}</span>
+          </div>
+          <div class="trust-badge-item">
+            <svg width="15" height="15" fill="none" viewBox="0 0 24 24" stroke="#c5a880"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+            <span>${t.trust?.shipping || 'Global Ekspres Kurye'}</span>
+          </div>
+        </div>
+
         <!-- Dedicated Exit / Return to Home Button at bottom of inspection -->
         <div class="qv-footer-nav-row">
           <button class="qv-back-to-home-full-btn" onclick="closeQuickViewModal(true)">
             <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/>
             </svg>
-            <span>${STATE.currentLang === 'TR' ? 'İNCELEMEYİ BİTİR &bull; ANA SAYFAYA GERİ DÖN' : 'EXIT INSPECTION &bull; RETURN TO HOME'}</span>
+            <span>${isTr ? 'İNCELEMEYİ BİTİR &bull; ANA SAYFAYA GERİ DÖN' : 'EXIT INSPECTION &bull; RETURN TO HOME'}</span>
           </button>
         </div>
       </div>
@@ -1225,6 +1469,27 @@ function selectQvSize(size, btnEl) {
   }
 }
 window.selectQvSize = selectQvSize;
+
+function openSizeGuideModal() {
+  const modal = document.getElementById('sizeGuideModal');
+  if (modal) {
+    modal.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }
+}
+window.openSizeGuideModal = openSizeGuideModal;
+
+function closeSizeGuideModal() {
+  const modal = document.getElementById('sizeGuideModal');
+  if (modal) {
+    modal.classList.remove('active');
+    const qvModal = document.getElementById('quickViewModal');
+    if (!qvModal || !qvModal.classList.contains('active')) {
+      document.body.style.overflow = '';
+    }
+  }
+}
+window.closeSizeGuideModal = closeSizeGuideModal;
 
 function closeQuickViewModal(scrollToTop = false) {
   const modal = document.getElementById('quickViewModal');
@@ -1295,6 +1560,11 @@ document.addEventListener('keydown', (e) => {
   } else if (e.key === 'ArrowRight') {
     navigateQvImage(1);
   } else if (e.key === 'Escape') {
+    const sgModal = document.getElementById('sizeGuideModal');
+    if (sgModal && sgModal.classList.contains('active')) {
+      closeSizeGuideModal();
+      return;
+    }
     closeQuickViewModal(false);
   }
 });
@@ -1370,16 +1640,29 @@ function renderCart() {
   const container = document.getElementById('cartItemsContainer');
   const subtotalEl = document.getElementById('cartSubtotalAmount');
   const progressEl = document.getElementById('shippingProgress');
+  const shipBar = document.getElementById('shippingBarText');
+  const isTr = STATE.currentLang === 'TR';
+
+  const cur = CURRENCY_RATES[STATE.currentCurrency] || { symbol: '₺', rate: 1, position: 'after' };
+  const threshold = SHIPPING_THRESHOLDS[STATE.currentCurrency] || 8000;
+  const formattedThreshold = cur.position === 'before'
+    ? `${cur.symbol}${threshold.toLocaleString('en-US')}`
+    : `₺${threshold.toLocaleString('tr-TR')}`;
 
   if (STATE.cart.length === 0) {
     container.innerHTML = `
       <div class="empty-cart-state">
-        <p>${STATE.currentLang === 'TR' ? 'Alışveriş çantanız henüz boş.' : 'Your shopping bag is empty.'}</p>
-        <p style="font-size: 0.72rem; margin-top: 8px;">${STATE.currentLang === 'TR' ? 'Koleksiyonumuzdaki imza parçaları keşfedin.' : 'Discover our signature collection.'}</p>
+        <p>${isTr ? 'Alışveriş çantanız henüz boş.' : 'Your shopping bag is empty.'}</p>
+        <p style="font-size: 0.72rem; margin-top: 8px;">${isTr ? 'Koleksiyonumuzdaki imza parçaları keşfedin.' : 'Discover our signature collection.'}</p>
       </div>
     `;
     subtotalEl.innerText = formatPrice(0);
-    progressEl.style.width = '0%';
+    if (progressEl) progressEl.style.width = '0%';
+    if (shipBar) {
+      shipBar.innerText = isTr 
+        ? `Ücretsiz Dünya Çapında Ekspres Kargo için ${formattedThreshold} limit` 
+        : `Complimentary Worldwide Express Delivery on orders over ${formattedThreshold}`;
+    }
     return;
   }
 
@@ -1388,7 +1671,7 @@ function renderCart() {
   container.innerHTML = STATE.cart.map((item, idx) => {
     const itemTotalTRY = item.priceTRY * item.quantity;
     subtotalTRY += itemTotalTRY;
-    const title = STATE.currentLang === 'TR' ? item.nameTr : item.name;
+    const title = isTr ? item.nameTr : item.name;
 
     return `
       <div class="cart-item">
@@ -1413,9 +1696,25 @@ function renderCart() {
 
   subtotalEl.innerText = formatPrice(subtotalTRY);
 
-  const freeThreshold = 8000;
-  const pct = Math.min(100, Math.round((subtotalTRY / freeThreshold) * 100));
-  progressEl.style.width = `${pct}%`;
+  const subtotalCurr = Math.round(subtotalTRY * cur.rate);
+  const pct = Math.min(100, Math.round((subtotalCurr / threshold) * 100));
+  if (progressEl) progressEl.style.width = `${pct}%`;
+
+  if (shipBar) {
+    if (subtotalCurr >= threshold) {
+      shipBar.innerHTML = isTr
+        ? '<strong>Tebrikler!</strong> Ücretsiz ekspres kargo hakkı kazandınız.'
+        : '<strong>Congratulations!</strong> You unlocked free express shipping.';
+    } else {
+      const diff = threshold - subtotalCurr;
+      const formattedDiff = cur.position === 'before'
+        ? `${cur.symbol}${diff.toLocaleString('en-US')}`
+        : `₺${diff.toLocaleString('tr-TR')}`;
+      shipBar.innerText = isTr
+        ? `Ücretsiz ekspres kargo için ${formattedDiff} daha ekleyin`
+        : `Add ${formattedDiff} more for free express shipping`;
+    }
+  }
 }
 
 function openCartDrawer() {
@@ -1533,6 +1832,7 @@ function closeAllDrawers() {
   closeStoryModal();
   closeJournalModal();
   closeQuickViewModal();
+  closeSizeGuideModal();
 }
 
 document.getElementById('btnOpenCart').addEventListener('click', openCartDrawer);

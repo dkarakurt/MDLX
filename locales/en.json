@@ -146,5 +146,34 @@
   "search": {
     "placeholder": "Search collection (Blazer, Wool, Trousers...)",
     "noResults": "No products match your search criteria."
+  },
+  "sizeGuide": {
+    "badge": "ATELIER SIZING ADVISORY",
+    "title": "WOMEN'S SIZE & FIT CHART",
+    "subtitle": "All measurements are in standard centimeters (cm). Engineered for an architectural, commanding silhouette.",
+    "button": "Size Guide",
+    "thSizeEu": "Size (EU)",
+    "thSizeTr": "TR / FR",
+    "thSizeUk": "UK",
+    "thSizeUs": "US",
+    "thBust": "Bust (cm)",
+    "thWaist": "Waist (cm)",
+    "thHips": "Hips (cm)",
+    "thLength": "Blazer Length (cm)",
+    "measureTitle": "HOW TO MEASURE YOUR BODY",
+    "bustTitle": "1. Bust Measurement:",
+    "bustDesc": "Measure around the fullest part of your bust, keeping the measuring tape horizontal and parallel to the floor.",
+    "waistTitle": "2. Waist Measurement:",
+    "waistDesc": "Measure around your natural waistline at the narrowest point, keeping the tape comfortably loose.",
+    "hipsTitle": "3. Hips Measurement:",
+    "hipsDesc": "Stand with feet together and measure around the fullest part of your hips and rear.",
+    "fitTitle": "4. Tailoring & Fit Note:",
+    "fitDesc": "Our blazers feature structured Italian shoulder canvassing. If in between sizes, choosing the next size up is recommended."
+  },
+  "trust": {
+    "ssl": "256-Bit SSL Encrypted Checkout",
+    "auth": "100% Authentic Atelier Craft",
+    "returns": "14-Day Complimentary Returns",
+    "shipping": "Worldwide Express Delivery"
   }
 }

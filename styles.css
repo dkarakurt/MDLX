@@ -2693,3 +2693,236 @@ img {
   gap: 16px;
   align-items: center;
 }
+
+/* ==========================================================================
+   PHASE 4: 4-ATTRIBUTE SPECS GRID (Fabric, Fit, Lining, Care)
+   ========================================================================== */
+.qv-specs-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px 14px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(197, 168, 128, 0.22);
+  padding: 14px;
+  margin: 16px 0;
+  border-radius: 2px;
+}
+
+.qv-spec-item {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.qv-spec-label {
+  font-size: 0.64rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--color-gold);
+  font-weight: 600;
+}
+
+.qv-spec-val {
+  font-size: 0.75rem;
+  color: #e4e4e7;
+  line-height: 1.45;
+}
+
+.qv-size-header-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.qv-size-guide-btn {
+  background: transparent;
+  border: none;
+  color: var(--color-gold);
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  padding: 4px 0;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  transition: opacity 0.2s ease;
+}
+
+.qv-size-guide-btn:hover {
+  opacity: 0.8;
+}
+
+/* ==========================================================================
+   PHASE 4: SIZE GUIDE MODAL
+   ========================================================================== */
+.size-guide-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: calc(var(--modal-z-index) + 5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: all var(--transition-smooth);
+  padding: 24px;
+}
+
+.size-guide-modal.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.size-guide-card {
+  position: relative;
+  z-index: 2;
+  background-color: #121214;
+  color: var(--color-white);
+  max-width: 840px;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  padding: 36px 32px;
+  box-shadow: 0 25px 70px rgba(0,0,0,0.85);
+  border: 1px solid rgba(197, 168, 128, 0.35);
+  border-radius: 2px;
+}
+
+.size-guide-header {
+  text-align: center;
+  margin-bottom: 24px;
+  position: relative;
+}
+
+.size-guide-badge {
+  display: inline-block;
+  font-size: 0.65rem;
+  letter-spacing: 0.2em;
+  color: var(--color-gold);
+  margin-bottom: 8px;
+}
+
+.size-guide-title {
+  font-family: var(--font-serif);
+  font-size: 1.6rem;
+  font-weight: 400;
+  letter-spacing: 0.08em;
+  margin-bottom: 6px;
+}
+
+.size-guide-sub {
+  font-size: 0.78rem;
+  color: #a1a1aa;
+}
+
+.size-guide-table-wrap {
+  width: 100%;
+  overflow-x: auto;
+  margin: 18px 0 24px 0;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.size-guide-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.78rem;
+  text-align: center;
+}
+
+.size-guide-table th {
+  background: #1a1a1e;
+  color: var(--color-gold);
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  padding: 12px 10px;
+  border-bottom: 1px solid rgba(197, 168, 128, 0.3);
+  text-transform: uppercase;
+  font-size: 0.7rem;
+  white-space: nowrap;
+}
+
+.size-guide-table td {
+  padding: 11px 10px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  color: #f4f4f5;
+  white-space: nowrap;
+}
+
+.size-guide-table tr:hover td {
+  background: rgba(197, 168, 128, 0.06);
+}
+
+.size-guide-measure-box {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 20px 24px;
+  margin-top: 18px;
+  border-radius: 2px;
+}
+
+.size-guide-measure-title {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  color: var(--color-gold);
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
+.size-guide-measure-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+  font-size: 0.74rem;
+  color: #a1a1aa;
+  line-height: 1.5;
+}
+
+/* ==========================================================================
+   PHASE 4: ATELIER TRUST & SECURITY BADGES
+   ========================================================================== */
+.atelier-trust-badges {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px 12px;
+  margin-top: 16px;
+  padding-top: 14px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.trust-badge-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.68rem;
+  color: #a1a1aa;
+  letter-spacing: 0.04em;
+}
+
+.trust-badge-item svg {
+  flex-shrink: 0;
+}
+
+@media (max-width: 600px) {
+  .qv-specs-grid {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+  .size-guide-measure-list {
+    grid-template-columns: 1fr;
+  }
+  .size-guide-card {
+    padding: 24px 18px;
+  }
+  .atelier-trust-badges {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+}

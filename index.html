@@ -247,7 +247,7 @@
         </div>
         <div class="sort-and-count">
           <span id="productCountLabel">12 Parça</span>
-          <select class="sort-select" id="sortSelect" onchange="renderProducts()">
+          <select class="sort-select" id="sortSelect" onchange="handleSortChange()">
             <option value="featured">ÖNE ÇIKANLAR</option>
             <option value="price-asc">FİYAT: DÜŞÜKTEN YÜKSEĞE</option>
             <option value="price-desc">FİYAT: YÜKSEKTEN DÜŞÜĞE</option>
@@ -439,6 +439,26 @@
       <button class="checkout-btn" onclick="proceedToCheckout()" id="checkoutBtn">
         GÜVENLİ ÖDEMEYE GEÇ
       </button>
+
+      <!-- Atelier Trust & Security Badges -->
+      <div class="atelier-trust-badges">
+        <div class="trust-badge-item">
+          <svg width="15" height="15" fill="none" viewBox="0 0 24 24" stroke="#c5a880"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg>
+          <span class="trust-text" id="trustSslText">256-Bit SSL Güvenli Ödeme</span>
+        </div>
+        <div class="trust-badge-item">
+          <svg width="15" height="15" fill="none" viewBox="0 0 24 24" stroke="#c5a880"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/></svg>
+          <span class="trust-text" id="trustAuthText">Orijinal Atelier İşçiliği</span>
+        </div>
+        <div class="trust-badge-item">
+          <svg width="15" height="15" fill="none" viewBox="0 0 24 24" stroke="#c5a880"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/></svg>
+          <span class="trust-text" id="trustReturnText">14 Gün Koşulsuz İade</span>
+        </div>
+        <div class="trust-badge-item">
+          <svg width="15" height="15" fill="none" viewBox="0 0 24 24" stroke="#c5a880"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+          <span class="trust-text" id="trustShipText">Global Ekspres Kurye</span>
+        </div>
+      </div>
     </div>
   </aside>
 
@@ -545,6 +565,113 @@
 
     <div class="quick-view-card" id="quickViewCard">
       <!-- Injected dynamically by app.js -->
+    </div>
+  </div>
+
+  <!-- =========================================================================
+       SIZE GUIDE MODAL
+       ========================================================================= -->
+  <div class="size-guide-modal" id="sizeGuideModal" role="dialog" aria-modal="true" aria-label="Beden Rehberi">
+    <div class="story-modal-overlay" onclick="closeSizeGuideModal()"></div>
+    <div class="size-guide-card">
+      <button class="story-modal-close" onclick="closeSizeGuideModal()" aria-label="Kapat">&times;</button>
+      
+      <div class="size-guide-header">
+        <span class="size-guide-badge" id="sgBadge">ATELIER KESİM REHBERİ</span>
+        <h2 class="size-guide-title" id="sgTitle">KADIN BEDEN ÖLÇÜ TABLOSU</h2>
+        <p class="size-guide-sub" id="sgSubtitle">Tüm ölçüler standart santimetre (cm) bazındadır. Rahat ve kusursuz terzilik silüeti için tasarlanmıştır.</p>
+      </div>
+
+      <div class="size-guide-table-wrap">
+        <table class="size-guide-table">
+          <thead>
+            <tr>
+              <th id="thSizeEu">Beden (EU)</th>
+              <th id="thSizeTr">TR / FR</th>
+              <th id="thSizeUk">UK</th>
+              <th id="thSizeUs">US</th>
+              <th id="thBust">Göğüs (cm)</th>
+              <th id="thWaist">Bel (cm)</th>
+              <th id="thHips">Basen (cm)</th>
+              <th id="thLength">Ceket Boyu (cm)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>34 (XS)</strong></td>
+              <td>34</td>
+              <td>6</td>
+              <td>2</td>
+              <td>82 - 85</td>
+              <td>62 - 65</td>
+              <td>88 - 91</td>
+              <td>72</td>
+            </tr>
+            <tr>
+              <td><strong>36 (S)</strong></td>
+              <td>36</td>
+              <td>8</td>
+              <td>4</td>
+              <td>86 - 89</td>
+              <td>66 - 69</td>
+              <td>92 - 95</td>
+              <td>73</td>
+            </tr>
+            <tr>
+              <td><strong>38 (M)</strong></td>
+              <td>38</td>
+              <td>10</td>
+              <td>6</td>
+              <td>90 - 93</td>
+              <td>70 - 73</td>
+              <td>96 - 99</td>
+              <td>74</td>
+            </tr>
+            <tr>
+              <td><strong>40 (L)</strong></td>
+              <td>40</td>
+              <td>12</td>
+              <td>8</td>
+              <td>94 - 97</td>
+              <td>74 - 77</td>
+              <td>100 - 103</td>
+              <td>75</td>
+            </tr>
+            <tr>
+              <td><strong>42 (XL)</strong></td>
+              <td>42</td>
+              <td>14</td>
+              <td>10</td>
+              <td>98 - 102</td>
+              <td>78 - 82</td>
+              <td>104 - 108</td>
+              <td>76</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="size-guide-measure-box">
+        <h3 class="size-guide-measure-title" id="sgMeasureTitle">DOĞRU BEDEN NASIL ÖLÇÜLÜR?</h3>
+        <div class="size-guide-measure-list">
+          <div>
+            <strong style="color: #fff;" id="sgBustTitle">1. Göğüs Ölçüsü:</strong>
+            <p id="sgBustDesc">Mezurayı sırtınızdan öne doğru, göğsünüzün en dolgun noktasından geçirerek yere paralel tutarak ölçünüz.</p>
+          </div>
+          <div>
+            <strong style="color: #fff;" id="sgWaistTitle">2. Bel Ölçüsü:</strong>
+            <p id="sgWaistDesc">Doğal bel kıvrımınızın en dar noktasından, mezurayı aşırı sıkmadan ve gevşetmeden ölçünüz.</p>
+          </div>
+          <div>
+            <strong style="color: #fff;" id="sgHipsTitle">3. Basen Ölçüsü:</strong>
+            <p id="sgHipsDesc">Ayaklarınız bitişik vaziyette dururken, kalçanızın en geniş ve dolgun noktasından çevre ölçüsü alınız.</p>
+          </div>
+          <div>
+            <strong style="color: #fff;" id="sgFitTitle">4. Terzilik &amp; Kalıp Notu:</strong>
+            <p id="sgFitDesc">Blazer ceketlerimiz İtalyan mimari omuz vatkalı kesime sahiptir. İki beden arasında kaldığınızda ceketlerde bir üst bedeni tercih etmeniz önerilir.</p>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 
