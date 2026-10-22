@@ -1,0 +1,150 @@
+{
+  "lang": "EN",
+  "meta": {
+    "title": "Maison De Loup Atelier | The Art of the Blazer — The House of the Wolf",
+    "description": "Maison De Loup Atelier — Merging Turkish design heritage with global high fashion. Tailored blazers and contemporary womenswear empowering freedom and strength."
+  },
+  "brand": {
+    "name": "Maison De Loup Atelier",
+    "slogan": "THE ART OF THE BLAZER",
+    "origin": "ATELIER ISTANBUL"
+  },
+  "announcement": "Designed in Türkiye — Made for the World • Worldwide Express Delivery",
+  "nav": {
+    "newIn": "NEW IN",
+    "blazers": "BLAZERS",
+    "clothing": "CLOTHING",
+    "collections": "COLLECTIONS",
+    "editorial": "EDITORIAL",
+    "about": "ABOUT",
+    "contact": "CONTACT"
+  },
+  "hero": {
+    "title": "MAISON DE LOUP ATELIER",
+    "slogan": "THE ART OF THE BLAZER",
+    "provenance": "Designed in Türkiye<br>Made for the world.",
+    "cta": "EXPLORE COLLECTION",
+    "storyTag": "OUR STORY"
+  },
+  "signature": {
+    "badge": "SIGNATURE CREATION",
+    "title": "MODERN WOMENSWEAR",
+    "desc": "Timeless silhouettes. Modern attitude.",
+    "link": "DISCOVER ATELIER"
+  },
+  "wolf": {
+    "title": "THE HOUSE OF THE WOLF",
+    "text": "Maison de Loup translates to 'The House of the Wolf'. Drawing deep inspiration from the wolf's profound symbolism of freedom, strength, independence, and guidance in Turkish culture, Maison De Loup Atelier is a contemporary womenswear fashion house uniting Turkish design heritage with global fashion centres.",
+    "link": "OUR STORY"
+  },
+  "categories": {
+    "title": "SHOP BY CATEGORY",
+    "badge": "CORE COLLECTION",
+    "items": {
+      "blazers": "BLAZERS",
+      "trousers": "TROUSERS",
+      "shirts": "SHIRTS",
+      "tops": "KNITWEAR & TOPS",
+      "dresses": "DRESSES",
+      "skirts": "SKIRTS"
+    }
+  },
+  "catalog": {
+    "heading": "THE COLLECTION",
+    "sub": "Tailored Blazers • Complementary Wardrobe • Accessible Luxury",
+    "pieces": "Pieces",
+    "sortOptions": {
+      "featured": "FEATURED",
+      "priceAsc": "PRICE: LOW TO HIGH",
+      "priceDesc": "PRICE: HIGH TO LOW",
+      "new": "NEW ARRIVALS"
+    },
+    "filterPills": {
+      "all": "ALL",
+      "blazers": "BLAZERS (HERO)",
+      "trousers": "TROUSERS",
+      "shirts": "SHIRTS",
+      "tops": "KNITWEAR & TOPS",
+      "dresses": "DRESSES",
+      "skirts": "SKIRTS"
+    },
+    "quickViewBtn": "QUICK VIEW (5 PHOTOS)"
+  },
+  "journal": {
+    "title": "THE JOURNAL",
+    "subtitle": "Fashion, Inspiration and the Maison De Loup Atelier World.",
+    "cta": "EXPLORE EDITORIAL"
+  },
+  "pillars": {
+    "card1Title": "QUALITY IN EVERY DETAIL",
+    "card1Text": "From design to fabric, artisan craftsmanship to client experience — uncompromised quality. Rooted in over 20 years of textile mastery.",
+    "card1Link": "OUR VALUES",
+    "card2Title": "THE ANATOMY OF FIT",
+    "card2Text": "Sculpted shoulders, internal canvas structure, and dynamic draped pure wool textiles.",
+    "card2Link": "ATELIER CRAFT"
+  },
+  "newsletter": {
+    "title": "JOIN OUR WORLD",
+    "desc": "Receive private invitations, seasonal previews, and priority access to limited atelier drops.",
+    "placeholder": "Your email address",
+    "submitAria": "Subscribe",
+    "kvkkText": "I have read and accept the Privacy Policy.",
+    "success": "Thank you! Your email has been subscribed to the Maison De Loup Atelier inner circle.",
+    "errorEmail": "Please enter a valid email address.",
+    "errorConsent": "Please accept the Privacy Policy."
+  },
+  "storyModal": {
+    "title": "MAISON DE LOUP ATELIER",
+    "subtitle": "THE HOUSE OF THE WOLF",
+    "visionBadge": "BRAND VISION",
+    "visionTitle": "The Power of the Wolf & Global Turkish Design",
+    "visionText": "Maison de Loup… Translated literally from French: <strong>“The House of the Wolf.”</strong><br><br>The genesis of our atelier draws from the deep, mythic symbolism of the wolf in Turkish culture. The wolf embodies supreme freedom, independence, courage, and intuition. We translate this powerful emblem into the modern identity of an international luxury fashion brand.<br><br>Maison De Loup Atelier’s overarching vision is to position Turkish design excellence at the forefront of global fashion capitals. Quality is our unwavering pillar — from bespoke canvassing to premium virgin wools and immaculate finishings.",
+    "missionBadge": "BRAND MISSION",
+    "missionTitle": "Contemporary Aesthetics & Timeless Value",
+    "missionText": "Nurtured by the richness of Turkish design culture and local manufacturing excellence; uniting modern silhouettes with uncompromising quality, authenticity, and accessibility.<br><br>Designing versatile, commanding, and timeless creations that empower women across global geographies to express their identity with unapologetic confidence.",
+    "strategyBadge": "PRODUCT & COMMERCIAL PILLARS",
+    "strategyTitle": "3 Core Axes Centered on the Tailored Blazer",
+    "strategyText": "At the nucleus of Maison De Loup Atelier stands the <strong>tailored women’s blazer</strong>. The blazer is our signature silhouette and the ultimate embodiment of our brand DNA. Around it orbits an engineered capsule wardrobe designed to elevate women from day to evening.",
+    "strategyAxes": "<strong>3 Core Axes of Our Product Strategy:</strong><br><strong>1. Signature Creations:</strong> Masterfully tailored virgin wool blazers crafted with bespoke craftsmanship.<br><strong>2. Complementary Capsule:</strong> Wide-leg trousers, poplin shirts, silk skirts, and slip dresses tailored to frame the blazer.<br><strong>3. Accessible Brand DNA:</strong> Dynamic luxury essentials designed for modern urban rhythms without compromising quality.",
+    "founderBadge": "FOUNDER'S VISION",
+    "founderTitle": "Over 20 Years of Textile & Fashion Mastery",
+    "founderText": "More than <strong>20 years of deep textile and fashion industry mastery</strong> serves as the fundamental cornerstone of Maison De Loup Atelier. Spanning decades across fine knitwear, worsted tailoring, denim, and leathercraft, this comprehensive expertise allows us to govern every millimeter from conceptual sketch to fabric mill and atelier finish.<br><br>Our mission is not merely to craft aesthetic garments, but to build a lasting, sustainable, and globally revered fashion house that proudly champions Turkish design mastery on the world stage."
+  },
+  "cart": {
+    "title": "SHOPPING BAG",
+    "shippingLimitPrefix": "Complimentary Worldwide Express Delivery on orders over",
+    "shippingLimitSuffix": "",
+    "shippingUnlocked": "Congratulations! You have unlocked Free Worldwide Express Delivery.",
+    "empty": "Your shopping bag is currently empty.",
+    "emptySub": "Discover the signature creations in our collection.",
+    "subtotal": "SUBTOTAL",
+    "checkout": "PROCEED TO SECURE CHECKOUT",
+    "remove": "Remove"
+  },
+  "quickView": {
+    "backHome": "RETURN TO HOME",
+    "exit": "EXIT",
+    "home": "Home",
+    "anglesBadge": "5 ANGLES • TAILORING DETAILS",
+    "selectSize": "SELECT SIZE (EU)",
+    "fabricLabel": "Fabric:",
+    "fitLabel": "Fit:",
+    "addToBag": "ADD TO BAG",
+    "exitInspection": "EXIT INSPECTION • RETURN TO HOME"
+  },
+  "footer": {
+    "copyright": "© 2026 Maison De Loup Atelier. All rights reserved. Designed in Türkiye.",
+    "legal": {
+      "terms": "Distance Sales Contract",
+      "preInfo": "Preliminary Information",
+      "kvkk": "Privacy Policy",
+      "cookies": "Cookie Policy",
+      "returns": "Returns & Exchanges",
+      "shipping": "Shipping & Delivery"
+    }
+  },
+  "search": {
+    "placeholder": "Search collection (Blazer, Wool, Trousers...)",
+    "noResults": "No products match your search criteria."
+  }
+}

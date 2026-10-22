@@ -41,12 +41,12 @@
 
     <!-- Center Navigation Links -->
     <nav class="main-nav" aria-label="Ana Menü">
-      <a href="#catalog" class="nav-link" data-filter="all" id="navNewIn">NEW IN</a>
-      <a href="#catalog" class="nav-link active" data-filter="blazers" id="navBlazers">BLAZERS</a>
-      <a href="#categorySection" class="nav-link" id="navClothing">CLOTHING</a>
-      <a href="#splitSection" class="nav-link" id="navCollections">COLLECTIONS</a>
-      <a href="#journalSection" class="nav-link" id="navEditorial">EDITORIAL</a>
-      <a href="#storyModal" class="nav-link" id="navAbout" onclick="openStoryModal(); return false;">ABOUT</a>
+      <a href="#catalog" class="nav-link" data-filter="all" id="navNewIn">YENİ GELENLER</a>
+      <a href="#catalog" class="nav-link active" data-filter="blazers" id="navBlazers">BLAZER CEKET</a>
+      <a href="#categorySection" class="nav-link" id="navClothing">GİYİM</a>
+      <a href="#splitSection" class="nav-link" id="navCollections">KOLEKSİYONLAR</a>
+      <a href="#journalSection" class="nav-link" id="navEditorial">EDİTORYAL</a>
+      <a href="#storyModal" class="nav-link" id="navAbout" onclick="openStoryModal(); return false;">HAKKIMIZDA</a>
       <a href="/iletisim" class="nav-link" id="navContact">İLETİŞİM</a>
     </nav>
 
@@ -123,7 +123,7 @@
     </div>
 
     <!-- Vertical Floating STORIES Tag -->
-    <div class="hero-stories-tag" onclick="openStoryModal()">STORIES</div>
+    <div class="hero-stories-tag" id="heroStoryTag" onclick="openStoryModal()">ATELIER HİKAYESİ</div>
   </section>
 
   <!-- =========================================================================
@@ -135,8 +135,8 @@
       <img src="assets/images/uploaded_1791788751605_Gemini_Generated_Image_fn3h8jfn3h8jfn3h.jpg" alt="The Signature Blazer" class="split-bg-img" id="sigImage">
       <div class="split-gradient-overlay"></div>
       <div class="split-left-content">
-        <div class="split-pretitle" id="sigPretitle">HERO CREATION</div>
-        <h2 class="split-title" id="sigTitle">MODERN WOMENSWEAR</h2>
+        <div class="split-pretitle" id="sigPretitle">İMZA TASARIM</div>
+        <h2 class="split-title" id="sigTitle">MODERN KADIN GİYİM</h2>
         <p class="split-desc" id="sigDesc">Zamansız silüetler. Modern tavır.</p>
         <a href="#catalog" class="split-link" onclick="filterCatalog('blazers')" id="sigLink">
           <span id="sigLinkText">ÜRÜNLERİ İNCELE</span> &rarr;
@@ -167,68 +167,68 @@
   <section class="category-section" id="categorySection">
     <div class="category-header-divider">
       <div class="divider-line"></div>
-      <h2 class="category-section-title" id="catTitle">SHOP BY CATEGORY</h2>
+      <h2 class="category-section-title" id="catTitle">KATEGORİLERE GÖRE KEŞFET</h2>
       <div class="divider-line"></div>
     </div>
 
     <div class="category-grid" id="categoryGrid">
       <a href="#catalog" class="category-card" onclick="filterCatalog('blazers')">
         <div class="category-img-box">
-          <img src="assets/images/cat_blazers_hd.jpg?t=179249" alt="Blazers" id="catImgBlazers">
-          <span class="category-badge-core">CORE</span>
+          <img src="assets/images/cat_blazers_hd.jpg?t=179249" alt="Blazer Ceket" id="catImgBlazers">
+          <span class="category-badge-core" id="catBadgeCore">İMZA KOLEKSİYON</span>
         </div>
         <div class="category-name-row">
-          <span>BLAZERS</span>
+          <span id="catNameBlazers">BLAZER CEKET</span>
           <span>&rarr;</span>
         </div>
       </a>
 
       <a href="#catalog" class="category-card" onclick="filterCatalog('trousers')">
         <div class="category-img-box">
-          <img src="assets/images/cat_trousers_hd.jpg?t=179249" alt="Trousers" id="catImgTrousers">
+          <img src="assets/images/cat_trousers_hd.jpg?t=179249" alt="Pantolon" id="catImgTrousers">
         </div>
         <div class="category-name-row">
-          <span>TROUSERS</span>
+          <span id="catNameTrousers">PANTOLON</span>
           <span>&rarr;</span>
         </div>
       </a>
 
       <a href="#catalog" class="category-card" onclick="filterCatalog('shirts')">
         <div class="category-img-box">
-          <img src="assets/images/cat_shirts_hd.jpg?t=179249" alt="Shirts" id="catImgShirts">
+          <img src="assets/images/cat_shirts_hd.jpg?t=179249" alt="Gömlek" id="catImgShirts">
         </div>
         <div class="category-name-row">
-          <span>SHIRTS</span>
+          <span id="catNameShirts">GÖMLEK</span>
           <span>&rarr;</span>
         </div>
       </a>
 
       <a href="#catalog" class="category-card" onclick="filterCatalog('tops')">
         <div class="category-img-box">
-          <img src="assets/images/cat_tops_hd.jpg?t=179249" alt="Tops" id="catImgTops">
+          <img src="assets/images/cat_tops_hd.jpg?t=179249" alt="Triko ve Üst" id="catImgTops">
         </div>
         <div class="category-name-row">
-          <span>TOPS</span>
+          <span id="catNameTops">TRİKO &amp; ÜST</span>
           <span>&rarr;</span>
         </div>
       </a>
 
       <a href="#catalog" class="category-card" onclick="filterCatalog('dresses')">
         <div class="category-img-box">
-          <img src="assets/images/cat_dresses_hd.jpg?t=179249" alt="Dresses" id="catImgDresses">
+          <img src="assets/images/cat_dresses_hd.jpg?t=179249" alt="Elbise" id="catImgDresses">
         </div>
         <div class="category-name-row">
-          <span>DRESSES</span>
+          <span id="catNameDresses">ELBİSE</span>
           <span>&rarr;</span>
         </div>
       </a>
 
       <a href="#catalog" class="category-card" onclick="filterCatalog('skirts')">
         <div class="category-img-box">
-          <img src="assets/images/cat_skirts_hd.jpg?t=179249" alt="Skirts" id="catImgSkirts">
+          <img src="assets/images/cat_skirts_hd.jpg?t=179249" alt="Etek" id="catImgSkirts">
         </div>
         <div class="category-name-row">
-          <span>SKIRTS</span>
+          <span id="catNameSkirts">ETEK</span>
           <span>&rarr;</span>
         </div>
       </a>
@@ -260,7 +260,7 @@
       <div class="catalog-controls">
         <div class="filter-pills" id="filterPillsContainer">
           <button class="filter-btn active" data-filter="all" onclick="filterCatalog('all')">TÜMÜ</button>
-          <button class="filter-btn" data-filter="blazers" onclick="filterCatalog('blazers')">BLAZERS (İMZA)</button>
+          <button class="filter-btn" data-filter="blazers" onclick="filterCatalog('blazers')">BLAZER CEKET (İMZA)</button>
           <button class="filter-btn" data-filter="trousers" onclick="filterCatalog('trousers')">PANTOLON</button>
           <button class="filter-btn" data-filter="shirts" onclick="filterCatalog('shirts')">GÖMLEK</button>
           <button class="filter-btn" data-filter="tops" onclick="filterCatalog('tops')">TRİKO &amp; ÜST</button>
@@ -303,7 +303,7 @@
         </div>
         <h3 class="pillar-title" id="card1Title">HER DETAYDA MÜKEMMELİYET</h3>
         <p class="pillar-copy" id="card1Text">
-          Tasarımdan kumaşa, işçilikten ürün deneyimine kadar kaliteden ödün vermeden. 15 yıllık sektör birikimiyle.
+          Tasarımdan kumaşa, işçilikten ürün deneyimine kadar kaliteden ödün vermeden. 20 yılı aşkın sektör deneyimiyle.
         </p>
         <a href="#storyModal" class="pillar-link" onclick="openStoryModal(); return false;" id="card1Link">
           <span id="card1LinkText">DEĞERLERİMİZ</span> &rarr;
@@ -341,7 +341,7 @@
         <div class="newsletter-consent">
           <label style="display: flex; gap: 8px; align-items: flex-start; cursor: pointer;">
             <input type="checkbox" id="newsletterKvkk" required>
-            <span><a href="/kvkk-aydinlatma-metni" target="_blank">KVKK Aydınlatma Metni</a>'ni okudum, kabul ediyorum.</span>
+            <span id="kvkkConsentText"><a href="/kvkk-aydinlatma-metni" target="_blank">KVKK Aydınlatma Metni</a>'ni okudum, kabul ediyorum.</span>
           </label>
         </div>
       </div>
@@ -357,14 +357,14 @@
         <a href="/" aria-label="Maison De Loup Atelier Ana Sayfa"><img src="assets/images/logo-white.png" alt="Maison De Loup Atelier"></a>
       </div>
 
-      <nav class="footer-nav" aria-label="Alt Menü">
-        <a href="#catalog" onclick="filterCatalog('all')">NEW IN</a>
-        <a href="#catalog" onclick="filterCatalog('blazers')">BLAZERS</a>
-        <a href="#categorySection">CLOTHING</a>
-        <a href="#splitSection">COLLECTIONS</a>
-        <a href="#journalSection">EDITORIAL</a>
-        <a href="#storyModal" onclick="openStoryModal(); return false;">ABOUT</a>
-        <a href="/iletisim">İLETİŞİM</a>
+      <nav class="footer-nav" aria-label="Alt Menü" id="footerNav">
+        <a href="#catalog" onclick="filterCatalog('all')" id="footNavNewIn">YENİ GELENLER</a>
+        <a href="#catalog" onclick="filterCatalog('blazers')" id="footNavBlazers">BLAZER CEKET</a>
+        <a href="#categorySection" id="footNavClothing">GİYİM</a>
+        <a href="#splitSection" id="footNavCollections">KOLEKSİYONLAR</a>
+        <a href="#journalSection" id="footNavEditorial">EDİTORYAL</a>
+        <a href="#storyModal" onclick="openStoryModal(); return false;" id="footNavAbout">HAKKIMIZDA</a>
+        <a href="/iletisim" id="footNavContact">İLETİŞİM</a>
       </nav>
 
       <div class="footer-socials">
@@ -384,14 +384,14 @@
     </div>
 
     <div class="footer-bottom-row">
-      <div>&copy; 2026 Maison De Loup Atelier. All rights reserved. Designed in Türkiye.</div>
-      <div class="footer-legal-links">
-        <a href="/mesafeli-satis-sozlesmesi">Mesafeli Satış Sözleşmesi</a>
-        <a href="/on-bilgilendirme-formu">Ön Bilgilendirme</a>
-        <a href="/kvkk-aydinlatma-metni">KVKK</a>
-        <a href="/cerez-politikasi">Çerez Politikası</a>
-        <a href="/iade-ve-degisim">İade &amp; Değişim</a>
-        <a href="/kargo-ve-teslimat">Kargo &amp; Teslimat</a>
+      <div id="footerCopyright">&copy; 2026 Maison De Loup Atelier. Tüm hakları saklıdır. Türkiye'de Tasarlandı.</div>
+      <div class="footer-legal-links" id="footerLegalLinks">
+        <a href="/mesafeli-satis-sozlesmesi" id="footLegalTerms">Mesafeli Satış Sözleşmesi</a>
+        <a href="/on-bilgilendirme-formu" id="footLegalPreInfo">Ön Bilgilendirme</a>
+        <a href="/kvkk-aydinlatma-metni" id="footLegalKvkk">KVKK</a>
+        <a href="/cerez-politikasi" id="footLegalCookies">Çerez Politikası</a>
+        <a href="/iade-ve-degisim" id="footLegalReturns">İade &amp; Değişim</a>
+        <a href="/kargo-ve-teslimat" id="footLegalShipping">Kargo &amp; Teslimat</a>
       </div>
     </div>
   </footer>
@@ -406,7 +406,7 @@
        ========================================================================= -->
   <aside class="cart-drawer" id="cartDrawer" aria-label="Alışveriş Çantası">
     <div class="drawer-header">
-      <h3 class="drawer-title" id="cartDrawerTitle">SHOPPING BAG (<span id="cartDrawerCount">0</span>)</h3>
+      <h3 class="drawer-title" id="cartDrawerTitle"><span id="cartDrawerTitleText">ALIŞVERİŞ ÇANTASI</span> (<span id="cartDrawerCount">0</span>)</h3>
       <button class="close-drawer-btn" onclick="closeAllDrawers()" aria-label="Kapat">
         <svg width="22" height="22" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M6 18L18 6M6 6l12 12"/>
@@ -425,8 +425,8 @@
     <!-- Items list -->
     <div class="cart-items-container" id="cartItemsContainer">
       <div class="empty-cart-state" id="emptyCartState">
-        <p>Alışveriş çantanız henüz boş.</p>
-        <p style="font-size: 0.72rem; margin-top: 8px;">Koleksiyonumuzdaki imza parçaları keşfedin.</p>
+        <p id="emptyCartTitle">Alışveriş çantanız henüz boş.</p>
+        <p style="font-size: 0.72rem; margin-top: 8px;" id="emptyCartSub">Koleksiyonumuzdaki imza parçaları keşfedin.</p>
       </div>
     </div>
 
@@ -474,14 +474,14 @@
       <div class="story-header">
         <img src="assets/images/logo-black.png" alt="Maison De Loup Atelier" class="story-logo-img">
         <h2 class="story-main-title">MAISON DE LOUP ATELIER</h2>
-        <p class="story-subtitle">KURDUN EVİ &bull; THE HOUSE OF THE WOLF</p>
+        <p class="story-subtitle" id="modalStorySubtitle">KURDUN EVİ &bull; THE HOUSE OF THE WOLF</p>
       </div>
 
       <div class="story-sections-grid">
         <!-- Vizyon -->
         <div class="story-block">
-          <span class="story-block-badge">MARKA VİZYONU</span>
-          <h3 class="story-block-title">Kurdun Gücü ve Global Türk Tasarımı</h3>
+          <span class="story-block-badge" id="modalStoryVisionBadge">MARKA VİZYONU</span>
+          <h3 class="story-block-title" id="modalStoryVisionTitle">Kurdun Gücü ve Global Türk Tasarımı</h3>
           <p class="story-block-text" id="modalStoryVision">
             Maison de Loup… Fransızca karşılığıyla <strong>“Kurdun Evi.”</strong><br><br>
             Markanın çıkış noktası, kurdun Türk kültüründeki güçlü ve sembolik anlamından ilham alıyor. Kurt; özgürlüğü, gücü, bağımsızlığı ve yol göstericiliği temsil ediyor. Biz bu güçlü sembolü, modern ve global bir moda markasının kimliğine dönüştürmek istiyoruz.<br><br>
@@ -491,8 +491,8 @@
 
         <!-- Misyon -->
         <div class="story-block">
-          <span class="story-block-badge">MARKA MİSYONU</span>
-          <h3 class="story-block-title">Çağdaş Estetik ve Zamansız Değer</h3>
+          <span class="story-block-badge" id="modalStoryMissionBadge">MARKA MİSYONU</span>
+          <h3 class="story-block-title" id="modalStoryMissionTitle">Çağdaş Estetik ve Zamansız Değer</h3>
           <p class="story-block-text" id="modalStoryMission">
             Türk tasarım kültüründen ve yerel üretim gücünden beslenerek; çağdaş tasarım anlayışını yüksek kalite, özgünlük ve erişilebilirlik ile buluşturmak.<br><br>
             Farklı coğrafyalardaki kadınların ihtiyaçlarını ve yaşam tarzlarını anlayarak, onların stiline ilham veren, güçlü ve zamansız ürünler tasarlamak. Maison De Loup Atelier olarak misyonumuz; Türk tasarımının özgün karakterini global moda dünyasının dinamikleriyle birleştirerek, uluslararası ölçekte değer yaratan ve kadınların kendilerini ifade etmelerine alan açan bir moda markası olmak.
@@ -501,12 +501,12 @@
 
         <!-- Ürün ve Ticari Strateji -->
         <div class="story-block full-width">
-          <span class="story-block-badge">ÜRÜN VE TİCARİ HEDEFLERİMİZ</span>
-          <h3 class="story-block-title">Kadın Blazer Ceket Merkezli 3 Temel Eksen</h3>
-          <p class="story-block-text">
+          <span class="story-block-badge" id="modalStoryStrategyBadge">ÜRÜN VE TİCARİ HEDEFLERİMİZ</span>
+          <h3 class="story-block-title" id="modalStoryStrategyTitle">Kadın Blazer Ceket Merkezli 3 Temel Eksen</h3>
+          <p class="story-block-text" id="modalStoryStrategyText">
             Maison De Loup Atelier’nin ürün stratejisinin merkezinde <strong>kadın blazer ceketi</strong> yer alır. Blazer; markanın imza ürünü ve tasarım kimliğini en güçlü şekilde yansıtan ana kategori olarak konumlandırılmıştır. Bunun yanında, blazerları tamamlayan ve kadınların günlük yaşamdan özel anlara kadar farklı kombin ihtiyaçlarına cevap verecek tamamlayıcı ürün grupları da koleksiyonun bir parçasıdır.
           </p>
-          <div class="three-axes-box">
+          <div class="three-axes-box" id="modalStoryStrategyAxes">
             <strong>Ürün Stratejimizin 3 Temel Ekseni:</strong><br>
             <strong>1. İmza Ürünler:</strong> Üst segment terzilik ve saf yün işçiliğiyle üretilen imza blazer ceketler.<br>
             <strong>2. Tamamlayıcı Koleksiyon:</strong> Blazer silüetini kusursuz tamamlayan pantolon, poplin gömlek, ipek etek ve elbiseler.<br>
@@ -516,10 +516,10 @@
 
         <!-- Kurucu Deneyimi -->
         <div class="story-block full-width">
-          <span class="story-block-badge">KURUCU VİZYONU</span>
-          <h3 class="story-block-title">15 Yıllık Tekstil ve Moda Birikimi</h3>
+          <span class="story-block-badge" id="modalStoryFounderBadge">KURUCU VİZYONU</span>
+          <h3 class="story-block-title" id="modalStoryFounderTitle">20 Yılı Aşkın Tekstil ve Moda Birikimi</h3>
           <p class="story-block-text" id="modalStoryFounder">
-            Yaklaşık <strong>15 yıllık tekstil ve moda sektöründeki deneyim</strong>, Maison De Loup Atelier’nin en güçlü yapı taşlarından biridir. Kariyer boyunca triko, dokuma, denim ve deri gibi farklı ürün gruplarında, kumaşlarda ve üretim tekniklerinde edinilen uzmanlık; koleksiyon oluşturma sürecinin tasarım aşamasından üretime kadar bütününü mükemmeliyetle yönetmeyi sağlamaktadır.<br><br>
+            Yaklaşık <strong>20 yılı aşkın tekstil ve moda sektöründeki deneyim</strong>, Maison De Loup Atelier’nin en güçlü yapı taşlarından biridir. Kariyer boyunca triko, dokuma, denim ve deri gibi farklı ürün gruplarında, kumaşlarda ve üretim tekniklerinde edinilen uzmanlık; koleksiyon oluşturma sürecinin tasarım aşamasından üretime kadar bütününü mükemmeliyetle yönetmeyi sağlamaktadır.<br><br>
             En büyük hedefimiz; markanın her koleksiyonunda aynı kimliği hissettiren ancak kendini tekrar etmeyen; güncel, özgün ve zamansız tasarımlar ortaya koymak. Tasarım ile ticari bakış açısını bir arada harmanlayarak, Türk tasarımını gururla temsil eden global bir moda evi inşa ediyoruz.
           </p>
         </div>
@@ -538,7 +538,7 @@
       <svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/>
       </svg>
-      <span class="exit-text">ANA SAYFAYA DÖN</span>
+      <span class="exit-text" id="qvExitBtnText">ANA SAYFAYA DÖN</span>
       <span class="esc-badge">ESC</span>
       <span class="close-x">&times;</span>
     </button>
@@ -572,7 +572,7 @@
           <span class="story-block-badge">MAKALE 01 &bull; TERZİLİK SANATI</span>
           <h3 class="story-block-title">Modern Blazer'ın Anatomisi</h3>
           <p class="story-block-text">
-            Bir kadının gardırobundaki en güçlü zırh, kusursuz kesilmiş bir blazer cekettir. Omuz vatkasının milimetrik eğiminden, telalı astarın hareketle esneyen yapısına kadar 15 yıllık terzilik birikimimizin sırları.
+            Bir kadının gardırobundaki en güçlü zırh, kusursuz kesilmiş bir blazer cekettir. Omuz vatkasının milimetrik eğiminden, telalı astarın hareketle esneyen yapısına kadar 20 yılı aşkın terzilik birikimimizin sırları.
           </p>
         </div>
         <div class="story-block">

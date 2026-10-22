@@ -1,0 +1,150 @@
+{
+  "lang": "TR",
+  "meta": {
+    "title": "Maison De Loup Atelier | The Art of the Blazer — Kurdun Evi",
+    "description": "Maison De Loup Atelier — Türk tasarımını global moda dünyasıyla buluşturan, kadının gücünü ve özgürlüğünü simgeleyen lüks blazer ceket ve çağdaş kadın giyim koleksiyonu."
+  },
+  "brand": {
+    "name": "Maison De Loup Atelier",
+    "slogan": "THE ART OF THE BLAZER",
+    "origin": "ATELIER ISTANBUL"
+  },
+  "announcement": "Türkiye'de Tasarlandı — Dünyaya Açılan Türk Modası",
+  "nav": {
+    "newIn": "YENİ GELENLER",
+    "blazers": "BLAZER CEKET",
+    "clothing": "GİYİM",
+    "collections": "KOLEKSİYONLAR",
+    "editorial": "EDİTORYAL",
+    "about": "HAKKIMIZDA",
+    "contact": "İLETİŞİM"
+  },
+  "hero": {
+    "title": "MAISON DE LOUP ATELIER",
+    "slogan": "THE ART OF THE BLAZER",
+    "provenance": "Designed in Türkiye<br>Made for the world.",
+    "cta": "KOLEKSİYONU KEŞFET",
+    "storyTag": "ATELIER HİKAYESİ"
+  },
+  "signature": {
+    "badge": "İMZA TASARIM",
+    "title": "MODERN KADIN GİYİM",
+    "desc": "Zamansız silüetler. Modern tavır.",
+    "link": "ÜRÜNLERİ İNCELE"
+  },
+  "wolf": {
+    "title": "KURDUN EVİ — THE HOUSE OF THE WOLF",
+    "text": "Maison de Loup, 'Kurdun Evi' anlamına gelir. Özgürlük, güç, bağımsızlık ve yol göstericiliği temsil eden kurt sembolünden ilham alan Maison De Loup Atelier, Türk tasarımını global moda dünyasıyla buluşturan modern ve zamansız bir kadın giyim markasıdır.",
+    "link": "HİKAYEMİZ"
+  },
+  "categories": {
+    "title": "KATEGORİLERE GÖRE KEŞFET",
+    "badge": "İMZA KOLEKSİYON",
+    "items": {
+      "blazers": "BLAZER CEKET",
+      "trousers": "PANTOLON",
+      "shirts": "GÖMLEK",
+      "tops": "TRİKO & ÜST",
+      "dresses": "ELBİSE",
+      "skirts": "ETEK"
+    }
+  },
+  "catalog": {
+    "heading": "KOLEKSİYON",
+    "sub": "Kadın Blazer Ceket • Tamamlayıcı Koleksiyon • Erişilebilir Lüks",
+    "pieces": "Parça",
+    "sortOptions": {
+      "featured": "ÖNE ÇIKANLAR",
+      "priceAsc": "FİYAT: DÜŞÜKTEN YÜKSEĞE",
+      "priceDesc": "FİYAT: YÜKSEKTEN DÜŞÜĞE",
+      "new": "YENİ GELENLER"
+    },
+    "filterPills": {
+      "all": "TÜMÜ",
+      "blazers": "BLAZER CEKET (İMZA)",
+      "trousers": "PANTOLON",
+      "shirts": "GÖMLEK",
+      "tops": "TRİKO & ÜST",
+      "dresses": "ELBİSE",
+      "skirts": "ETEK"
+    },
+    "quickViewBtn": "HIZLI BAKIŞ (5 GÖRSEL)"
+  },
+  "journal": {
+    "title": "THE JOURNAL",
+    "subtitle": "Moda, İlham ve Maison De Loup Atelier Dünyası.",
+    "cta": "EDİTORYAL YAZILARI OKU"
+  },
+  "pillars": {
+    "card1Title": "HER DETAYDA MÜKEMMELİYET",
+    "card1Text": "Tasarımdan kumaşa, işçilikten ürün deneyimine kadar kaliteden ödün vermeden. 20 yılı aşkın sektör deneyimiyle.",
+    "card1Link": "DEĞERLERİMİZ",
+    "card2Title": "MİMARİ TERZİLİK & KALIP",
+    "card2Text": "Keskin omuz hatları, hareket kabiliyeti sağlayan kavisler ve dökümlü saf yün kumaşlar.",
+    "card2Link": "ATÖLYE DETAYLARI"
+  },
+  "newsletter": {
+    "title": "DÜNYAMIZA KATILIN",
+    "desc": "Yeni koleksiyonlar, özel atölye sunumları ve öncelikli sipariş fırsatlarından haberdar olun.",
+    "placeholder": "E-posta adresiniz",
+    "submitAria": "Abone Ol",
+    "kvkkText": "KVKK Aydınlatma Metni'ni okudum, kabul ediyorum.",
+    "success": "Teşekkürler! E-posta adresiniz Maison De Loup Atelier ayrıcalıklar dünyasına kaydedildi.",
+    "errorEmail": "Lütfen geçerli bir e-posta adresi giriniz.",
+    "errorConsent": "Lütfen KVKK Aydınlatma Metnini onaylayınız."
+  },
+  "storyModal": {
+    "title": "MAISON DE LOUP ATELIER",
+    "subtitle": "KURDUN EVİ • THE HOUSE OF THE WOLF",
+    "visionBadge": "MARKA VİZYONU",
+    "visionTitle": "Kurdun Gücü ve Global Türk Tasarımı",
+    "visionText": "Maison de Loup… Fransızca karşılığıyla <strong>“Kurdun Evi.”</strong><br><br>Markanın çıkış noktası, kurdun Türk kültüründeki güçlü ve sembolik anlamından ilham alıyor. Kurt; özgürlüğü, gücü, bağımsızlığı ve yol göstericiliği temsil ediyor. Biz bu güçlü sembolü, modern ve global bir moda markasının kimliğine dönüştürmek istiyoruz.<br><br>Maison De Loup Atelier’nin amacı; Türk tasarımını yalnızca Türkiye’de değil, dünyanın farklı noktalarında erişilebilir ve tercih edilir hale getirmek. Bunu yaparken en önemli değerlerimizden biri kalite. Tasarımdan kumaşa, işçilikten ürün deneyimine kadar her aşamada kaliteden ödün vermeden; güncel trendleri takip eden ancak onları birebir kopyalamak yerine kendi kimliğiyle yorumlayan bir marka yaratmayı hedefliyoruz.",
+    "missionBadge": "MARKA MİSYONU",
+    "missionTitle": "Çağdaş Estetik ve Zamansız Değer",
+    "missionText": "Türk tasarım kültüründen ve yerel üretim gücünden beslenerek; çağdaş tasarım anlayışını yüksek kalite, özgünlük ve erişilebilirlik ile buluşturmak.<br><br>Farklı coğrafyalardaki kadınların ihtiyaçlarını ve yaşam tarzlarını anlayarak, onların stiline ilham veren, güçlü ve zamansız ürünler tasarlamak. Maison De Loup Atelier olarak misyonumuz; Türk tasarımının özgün karakterini global moda dünyasının dinamikleriyle birleştirerek, uluslararası ölçekte değer yaratan ve kadınların kendilerini ifade etmelerine alan açan bir moda markası olmak.",
+    "strategyBadge": "ÜRÜN VE TİCARİ HEDEFLERİMİZ",
+    "strategyTitle": "Kadın Blazer Ceket Merkezli 3 Temel Eksen",
+    "strategyText": "Maison De Loup Atelier’nin ürün stratejisinin merkezinde <strong>kadın blazer ceketi</strong> yer alır. Blazer; markanın imza ürünü ve tasarım kimliğini en güçlü şekilde yansıtan ana kategori olarak konumlandırılmıştır. Bunun yanında, blazerları tamamlayan ve kadınların günlük yaşamdan özel anlara kadar farklı kombin ihtiyaçlarına cevap verecek tamamlayıcı ürün grupları da koleksiyonun bir parçasıdır.",
+    "strategyAxes": "<strong>Ürün Stratejimizin 3 Temel Ekseni:</strong><br><strong>1. İmza Ürünler:</strong> Üst segment terzilik ve saf yün işçiliğiyle üretilen imza blazer ceketler.<br><strong>2. Tamamlayıcı Koleksiyon:</strong> Blazer silüetini kusursuz tamamlayan pantolon, poplin gömlek, ipek etek ve elbiseler.<br><strong>3. Markanın DNA’sını Taşıyan Erişilebilir Ürünler:</strong> Genç tüketicilerin dinamik beklentilerine cevap veren, kaliteden ödün vermeyen erişilebilir lüks parçalar.",
+    "founderBadge": "KURUCU VİZYONU",
+    "founderTitle": "20 Yılı Aşkın Tekstil ve Moda Birikimi",
+    "founderText": "Yaklaşık <strong>20 yılı aşkın tekstil ve moda sektöründeki deneyim</strong>, Maison De Loup Atelier’nin en güçlü yapı taşlarından biridir. Kariyer boyunca triko, dokuma, denim ve deri gibi farklı ürün gruplarında, kumaşlarda ve üretim tekniklerinde edinilen uzmanlık; koleksiyon oluşturma sürecinin tasarım aşamasından üretime kadar bütününü mükemmeliyetle yönetmeyi sağlamaktadır.<br><br>En büyük hedefimiz; markanın her koleksiyonunda aynı kimliği hissettiren ancak kendini tekrar etmeyen; güncel, özgün ve zamansız tasarımlar ortaya koymak. Tasarım ile ticari bakış açısını bir arada harmanlayarak, Türk tasarımını gururla temsil eden global bir moda evi inşa ediyoruz."
+  },
+  "cart": {
+    "title": "ALIŞVERİŞ ÇANTASI",
+    "shippingLimitPrefix": "Ücretsiz Dünya Çapında Ekspres Kargo için",
+    "shippingLimitSuffix": "limit",
+    "shippingUnlocked": "Tebrikler! Ücretsiz Dünya Çapında Ekspres Kargo Kazandınız.",
+    "empty": "Alışveriş çantanız henüz boş.",
+    "emptySub": "Koleksiyonumuzdaki imza parçaları keşfedin.",
+    "subtotal": "ARA TOPLAM",
+    "checkout": "GÜVENLİ ÖDEMEYE GEÇ",
+    "remove": "Kaldır"
+  },
+  "quickView": {
+    "backHome": "ANA SAYFAYA DÖN",
+    "exit": "ÇIKIŞ",
+    "home": "Ana Sayfa",
+    "anglesBadge": "5 FOTOĞRAF • TERZİ DETAYI",
+    "selectSize": "BEDEN SEÇİMİ (EU)",
+    "fabricLabel": "Kumaş:",
+    "fitLabel": "Kalıp:",
+    "addToBag": "ÇANTAYA EKLE",
+    "exitInspection": "İNCELEMEYİ BİTİR • ANA SAYFAYA GERİ DÖN"
+  },
+  "footer": {
+    "copyright": "© 2026 Maison De Loup Atelier. Tüm hakları saklıdır. Türkiye'de Tasarlandı.",
+    "legal": {
+      "terms": "Mesafeli Satış Sözleşmesi",
+      "preInfo": "Ön Bilgilendirme",
+      "kvkk": "KVKK",
+      "cookies": "Çerez Politikası",
+      "returns": "İade & Değişim",
+      "shipping": "Kargo & Teslimat"
+    }
+  },
+  "search": {
+    "placeholder": "Koleksiyonda ara (Blazer, Yün, Pantolon...)",
+    "noResults": "Aramanızla eşleşen ürün bulunamadı."
+  }
+}
