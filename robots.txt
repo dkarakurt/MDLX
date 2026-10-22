@@ -1,0 +1,4 @@
+# Maison De Loup Atelier — Test & Staging Environment Default
+# Arama motoru indekslemesi canlı yayına kadar kapalıdır.
+User-agent: *
+Disallow: /

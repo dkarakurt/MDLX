@@ -501,16 +501,24 @@ async function saveAllChanges(notify = true) {
 
   // 2. Save to Server Disk if available
   try {
-    await fetch('/api/content', {
+    const resContent = await fetch('/api/content', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(adminContent)
     });
-    await fetch('/api/products', {
+    if (resContent.status === 401) {
+      showToast('⚠️ Yetki Hatası (401): Sunucuya kaydetme yetkiniz yok.');
+      return;
+    }
+    const resProducts = await fetch('/api/products', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(adminProducts)
     });
+    if (resProducts.status === 401) {
+      showToast('⚠️ Yetki Hatası (401): Ürün verilerini kaydetme yetkiniz yok.');
+      return;
+    }
   } catch(e) {}
 
   if (notify) {
