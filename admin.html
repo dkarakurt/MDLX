@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Maison De Loup Atelier — Yönetim Paneli</title>
+  <link rel="stylesheet" href="admin.css">
+  <link rel="icon" type="image/png" href="assets/images/logo-black.png">
+</head>
+<body>
+
+  <!-- Top Navbar -->
+  <header class="admin-navbar">
+    <div class="admin-brand">
+      <img src="assets/images/logo-white.png" alt="Maison De Loup Atelier">
+      <span class="admin-tag">YÖNETİM PANELİ</span>
+    </div>
+    <div class="admin-header-actions">
+      <button class="btn-primary" onclick="saveAllChanges()">
+        <svg width="15" height="15" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7H5a2 2 0 00-2 2v9a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-3m-1 4l-3 3m0 0l-3-3m3 3V4"/>
+        </svg>
+        TÜMÜNÜ KAYDET
+      </button>
+      <a href="index.html" target="_blank" class="btn-secondary">
+        <svg width="15" height="15" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
+        </svg>
+        CANLI SİTEYİ AÇ
+      </a>
+    </div>
+  </header>
+
+  <!-- Main Container -->
+  <main class="admin-container">
+    <!-- Tabs Navigation -->
+    <nav class="admin-tabs">
+      <button class="tab-btn active" onclick="switchTab('products', this)">📦 ÜRÜN YÖNETİMİ</button>
+      <button class="tab-btn" onclick="switchTab('media', this)">🖼️ GÖRSEL &amp; BANNER YÖNETİMİ</button>
+      <button class="tab-btn" onclick="switchTab('texts', this)">✍️ METİN &amp; İÇERİK YÖNETİMİ</button>
+      <button class="tab-btn" onclick="switchTab('backup', this)">⚙️ YEDEKLEME &amp; VERİ</button>
+    </nav>
+
+    <!-- =====================================================================
+         TAB 1: ÜRÜN YÖNETİMİ (PRODUCTS)
+         ===================================================================== -->
+    <section class="tab-content active" id="tab-products">
+      <div class="admin-card">
+        <div class="card-header-row">
+          <div>
+            <h2 class="card-title">Katalog &amp; Ürün Listesi</h2>
+            <p class="card-subtitle">Kadın Blazer Ceket ve tamamlayıcı koleksiyon parçalarını ekleyin, düzenleyin veya kaldırın.</p>
+          </div>
+          <button class="btn-primary" onclick="openProductModal()">
+            + YENİ ÜRÜN EKLE
+          </button>
+        </div>
+
+        <div class="admin-product-grid" id="adminProductGrid">
+          <!-- Populated by admin.js -->
+        </div>
+      </div>
+    </section>
+
+    <!-- =====================================================================
+         TAB 2: GÖRSEL & BANNER YÖNETİMİ (MEDIA)
+         ===================================================================== -->
+    <section class="tab-content" id="tab-media">
+      <div class="admin-card">
+        <div class="card-header-row">
+          <div>
+            <h2 class="card-title">Site Görselleri &amp; Bannerlar</h2>
+            <p class="card-subtitle">Hero slider, imza parçalar, kategoriler ve editoryal banner görsellerini doğrudan değiştirin veya yükleyin.</p>
+          </div>
+          <button class="btn-primary" onclick="saveAllChanges()">GÖRSELLERİ KAYDET</button>
+        </div>
+
+        <div class="media-manager-grid">
+          <!-- Hero Slide 1 -->
+          <div class="media-card">
+            <div style="font-weight: 500; font-size: 0.85rem;">Hero Slider 01 (Ana Kampanya)</div>
+            <div class="media-preview-box">
+              <img src="assets/images/hero_model.jpg" id="prevHero1">
+            </div>
+            <div class="form-group">
+              <label class="form-label">Görsel URL veya Yolu</label>
+              <input type="text" class="form-control" id="inpHero1" oninput="updateMediaPreview('prevHero1', this.value)">
+            </div>
+            <div class="media-upload-row">
+              <label class="file-input-label">
+                📁 Dosyadan Yükle
+                <input type="file" accept="image/*" style="display: none;" onchange="handleFileUpload(this, 'inpHero1', 'prevHero1')">
+              </label>
+            </div>
+          </div>
+
+          <!-- Hero Slide 2 -->
+          <div class="media-card">
+            <div style="font-weight: 500; font-size: 0.85rem;">Hero Slider 02 (Siyah Blazer)</div>
+            <div class="media-preview-box">
+              <img src="assets/images/product_blazer_noir.jpg" id="prevHero2">
+            </div>
+            <div class="form-group">
+              <label class="form-label">Görsel URL veya Yolu</label>
+              <input type="text" class="form-control" id="inpHero2" oninput="updateMediaPreview('prevHero2', this.value)">
+            </div>
+            <div class="media-upload-row">
+              <label class="file-input-label">
+                📁 Dosyadan Yükle
+                <input type="file" accept="image/*" style="display: none;" onchange="handleFileUpload(this, 'inpHero2', 'prevHero2')">
+              </label>
+            </div>
+          </div>
+
+          <!-- Hero Slide 3 -->
+          <div class="media-card">
+            <div style="font-weight: 500; font-size: 0.85rem;">Hero Slider 03 (Ekru Blazer)</div>
+            <div class="media-preview-box">
+              <img src="assets/images/product_blazer_ecru.jpg" id="prevHero3">
+            </div>
+            <div class="form-group">
+              <label class="form-label">Görsel URL veya Yolu</label>
+              <input type="text" class="form-control" id="inpHero3" oninput="updateMediaPreview('prevHero3', this.value)">
+            </div>
+            <div class="media-upload-row">
+              <label class="file-input-label">
+                📁 Dosyadan Yükle
+                <input type="file" accept="image/*" style="display: none;" onchange="handleFileUpload(this, 'inpHero3', 'prevHero3')">
+              </label>
+            </div>
+          </div>
+
+          <!-- Signature Blazer Split Image -->
+          <div class="media-card">
+            <div style="font-weight: 500; font-size: 0.85rem;">The Signature Blazer (Sol Split)</div>
+            <div class="media-preview-box">
+              <img src="assets/images/signature_blazer_card.jpg" id="prevSig">
+            </div>
+            <div class="form-group">
+              <label class="form-label">Görsel URL veya Yolu</label>
+              <input type="text" class="form-control" id="inpSig" oninput="updateMediaPreview('prevSig', this.value)">
+            </div>
+            <div class="media-upload-row">
+              <label class="file-input-label">
+                📁 Dosyadan Yükle
+                <input type="file" accept="image/*" style="display: none;" onchange="handleFileUpload(this, 'inpSig', 'prevSig')">
+              </label>
+            </div>
+          </div>
+
+          <!-- Wolf Art Portrait -->
+          <div class="media-card">
+            <div style="font-weight: 500; font-size: 0.85rem;">Kurt Sembolü Çizimi (Sağ Split)</div>
+            <div class="media-preview-box">
+              <img src="assets/images/wolf_art.jpg" id="prevWolf">
+            </div>
+            <div class="form-group">
+              <label class="form-label">Görsel URL veya Yolu</label>
+              <input type="text" class="form-control" id="inpWolf" oninput="updateMediaPreview('prevWolf', this.value)">
+            </div>
+            <div class="media-upload-row">
+              <label class="file-input-label">
+                📁 Dosyadan Yükle
+                <input type="file" accept="image/*" style="display: none;" onchange="handleFileUpload(this, 'inpWolf', 'prevWolf')">
+              </label>
+            </div>
+          </div>
+
+          <!-- Journal Banner -->
+          <div class="media-card">
+            <div style="font-weight: 500; font-size: 0.85rem;">The Journal (Editoryal Banner)</div>
+            <div class="media-preview-box">
+              <img src="assets/images/journal_banner.jpg" id="prevJournal">
+            </div>
+            <div class="form-group">
+              <label class="form-label">Görsel URL veya Yolu</label>
+              <input type="text" class="form-control" id="inpJournal" oninput="updateMediaPreview('prevJournal', this.value)">
+            </div>
+            <div class="media-upload-row">
+              <label class="file-input-label">
+                📁 Dosyadan Yükle
+                <input type="file" accept="image/*" style="display: none;" onchange="handleFileUpload(this, 'inpJournal', 'prevJournal')">
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =====================================================================
+         TAB 3: METİN & İÇERİK YÖNETİMİ (TEXTS)
+         ===================================================================== -->
+    <section class="tab-content" id="tab-texts">
+      <!-- Section 1: The Signature Blazer (Split Sol Kolon) - Ekran Görüntüsündeki Alan -->
+      <div class="admin-card" style="border-left: 3px solid var(--admin-gold);">
+        <div class="card-header-row">
+          <div>
+            <h2 class="card-title">🌟 İmza Blazer &amp; Vitrin Alanı (The Signature Blazer)</h2>
+            <p class="card-subtitle">Ana sayfadaki sol vitrin kartının tüm metinleri (Rozet, Başlık, Alt Açıklama ve Buton Linki).</p>
+          </div>
+          <button class="btn-primary" onclick="saveAllChanges()">💾 TÜM METİNLERİ KAYDET</button>
+        </div>
+
+        <div class="form-grid">
+          <div class="form-group">
+            <label class="form-label">Üst Rozet / Ön Başlık (Eyebrow)</label>
+            <input type="text" class="form-control" id="textSigPretitle" placeholder="HERO CREATION">
+            <small style="color: #71717a; font-size: 0.72rem; margin-top: 4px;">Örnek: HERO CREATION, İMZA TASARIM vb.</small>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Vitrin Ana Başlığı</label>
+            <input type="text" class="form-control" id="textSigTitle" placeholder="THE SIGNATURE BLAZER">
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Alt Slogan / Açıklama Metni</label>
+            <input type="text" class="form-control" id="textSigDesc" placeholder="Timeless shapes. Modern attitude.">
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Buton / Link Metni</label>
+            <input type="text" class="form-control" id="textSigLink" placeholder="BLAZERLARI İNCELE">
+          </div>
+        </div>
+      </div>
+
+      <!-- Section 2: The House of the Wolf (Split Sağ Kolon) -->
+      <div class="admin-card">
+        <div class="card-header-row">
+          <div>
+            <h2 class="card-title">🐺 Kurdun Evi Vitrin Alanı (The House of the Wolf)</h2>
+            <p class="card-subtitle">Ana sayfadaki sağ vitrin kartının başlık, kısa tanıtım ve link metinleri.</p>
+          </div>
+          <button class="btn-primary" onclick="saveAllChanges()">💾 KAYDET</button>
+        </div>
+
+        <div class="form-grid">
+          <div class="form-group">
+            <label class="form-label">Bölüm Başlığı</label>
+            <input type="text" class="form-control" id="textWolfTitle" placeholder="KURDUN EVİ — THE HOUSE OF THE WOLF">
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Buton / Link Metni</label>
+            <input type="text" class="form-control" id="textWolfLink" placeholder="HİKAYEMİZ">
+          </div>
+
+          <div class="form-group full-width">
+            <label class="form-label">Kısa Tanıtım Metni</label>
+            <textarea class="form-control" id="textWolfStoryTR" rows="3" placeholder="Maison de Loup, 'Kurdun Evi' anlamına gelir..."></textarea>
+          </div>
+        </div>
+      </div>
+
+      <!-- Section 3: Hero & Tepe Banner Metinleri -->
+      <div class="admin-card">
+        <div class="card-header-row">
+          <div>
+            <h2 class="card-title">👑 Hero &amp; Tepe Başlık Metinleri</h2>
+            <p class="card-subtitle">Sitenin en üstündeki marka adı, hero başlığı, sloganı, menşei ve kayan duyuru çubuğu.</p>
+          </div>
+          <button class="btn-primary" onclick="saveAllChanges()">💾 KAYDET</button>
+        </div>
+
+        <div class="form-grid">
+          <div class="form-group">
+            <label class="form-label">Marka Adı (Brand Name)</label>
+            <input type="text" class="form-control" id="textBrandName" placeholder="MAISON DE LOUP ATELIER">
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Hero Ana Başlığı</label>
+            <input type="text" class="form-control" id="textHeroTitle" placeholder="MAISON DE LOUP ATELIER">
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Hero Alt Başlığı (Slogan)</label>
+            <input type="text" class="form-control" id="textHeroSub" placeholder="THE ART OF THE BLAZER">
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Menşei İmzası (Provenance)</label>
+            <input type="text" class="form-control" id="textHeroProv" placeholder="Designed in Türkiye / Made for the world.">
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Hero Buton Metni (CTA)</label>
+            <input type="text" class="form-control" id="textHeroCta" placeholder="KOLEKSİYONU KEŞFET">
+          </div>
+
+          <div class="form-group full-width">
+            <label class="form-label">Üst Kayan Duyuru Çubuğu Metni</label>
+            <input type="text" class="form-control" id="textAnnouncementTR" placeholder="Türkiye'de Tasarlandı — Dünyaya Açılan Türk Modası • Ekspres Kargo">
+          </div>
+        </div>
+      </div>
+
+      <!-- Section 4: Kategoriler & Koleksiyon (Katalog) Metinleri -->
+      <div class="admin-card">
+        <div class="card-header-row">
+          <div>
+            <h2 class="card-title">🏷️ Kategori &amp; Koleksiyon Bölümü Başlıkları</h2>
+            <p class="card-subtitle">Kategori ızgarası ve ürün kataloğunun başlık ve açıklamaları.</p>
+          </div>
+          <button class="btn-primary" onclick="saveAllChanges()">💾 KAYDET</button>
+        </div>
+
+        <div class="form-grid">
+          <div class="form-group">
+            <label class="form-label">Kategoriler Bölüm Başlığı</label>
+            <input type="text" class="form-control" id="textCatTitle" placeholder="KATEGORİLERE GÖRE KEŞFET">
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Koleksiyon (Katalog) Ana Başlığı</label>
+            <input type="text" class="form-control" id="textCatalogHeading" placeholder="KOLEKSİYON">
+          </div>
+
+          <div class="form-group full-width">
+            <label class="form-label">Koleksiyon Alt Açıklama Metni</label>
+            <input type="text" class="form-control" id="textCatalogSub" placeholder="Kadın Blazer Ceket • Tamamlayıcı Koleksiyon • Erişilebilir Lüks">
+          </div>
+        </div>
+      </div>
+
+      <!-- Section 5: The Journal (Editoryal Banner) Metinleri -->
+      <div class="admin-card">
+        <div class="card-header-row">
+          <div>
+            <h2 class="card-title">📰 The Journal (Editoryal Banner) Metinleri</h2>
+            <p class="card-subtitle">Büyük dergi / editoryal afiş alanının başlığı, alt açıklaması ve buton metni.</p>
+          </div>
+          <button class="btn-primary" onclick="saveAllChanges()">💾 KAYDET</button>
+        </div>
+
+        <div class="form-grid">
+          <div class="form-group">
+            <label class="form-label">Editoryal Başlık</label>
+            <input type="text" class="form-control" id="textJournalHeading" placeholder="THE JOURNAL">
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Editoryal Buton Metni</label>
+            <input type="text" class="form-control" id="textJournalCta" placeholder="EDİTORYAL YAZILARI OKU">
+          </div>
+
+          <div class="form-group full-width">
+            <label class="form-label">Editoryal Alt Açıklama Metni</label>
+            <input type="text" class="form-control" id="textJournalSub" placeholder="Moda, İlham ve Maison De Loup Atelier Dünyası.">
+          </div>
+        </div>
+      </div>
+
+      <!-- Section 6: Marka Değerleri & Bülten Kartları (Alt 3 Kart) -->
+      <div class="admin-card">
+        <div class="card-header-row">
+          <div>
+            <h2 class="card-title">💎 Marka Değerleri &amp; Bülten Kartları (Alt 3 Kart)</h2>
+            <p class="card-subtitle">Sayfa altındaki mükemmeliyet, terzilik ve bülten kartlarının metinleri.</p>
+          </div>
+          <button class="btn-primary" onclick="saveAllChanges()">💾 KAYDET</button>
+        </div>
+
+        <div class="form-grid">
+          <!-- Kart 1: Mükemmeliyet -->
+          <div class="form-group">
+            <label class="form-label">1. Kart Başlık</label>
+            <input type="text" class="form-control" id="textCard1Title" placeholder="HER DETAYDA MÜKEMMELİYET">
+          </div>
+          <div class="form-group">
+            <label class="form-label">1. Kart Buton Metni</label>
+            <input type="text" class="form-control" id="textCard1Link" placeholder="DEĞERLERİMİZ">
+          </div>
+          <div class="form-group full-width">
+            <label class="form-label">1. Kart Açıklama</label>
+            <input type="text" class="form-control" id="textCard1Text" placeholder="Tasarımdan kumaşa, işçilikten ürün deneyimine kadar kaliteden ödün vermeden...">
+          </div>
+
+          <!-- Kart 2: Mimari Terzilik -->
+          <div class="form-group" style="margin-top: 12px;">
+            <label class="form-label">2. Kart Başlık</label>
+            <input type="text" class="form-control" id="textCard2Title" placeholder="MİMARİ TERZİLİK &amp; KALIP">
+          </div>
+          <div class="form-group" style="margin-top: 12px;">
+            <label class="form-label">2. Kart Buton Metni</label>
+            <input type="text" class="form-control" id="textCard2Link" placeholder="ATÖLYE DETAYLARI">
+          </div>
+          <div class="form-group full-width">
+            <label class="form-label">2. Kart Açıklama</label>
+            <input type="text" class="form-control" id="textCard2Text" placeholder="Keskin omuz hatları, hareket kabiliyeti sağlayan kavisler ve dökümlü saf yün kumaşlar.">
+          </div>
+
+          <!-- Kart 3: Bülten -->
+          <div class="form-group" style="margin-top: 12px;">
+            <label class="form-label">3. Kart (Bülten) Başlık</label>
+            <input type="text" class="form-control" id="textNewsletterTitle" placeholder="DÜNYAMIZA KATILIN">
+          </div>
+          <div class="form-group full-width" style="margin-top: 12px;">
+            <label class="form-label">3. Kart (Bülten) Açıklama</label>
+            <input type="text" class="form-control" id="textNewsletterDesc" placeholder="Yeni koleksiyonlar, özel atölye sunumları ve öncelikli sipariş fırsatlarından haberdar olun.">
+          </div>
+        </div>
+      </div>
+
+      <!-- Section 7: Kurdun Evi / Vizyon & Misyon Metinleri -->
+      <div class="admin-card">
+        <div class="card-header-row">
+          <div>
+            <h2 class="card-title">📜 Kurdun Evi / Vizyon, Misyon &amp; Kurucu Hikayesi</h2>
+            <p class="card-subtitle">Şirket vizyonu, misyonu ve kurucu deneyimi açıklamaları ("Hakkımızda" modalında görüntülenir).</p>
+          </div>
+          <button class="btn-primary" onclick="saveAllChanges()">💾 KAYDET</button>
+        </div>
+
+        <div class="form-grid">
+          <div class="form-group full-width">
+            <label class="form-label">Marka Vizyonu (Kurdun Sembolü &amp; Global Hedefler)</label>
+            <textarea class="form-control" id="textStoryVisionTR" rows="6"></textarea>
+          </div>
+
+          <div class="form-group full-width">
+            <label class="form-label">Marka Misyonu (Üretim Gücü &amp; Çağdaş Tasarım)</label>
+            <textarea class="form-control" id="textStoryMissionTR" rows="5"></textarea>
+          </div>
+
+          <div class="form-group full-width">
+            <label class="form-label">15 Yıllık Kurucu Deneyimi</label>
+            <textarea class="form-control" id="textStoryFounderTR" rows="5"></textarea>
+          </div>
+        </div>
+      </div>
+
+      <div style="display: flex; justify-content: flex-end; margin-top: 20px; margin-bottom: 40px;">
+        <button class="btn-primary" style="padding: 14px 32px; font-size: 0.85rem;" onclick="saveAllChanges()">
+          💾 TÜM METİNLERİ KAYDET &amp; CANLI SİTEYE YAYINLA
+        </button>
+      </div>
+    </section>
+
+    <!-- =====================================================================
+         TAB 4: YEDEKLEME & VERİ (BACKUP)
+         ===================================================================== -->
+    <section class="tab-content" id="tab-backup">
+      <div class="admin-card">
+        <div class="card-header-row">
+          <div>
+            <h2 class="card-title">Veri Yedekleme &amp; Dışa Aktarma</h2>
+            <p class="card-subtitle">Tüm ürün kataloğunu ve site metinlerini tek tıkla bilgisayarınıza indirin veya geri yükleyin.</p>
+          </div>
+        </div>
+
+        <div style="display: flex; gap: 16px; flex-wrap: wrap;">
+          <button class="btn-primary" onclick="exportBackupJSON()">
+            📥 TÜM VERİYİ İNDİR (JSON)
+          </button>
+
+          <label class="btn-secondary" style="cursor: pointer;">
+            📤 YEDEKTEN GERİ YÜKLE
+            <input type="file" accept=".json" style="display: none;" onchange="importBackupJSON(this)">
+          </label>
+
+          <button class="btn-secondary" style="border-color: var(--admin-accent-red); color: var(--admin-accent-red);" onclick="resetToDefaults()">
+            ⚠️ FABRİKA AYARLARINA DÖN
+          </button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- =====================================================================
+       PRODUCT EDIT / ADD MODAL
+       ===================================================================== -->
+  <div class="admin-modal" id="productModal">
+    <div class="admin-modal-card">
+      <div class="card-header-row">
+        <h3 class="card-title" id="modalProdTitle">Ürünü Düzenle</h3>
+        <button onclick="closeProductModal()" style="font-size: 1.5rem; color: #a1a1aa; cursor: pointer;">&times;</button>
+      </div>
+
+      <form id="productForm" onsubmit="handleProductFormSubmit(event)">
+        <input type="hidden" id="prodEditId">
+
+        <div class="form-grid">
+          <div class="form-group">
+            <label class="form-label">Ürün Adı (Türkçe)</label>
+            <input type="text" class="form-control" id="prodNameTr" required>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Ürün Adı (İngilizce)</label>
+            <input type="text" class="form-control" id="prodNameEn" required>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Kategori</label>
+            <select class="form-control" id="prodCategory">
+              <option value="blazers">BLAZER CEKET (Hero)</option>
+              <option value="trousers">PANTOLON</option>
+              <option value="shirts">GÖMLEK</option>
+              <option value="tops">TRİKO &amp; ÜST</option>
+              <option value="dresses">ELBİSE</option>
+              <option value="skirts">ETEK</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Etiket / Rozet (Badge)</label>
+            <select class="form-control" id="prodBadge">
+              <option value="SIGNATURE">SIGNATURE</option>
+              <option value="HERO PIECE">HERO PIECE</option>
+              <option value="ATELIER COUTURE">ATELIER COUTURE</option>
+              <option value="BESTSELLER">BESTSELLER</option>
+              <option value="LIMITED RUN">LIMITED RUN</option>
+              <option value="ESSENTIAL">ESSENTIAL</option>
+              <option value="DNA ACCESSIBLE">DNA ACCESSIBLE</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Fiyat (TRY ₺)</label>
+            <input type="number" class="form-control" id="prodPriceTRY" required>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Mevcut Bedenler (Virgülle ayırın)</label>
+            <input type="text" class="form-control" id="prodSizes" value="34, 36, 38, 40, 42">
+          </div>
+
+          <!-- 5 Product Photos (Müşteri İncelemesi İçin 5 Açı) -->
+          <div class="form-group full-width" style="margin-top: 14px; border-top: 1px solid var(--admin-card-border); padding-top: 16px;">
+            <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 6px;">
+              <label class="form-label" style="color: var(--admin-gold); font-size: 0.8rem;">Ürün Fotoğrafları (Müşteri İncelemesi İçin 5 Açı)</label>
+              <span style="font-size: 0.68rem; color: var(--admin-text-muted);">Müşteri ürün detayında bu 5 fotoğrafa göz atabilir</span>
+            </div>
+
+            <div style="display: grid; grid-template-columns: repeat(5, 1fr); gap: 12px;" id="prod5ImagesGrid">
+              <!-- Slot 1 -->
+              <div style="display: flex; flex-direction: column; gap: 6px;">
+                <span style="font-size: 0.65rem; color: var(--admin-text-muted);">01 &bull; Ön (Ana)</span>
+                <div style="aspect-ratio: 3/4; background: #27272a; overflow: hidden; border-radius: 2px;">
+                  <img id="prevProdImg0" src="assets/images/product_blazer_noir.jpg" style="width: 100%; height: 100%; object-fit: cover;">
+                </div>
+                <input type="text" class="form-control" id="prodImgInput0" placeholder="Görsel 1 URL" style="font-size: 0.7rem; padding: 6px 8px;" oninput="document.getElementById('prevProdImg0').src = this.value" required>
+                <label class="file-input-label" style="font-size: 0.65rem; padding: 4px 6px; justify-content: center;">
+                  📁 Yükle
+                  <input type="file" accept="image/*" style="display: none;" onchange="handleProductSlotUpload(this, 0)">
+                </label>
+              </div>
+
+              <!-- Slot 2 -->
+              <div style="display: flex; flex-direction: column; gap: 6px;">
+                <span style="font-size: 0.65rem; color: var(--admin-text-muted);">02 &bull; Yaka / Detay</span>
+                <div style="aspect-ratio: 3/4; background: #27272a; overflow: hidden; border-radius: 2px;">
+                  <img id="prevProdImg1" src="assets/images/product_blazer_detail.jpg" style="width: 100%; height: 100%; object-fit: cover;">
+                </div>
+                <input type="text" class="form-control" id="prodImgInput1" placeholder="Görsel 2 URL" style="font-size: 0.7rem; padding: 6px 8px;" oninput="document.getElementById('prevProdImg1').src = this.value">
+                <label class="file-input-label" style="font-size: 0.65rem; padding: 4px 6px; justify-content: center;">
+                  📁 Yükle
+                  <input type="file" accept="image/*" style="display: none;" onchange="handleProductSlotUpload(this, 1)">
+                </label>
+              </div>
+
+              <!-- Slot 3 -->
+              <div style="display: flex; flex-direction: column; gap: 6px;">
+                <span style="font-size: 0.65rem; color: var(--admin-text-muted);">03 &bull; Sırt / Kalıp</span>
+                <div style="aspect-ratio: 3/4; background: #27272a; overflow: hidden; border-radius: 2px;">
+                  <img id="prevProdImg2" src="assets/images/tailoring_back.jpg" style="width: 100%; height: 100%; object-fit: cover;">
+                </div>
+                <input type="text" class="form-control" id="prodImgInput2" placeholder="Görsel 3 URL" style="font-size: 0.7rem; padding: 6px 8px;" oninput="document.getElementById('prevProdImg2').src = this.value">
+                <label class="file-input-label" style="font-size: 0.65rem; padding: 4px 6px; justify-content: center;">
+                  📁 Yükle
+                  <input type="file" accept="image/*" style="display: none;" onchange="handleProductSlotUpload(this, 2)">
+                </label>
+              </div>
+
+              <!-- Slot 4 -->
+              <div style="display: flex; flex-direction: column; gap: 6px;">
+                <span style="font-size: 0.65rem; color: var(--admin-text-muted);">04 &bull; Yan / Profil</span>
+                <div style="aspect-ratio: 3/4; background: #27272a; overflow: hidden; border-radius: 2px;">
+                  <img id="prevProdImg3" src="assets/images/product_blazer_side.jpg" style="width: 100%; height: 100%; object-fit: cover;">
+                </div>
+                <input type="text" class="form-control" id="prodImgInput3" placeholder="Görsel 4 URL" style="font-size: 0.7rem; padding: 6px 8px;" oninput="document.getElementById('prevProdImg3').src = this.value">
+                <label class="file-input-label" style="font-size: 0.65rem; padding: 4px 6px; justify-content: center;">
+                  📁 Yükle
+                  <input type="file" accept="image/*" style="display: none;" onchange="handleProductSlotUpload(this, 3)">
+                </label>
+              </div>
+
+              <!-- Slot 5 -->
+              <div style="display: flex; flex-direction: column; gap: 6px;">
+                <span style="font-size: 0.65rem; color: var(--admin-text-muted);">05 &bull; Stil & Kombin</span>
+                <div style="aspect-ratio: 3/4; background: #27272a; overflow: hidden; border-radius: 2px;">
+                  <img id="prevProdImg4" src="assets/images/product_blazer_style.jpg" style="width: 100%; height: 100%; object-fit: cover;">
+                </div>
+                <input type="text" class="form-control" id="prodImgInput4" placeholder="Görsel 5 URL" style="font-size: 0.7rem; padding: 6px 8px;" oninput="document.getElementById('prevProdImg4').src = this.value">
+                <label class="file-input-label" style="font-size: 0.65rem; padding: 4px 6px; justify-content: center;">
+                  📁 Yükle
+                  <input type="file" accept="image/*" style="display: none;" onchange="handleProductSlotUpload(this, 4)">
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group full-width">
+            <label class="form-label">Kumaş &amp; Kompozisyon (TR)</label>
+            <input type="text" class="form-control" id="prodFabricTr" value="%100 Saf Anadolu Yünü">
+          </div>
+
+          <div class="form-group full-width">
+            <label class="form-label">Ürün Açıklaması (TR)</label>
+            <textarea class="form-control" id="prodDescTr" rows="3"></textarea>
+          </div>
+        </div>
+
+        <div style="display: flex; justify-content: flex-end; gap: 12px; margin-top: 24px;">
+          <button type="button" class="btn-secondary" onclick="closeProductModal()">İptal</button>
+          <button type="submit" class="btn-primary">Kaydet</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Toast Notification Container -->
+  <div class="admin-toast-container" id="adminToastContainer"></div>
+
+  <!-- Scripts -->
+  <script src="products.js"></script>
+  <script src="admin.js"></script>
+</body>
+</html>

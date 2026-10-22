@@ -1,0 +1,582 @@
+// Maison De Loup Atelier - Product Catalog Data
+const PRODUCTS_DATA = [
+  {
+    "id": "mdl-prod-1791792766078",
+    "name": "CEKET002",
+    "nameTr": "CEKET002",
+    "category": "blazers",
+    "badge": "HERO PIECE",
+    "isHero": true,
+    "priceTRY": 14500,
+    "priceEUR": 384,
+    "priceUSD": 419,
+    "priceGBP": 331,
+    "primaryImage": "assets/images/uploaded_1791792738437_WhatsApp_Image_2026-10-12_at_09.51.56__3_.jpeg",
+    "secondaryImage": "assets/images/uploaded_1791792745236_Screenshot_39.jpg",
+    "images": [
+      "assets/images/uploaded_1791792738437_WhatsApp_Image_2026-10-12_at_09.51.56__3_.jpeg",
+      "assets/images/uploaded_1791792745236_Screenshot_39.jpg",
+      "assets/images/uploaded_1791792747931_Screenshot_40.jpg",
+      "assets/images/uploaded_1791792750367_Screenshot_41.jpg",
+      "assets/images/uploaded_1791792753407_Gemini_Generated_Image_5di7lp5di7lp5di7.jpg"
+    ],
+    "colors": [
+      {
+        "name": "Noir",
+        "hex": "#111111"
+      }
+    ],
+    "sizes": [
+      "34",
+      "36",
+      "38",
+      "40",
+      "42"
+    ],
+    "description": "",
+    "descriptionTr": "",
+    "fabric": "%100 KAŞMİR",
+    "fabricTr": "%100 KAŞMİR",
+    "fit": "Tailored structured fit.",
+    "fitTr": "Kalıplı terzi formu.",
+    "details": [
+      "Maison De Loup Atelier özel üretimi"
+    ],
+    "detailsTr": [
+      "Maison De Loup Atelier özel üretimi"
+    ]
+  },
+  {
+    "id": "mdl-prod-1791792518739",
+    "name": "PNTLN002",
+    "nameTr": "PNTLN002",
+    "category": "trousers",
+    "badge": "HERO PIECE",
+    "isHero": false,
+    "priceTRY": 9900,
+    "priceEUR": 262,
+    "priceUSD": 286,
+    "priceGBP": 226,
+    "primaryImage": "assets/images/uploaded_1791792489873_WhatsApp_Image_2026-10-12_at_09.51.56__2_.jpeg",
+    "secondaryImage": "assets/images/uploaded_1791792495254_Screenshot_36.jpg",
+    "images": [
+      "assets/images/uploaded_1791792489873_WhatsApp_Image_2026-10-12_at_09.51.56__2_.jpeg",
+      "assets/images/uploaded_1791792495254_Screenshot_36.jpg",
+      "assets/images/uploaded_1791792498323_Screenshot_37.jpg",
+      "assets/images/uploaded_1791792501070_Screenshot_38.jpg",
+      "assets/images/uploaded_1791792504255_Gemini_Generated_Image_ga4uohga4uohga4u.jpg"
+    ],
+    "colors": [
+      {
+        "name": "Noir",
+        "hex": "#111111"
+      }
+    ],
+    "sizes": [
+      "34",
+      "36",
+      "38",
+      "40",
+      "42"
+    ],
+    "description": "",
+    "descriptionTr": "",
+    "fabric": "%100 KETEN",
+    "fabricTr": "%100 KETEN",
+    "fit": "Tailored structured fit.",
+    "fitTr": "Kalıplı terzi formu.",
+    "details": [
+      "Maison De Loup Atelier özel üretimi"
+    ],
+    "detailsTr": [
+      "Maison De Loup Atelier özel üretimi"
+    ]
+  },
+  {
+    "id": "mdl-prod-1791792265725",
+    "name": "ELBISE 003",
+    "nameTr": "ELBISE 003",
+    "category": "dresses",
+    "badge": "HERO PIECE",
+    "isHero": false,
+    "priceTRY": 5500,
+    "priceEUR": 146,
+    "priceUSD": 159,
+    "priceGBP": 125,
+    "primaryImage": "assets/images/uploaded_1791792223485_WhatsApp_Image_2026-10-12_at_09.51.56__1_.jpeg",
+    "secondaryImage": "assets/images/uploaded_1791792229067_Screenshot_34.jpg",
+    "images": [
+      "assets/images/uploaded_1791792223485_WhatsApp_Image_2026-10-12_at_09.51.56__1_.jpeg",
+      "assets/images/uploaded_1791792229067_Screenshot_34.jpg",
+      "assets/images/uploaded_1791792232384_Screenshot_33.jpg",
+      "assets/images/uploaded_1791792235284_Screenshot_35.jpg",
+      "assets/images/uploaded_1791792248355_Gemini_Generated_Image_3w5gec3w5gec3w5g__1_.jpg"
+    ],
+    "colors": [
+      {
+        "name": "Noir",
+        "hex": "#111111"
+      }
+    ],
+    "sizes": [
+      "34",
+      "36",
+      "38",
+      "40",
+      "42"
+    ],
+    "description": "",
+    "descriptionTr": "",
+    "fabric": "%100 Pamuk",
+    "fabricTr": "%100 Pamuk",
+    "fit": "Tailored structured fit.",
+    "fitTr": "Kalıplı terzi formu.",
+    "details": [
+      "Maison De Loup Atelier özel üretimi"
+    ],
+    "detailsTr": [
+      "Maison De Loup Atelier özel üretimi"
+    ]
+  },
+  {
+    "id": "mdl-prod-1791785220112",
+    "name": "WHITE CLASSIC",
+    "nameTr": "BEYAZ KLASIK",
+    "category": "blazers",
+    "badge": "SIGNATURE",
+    "isHero": true,
+    "priceTRY": 14500,
+    "priceEUR": 384,
+    "priceUSD": 419,
+    "priceGBP": 331,
+    "primaryImage": "assets/images/uploaded_1791792318446_Gemini_Generated_Image_1pmn0n1pmn0n1pmn.jpg",
+    "secondaryImage": "assets/images/uploaded_1791786960676_Screenshot_30.jpg",
+    "colors": [
+      {
+        "name": "Noir",
+        "hex": "#111111"
+      }
+    ],
+    "sizes": [
+      "34",
+      "36",
+      "38",
+      "40",
+      "42"
+    ],
+    "description": "",
+    "descriptionTr": "",
+    "fabric": "%100 Saf Anadolu Yünü",
+    "fabricTr": "%100 Saf Anadolu Yünü",
+    "fit": "Tailored structured fit.",
+    "fitTr": "Kalıplı terzi formu.",
+    "details": [
+      "Maison De Loup Atelier özel üretimi"
+    ],
+    "detailsTr": [
+      "Maison De Loup Atelier özel üretimi"
+    ],
+    "images": [
+      "assets/images/uploaded_1791792318446_Gemini_Generated_Image_1pmn0n1pmn0n1pmn.jpg",
+      "assets/images/uploaded_1791786960676_Screenshot_30.jpg",
+      "assets/images/uploaded_1791786965063_Screenshot_31.jpg",
+      "assets/images/uploaded_1791786969864_Screenshot_32.jpg",
+      "assets/images/uploaded_1791792329245_Screenshot_29.jpg"
+    ]
+  },
+  {
+    "id": "mdl-blz-01",
+    "name": "L'Iconique Double-Breasted Wool Blazer",
+    "nameTr": "L'Iconique Kruvaze Yün Blazer Ceket",
+    "category": "blazers",
+    "badge": "SIGNATURE",
+    "isHero": true,
+    "priceTRY": 14850,
+    "priceEUR": 395,
+    "priceUSD": 430,
+    "priceGBP": 340,
+    "primaryImage": "assets/images/product_blazer_noir.jpg",
+    "secondaryImage": "assets/images/tailoring_back.jpg",
+    "colors": [
+      {
+        "name": "Deep Noir",
+        "hex": "#111111"
+      },
+      {
+        "name": "Midnight Charcoal",
+        "hex": "#222428"
+      }
+    ],
+    "sizes": [
+      "34",
+      "36",
+      "38",
+      "40",
+      "42"
+    ],
+    "description": "The definitive silhouette of Maison De Loup Atelier. Sculpted sharp shoulders, double-breasted horn button closure, and floating canvas construction. Designed in Türkiye, crafted from 100% Anatolian virgin wool in our Istanbul atelier.",
+    "descriptionTr": "Maison De Loup Atelier'nin imza silüeti. Keskin omuz yapısı, kruvaze kemik düğme kapaması ve telalı terzilik işçiliği. %100 saf Anadolu yününden İstanbul atölyemizde özenle üretildi.",
+    "fabric": "100% Virgin Wool / Lining: 100% Cupro Silk",
+    "fabricTr": "%100 Saf Yün / Astar: %100 Kupro İpek",
+    "fit": "Tailored structured fit. True to size. For an oversized look, size up.",
+    "fitTr": "Kalıplı terzi formu. Kendi bedeninizde tercih edebilirsiniz. Oversize kullanım için bir beden büyük önerilir.",
+    "details": [
+      "Peak lapel with hand-finished pick stitching",
+      "Signature horn buttons with engraved MDL monogram",
+      "Interior breast passport pocket & welt flap pockets",
+      "Dry clean only by luxury garment specialist"
+    ],
+    "detailsTr": [
+      "El dikişi finisajlı sivri yaka (Peak lapel)",
+      "MDL monogram işlemeli kemik düğmeler",
+      "İç cep detayı ve kapaklı yan cepler",
+      "Yalnızca özel kuru temizleme"
+    ]
+  },
+  {
+    "id": "mdl-blz-02",
+    "name": "The Sculpted Hourglass Wool Blazer",
+    "nameTr": "Kum Saati Formlu Yün Blazer Ceket",
+    "category": "blazers",
+    "badge": "HERO PIECE",
+    "isHero": true,
+    "priceTRY": 15400,
+    "priceEUR": 410,
+    "priceUSD": 445,
+    "priceGBP": 355,
+    "primaryImage": "assets/images/product_blazer_ecru.jpg",
+    "secondaryImage": "assets/images/signature_blazer_card.jpg",
+    "colors": [
+      {
+        "name": "Oatmeal Ecru",
+        "hex": "#E7DFD5"
+      },
+      {
+        "name": "Warm Alabaster",
+        "hex": "#F3EFEA"
+      }
+    ],
+    "sizes": [
+      "34",
+      "36",
+      "38",
+      "40"
+    ],
+    "description": "Architectural tailoring celebrating feminine poise. Cinched waist contour with reinforced canvas, tortoiseshell buttons, and patch flap pockets. A contemporary interpretation of classic power dressing.",
+    "descriptionTr": "Zarif kadınsı formu vurgulayan mimari terzilik. Beli kavrayan kum saati kesim, kaplumbağa kabuğu desenli düğmeler ve kapaklı cepler. Güçlü duruşun zamansız ifadesi.",
+    "fabric": "95% Virgin Wool, 5% Cashmere / Lining: 100% Viscose",
+    "fabricTr": "%95 Saf Yün, %5 Kaşmir / Astar: %100 Viskon",
+    "fit": "Fitted waist silhouette. Fits true to size.",
+    "fitTr": "Beli oturan kalıp. Tam bedeninizi tercih ediniz.",
+    "details": [
+      "Notch collar with sculpted lapel rolls",
+      "Tortoiseshell resin buttons",
+      "Back double vent for effortless mobility",
+      "Made in Istanbul atelier"
+    ],
+    "detailsTr": [
+      "Kavisli terzi yaka kesimi",
+      "Özel desenli reçine düğmeler",
+      "Rahat hareket sağlayan çift arka yırtmaç",
+      "İstanbul atölyelerinde üretilmiştir"
+    ]
+  },
+  {
+    "id": "mdl-blz-03",
+    "name": "The Peak Lapel Camel Wool Blazer",
+    "nameTr": "Sivri Yaka Camel Yün Blazer Ceket",
+    "category": "blazers",
+    "badge": "TIMELESS",
+    "isHero": true,
+    "priceTRY": 16900,
+    "priceEUR": 450,
+    "priceUSD": 490,
+    "priceGBP": 390,
+    "primaryImage": "assets/images/product_blazer_camel.jpg",
+    "secondaryImage": "assets/images/hero_model.jpg",
+    "colors": [
+      {
+        "name": "Camel Dune",
+        "hex": "#C29B72"
+      },
+      {
+        "name": "Warm Cognac",
+        "hex": "#9E6D42"
+      }
+    ],
+    "sizes": [
+      "34",
+      "36",
+      "38",
+      "40",
+      "42"
+    ],
+    "description": "Spun from heavyweight Turkish virgin wool with a brush finish. Impeccable double-breasted crossover, sharp masculine-inspired shoulders, and rich warm camel tone.",
+    "descriptionTr": "Fırçalanmış dokulu saf Türk yününden dokundu. Kruvaze kesim, maskülen esintili keskin vatkalar ve zengin sıcak deve tüyü tonu.",
+    "fabric": "100% Fine Wool / Lining: 100% Bemberg Cupro",
+    "fabricTr": "%100 Saf Yün / Astar: %100 Bemberg Kupro",
+    "fit": "Relaxed tailored cut. Designed for layering over fine knitwear.",
+    "fitTr": "Rahat terzi kesimi. İnce trikolar üzerine giyilmeye uygundur.",
+    "details": [
+      "Subtle melange camel weave",
+      "Hand-attached natural horn buttons",
+      "Functional surgeon's cuffs with working buttonholes",
+      "Signature wolf embroidery inside internal facing"
+    ],
+    "detailsTr": [
+      "İnce melanj camel dokuma",
+      "El dikimi doğal boynuz düğmeler",
+      "Açılabilir fonksiyonel kol düğmeleri",
+      "İç cep astarında gizli kurt arması işlemesi"
+    ]
+  },
+  {
+    "id": "mdl-blz-04",
+    "name": "The Architectural Tuxedo Blazer Dress",
+    "nameTr": "Mimari Kesim Smokin Blazer Elbise",
+    "category": "dresses",
+    "badge": "ATELIER COUTURE",
+    "isHero": true,
+    "priceTRY": 18500,
+    "priceEUR": 495,
+    "priceUSD": 540,
+    "priceGBP": 425,
+    "primaryImage": "assets/images/product_blazer_dress.jpg",
+    "secondaryImage": "assets/images/cat_dresses.jpg",
+    "colors": [
+      {
+        "name": "Obsidian Noir",
+        "hex": "#0c0c0c"
+      }
+    ],
+    "sizes": [
+      "34",
+      "36",
+      "38",
+      "40"
+    ],
+    "description": "A showstopping hybrid of black-tie tailoring and modern eveningwear. Lustrous silk satin peak lapels contrast against matte wool twill, fastened with satin-covered buttons.",
+    "descriptionTr": "Smokin terziliği ile modern gece zarafetinin kusursuz buluşması. Mat yün dimi kumaş üzerine parlak ipek saten sivri yaka ve saten kaplı düğmeler.",
+    "fabric": "Wool Barathia / Lapel: 100% Mulberry Silk Satin",
+    "fabricTr": "Barathia Yün / Yaka: %100 Dut İpeği Saten",
+    "fit": "Structured mini dress length. Tailored close to the body.",
+    "fitTr": "Kalıplı mini boy elbise. Vücuda zarifçe oturan terzi formu.",
+    "details": [
+      "Silk satin contrast peak lapel",
+      "Satin-covered button closure",
+      "Flattering princess seams for architectural contour",
+      "Double-lined for complete opacity and structure"
+    ],
+    "detailsTr": [
+      "Kontrast ipek saten sivri yaka",
+      "Saten kaplama düğmeler",
+      "Vücudu şekillendiren mimari prenses dikişleri",
+      "Tok duruş sağlayan çift kat astar"
+    ]
+  },
+  {
+    "id": "mdl-trs-01",
+    "name": "Pleated Wide-Leg Virgin Wool Trousers",
+    "nameTr": "Pili Detaylı Geniş Paça Yün Pantolon",
+    "category": "trousers",
+    "badge": "ESSENTIAL",
+    "isHero": false,
+    "priceTRY": 8600,
+    "priceEUR": 230,
+    "priceUSD": 250,
+    "priceGBP": 195,
+    "primaryImage": "assets/images/product_trouser_pleated.jpg",
+    "secondaryImage": "assets/images/cat_trousers.jpg",
+    "colors": [
+      {
+        "name": "Sand Dune",
+        "hex": "#D4C7B5"
+      },
+      {
+        "name": "Charcoal Slate",
+        "hex": "#343538"
+      }
+    ],
+    "sizes": [
+      "34",
+      "36",
+      "38",
+      "40",
+      "42"
+    ],
+    "description": "Masterfully draped high-waisted trousers with deep forward double pleats. Perfectly calibrated to pool slightly over leather loafers or stilettos.",
+    "descriptionTr": "Yüksek bel, derin çift pili detaylı ve akıcı dökümlü yün pantolon. Loafer ve topuklu ayakkabılarla kusursuz oran sunmak için tasarlandı.",
+    "fabric": "100% Lightweight Virgin Wool Worsted",
+    "fabricTr": "%100 Hafif Kamgarn Yün",
+    "fit": "High waist with relaxed wide leg. Floor-skimming length.",
+    "fitTr": "Yüksek bel, dökümlü geniş paça. Ayakkabı üzerine hafif dökülen boy.",
+    "details": [
+      "Concealed zip fly with hook-and-bar closure",
+      "Belt loops and deep side slash pockets",
+      "Internal curtain waistband for tailored precision",
+      "Dry clean recommended"
+    ],
+    "detailsTr": [
+      "Gizli fermuar ve terzi kopçası kapama",
+      "Kemer köprüleri ve yan cepler",
+      "Kaymayı önleyen terzi tipi iç bel kuşağı",
+      "Kuru temizleme önerilir"
+    ]
+  },
+  {
+    "id": "mdl-shr-01",
+    "name": "L'Oversize Crisp Cotton Poplin Shirt",
+    "nameTr": "L'Oversize Poplin Pamuk Gömlek",
+    "category": "shirts",
+    "badge": "BESTSELLER",
+    "isHero": false,
+    "priceTRY": 5400,
+    "priceEUR": 145,
+    "priceUSD": 160,
+    "priceGBP": 125,
+    "primaryImage": "assets/images/product_shirt_poplin.jpg",
+    "secondaryImage": "assets/images/cat_shirts.jpg",
+    "colors": [
+      {
+        "name": "Optic White",
+        "hex": "#FFFFFF"
+      },
+      {
+        "name": "Powder Blue",
+        "hex": "#D6E4EB"
+      }
+    ],
+    "sizes": [
+      "34",
+      "36",
+      "38",
+      "40"
+    ],
+    "description": "Woven from extra-long staple Turkish Aegean cotton. Clean elongated pointed collar, extended French cuffs with button fastening, and concealed front placket.",
+    "descriptionTr": "Ege'nin uzun elyaflı pamuğundan dokunan tok poplin gömlek. Uzatılmış sivri yaka, çift manşet görünümü ve gizli pat detayı.",
+    "fabric": "100% Turkish Aegean Organic Cotton Poplin",
+    "fabricTr": "%100 Ege Organik Pamuk Poplin",
+    "fit": "Voluminous oversized cut. Choose your usual size.",
+    "fitTr": "Dökümlü ve rahat oversize form. Normal bedeninizi seçiniz.",
+    "details": [
+      "Mother-of-pearl buttons",
+      "Concealed front button placket",
+      "Elongated architectural cuffs",
+      "Curved hemline designed to wear untucked or French-tucked"
+    ],
+    "detailsTr": [
+      "Doğal sedef düğmeler",
+      "Gizli ön ilikleme patı",
+      "Geniş mimari manşetler",
+      "Etek ucu kavisli rahat form"
+    ]
+  },
+  {
+    "id": "mdl-top-01",
+    "name": "Fine-Gauge Ribbed Knit Boatneck Top",
+    "nameTr": "İnce Triko Kayık Yaka Uzun Kollu Üst",
+    "category": "tops",
+    "badge": "DNA ACCESSIBLE",
+    "isHero": false,
+    "priceTRY": 4200,
+    "priceEUR": 110,
+    "priceUSD": 125,
+    "priceGBP": 95,
+    "primaryImage": "assets/images/product_knit_top.jpg",
+    "secondaryImage": "assets/images/cat_tops.jpg",
+    "colors": [
+      {
+        "name": "Deep Noir",
+        "hex": "#161616"
+      },
+      {
+        "name": "Castor Olive",
+        "hex": "#4C4E44"
+      }
+    ],
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L"
+    ],
+    "description": "Spun from ultra-fine Merino wool for a second-skin feel. Flattering boat neckline designed specifically to sit under Maison De Loup Atelier tailored blazers without bulk.",
+    "descriptionTr": "Ekstra ince Merinos yününden dokunan ikinci ten hissi veren triko. Maison De Loup Atelier blazer ceketlerinin yakasıyla kusursuz uyum sağlayan kayık yaka formu.",
+    "fabric": "85% Extra-Fine Merino Wool, 15% Silk",
+    "fabricTr": "%85 İnce Merinos Yünü, %15 İpek",
+    "fit": "Body-skimming fit with stretch recovery.",
+    "fitTr": "Vücudu zarifçe saran esnek dokuma.",
+    "details": [
+      "Seamless tubular knit side construction",
+      "Ribbed cuffs and hem",
+      "Ultra-soft non-itch handfeel",
+      "Hand wash cold or dry clean"
+    ],
+    "detailsTr": [
+      "Dikişsiz yuvarlak örgü yan yapı",
+      "İnce ribanalı manşetler",
+      "Kaşındırmayan yumuşak tuşe",
+      "Elde soğuk yıkama veya kuru temizleme"
+    ]
+  },
+  {
+    "id": "mdl-skt-01",
+    "name": "High-Slit Pleated Silk-Blend Maxi Skirt",
+    "nameTr": "Yırtmaçlı Pili Detaylı İpek Maxi Etek",
+    "category": "skirts",
+    "badge": "LIMITED RUN",
+    "isHero": false,
+    "priceTRY": 9400,
+    "priceEUR": 250,
+    "priceUSD": 275,
+    "priceGBP": 215,
+    "primaryImage": "assets/images/product_skirt_silk.jpg",
+    "secondaryImage": "assets/images/cat_skirts.jpg",
+    "colors": [
+      {
+        "name": "Champagne Cream",
+        "hex": "#EDE8DD"
+      }
+    ],
+    "sizes": [
+      "34",
+      "36",
+      "38",
+      "40"
+    ],
+    "description": "Permanent sunray pleating with an audacious high leg slit. Accented with contrast vegan leather yoke detailing. Pairs exceptionally with tailored structured blazers.",
+    "descriptionTr": "Kalıcı güneş pili detayı ve cesur yüksek yırtmaç. Kontrast deri biyelerle güçlendirilmiş bel formu. Blazer ceketlerle kontrast yakalamak için ideal silüet.",
+    "fabric": "70% Silk Crepe de Chine, 30% Fine Viscose",
+    "fabricTr": "%70 İpek Krep Düşin, %30 Viskon",
+    "fit": "High waist, flowy maxi length. Swings dynamically in motion.",
+    "fitTr": "Yüksek bel, akıcı maksi boy. Adımlarla dans eden dökümlü form.",
+    "details": [
+      "Dramatic thigh-high walking slit",
+      "Structured leather-accented waistband",
+      "Concealed side zipper",
+      "Dry clean only"
+    ],
+    "detailsTr": [
+      "Yüksek hareket yırtmacı",
+      "Deri detaylı formlu bel bandı",
+      "Gizli yan fermuar",
+      "Kuru temizleme"
+    ]
+  }
+];
+
+const CATEGORIES_DATA = [
+  { id: "blazers", name: "BLAZERS", nameTr: "BLAZER CEKET", image: "assets/images/cat_blazers.jpg", count: 4, isHero: true },
+  { id: "trousers", name: "TROUSERS", nameTr: "PANTOLON", image: "assets/images/cat_trousers.jpg", count: 2 },
+  { id: "shirts", name: "SHIRTS", nameTr: "GÖMLEK", image: "assets/images/cat_shirts.jpg", count: 2 },
+  { id: "tops", name: "TOPS", nameTr: "TRİKO & ÜST", image: "assets/images/cat_tops.jpg", count: 2 },
+  { id: "dresses", name: "DRESSES", nameTr: "ELBİSE", image: "assets/images/cat_dresses.jpg", count: 2 },
+  { id: "skirts", name: "SKIRTS", nameTr: "ETEK", image: "assets/images/cat_skirts.jpg", count: 2 }
+];
+
+const CURRENCY_RATES = {
+  TRY: { symbol: "₺", rate: 1, position: "after" },
+  EUR: { symbol: "€", rate: 0.0265, position: "before" },
+  USD: { symbol: "$", rate: 0.0289, position: "before" },
+  GBP: { symbol: "£", rate: 0.0228, position: "before" }
+};
