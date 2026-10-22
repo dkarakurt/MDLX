@@ -1167,15 +1167,49 @@ document.getElementById('btnOpenWishlist').addEventListener('click', () => {
 });
 
 // Newsletter Form
-function handleNewsletter(e) {
+async function handleNewsletter(e) {
   e.preventDefault();
-  const email = document.getElementById('newsletterEmail').value;
-  if (email) {
-    showToast(STATE.currentLang === 'TR' 
-      ? `Teşekkürler! ${email} adresi Maison De Loup Atelier ayrıcalıklar dünyasına kaydedildi.` 
-      : `Thank you! ${email} has been subscribed to the Maison De Loup Atelier inner circle.`);
-    document.getElementById('newsletterEmail').value = '';
+  const emailInput = document.getElementById('newsletterEmail');
+  const kvkkCheckbox = document.getElementById('newsletterKvkk');
+  const email = emailInput ? emailInput.value.trim() : '';
+
+  // Email format validation
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if (!email || !emailRegex.test(email)) {
+    showToast(STATE.currentLang === 'TR' ? 'Lütfen geçerli bir e-posta adresi giriniz.' : 'Please enter a valid email address.');
+    return;
   }
+
+  // KVKK consent check
+  if (kvkkCheckbox && !kvkkCheckbox.checked) {
+    showToast(STATE.currentLang === 'TR' ? 'Lütfen KVKK Aydınlatma Metnini onaylayınız.' : 'Please accept the KVKK Privacy Notice.');
+    return;
+  }
+
+  // Save locally
+  try {
+    const existing = JSON.parse(localStorage.getItem('mdl_subscribers') || '[]');
+    if (!existing.includes(email)) {
+      existing.push(email);
+      localStorage.setItem('mdl_subscribers', JSON.stringify(existing));
+    }
+  } catch (err) {}
+
+  // Send to server
+  try {
+    await fetch('/api/newsletter', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ email: email, date: new Date().toISOString() })
+    });
+  } catch (err) {}
+
+  showToast(STATE.currentLang === 'TR' 
+    ? `Teşekkürler! ${email} adresi Maison De Loup Atelier ayrıcalıklar dünyasına kaydedildi.` 
+    : `Thank you! ${email} has been subscribed to the Maison De Loup Atelier inner circle.`);
+
+  if (emailInput) emailInput.value = '';
+  if (kvkkCheckbox) kvkkCheckbox.checked = false;
 }
 
 // Toast Feedback System

@@ -298,8 +298,62 @@ const server = http.createServer((req, res) => {
     return;
   }
 
-  // --- STATIC FILE SERVER ---
+  // --- API: POST NEWSLETTER SUBSCRIBER ---
+  if (reqPath === '/api/newsletter' && req.method === 'POST') {
+    let body = '';
+    req.on('data', chunk => { body += chunk; });
+    req.on('end', () => {
+      try {
+        const { email } = JSON.parse(body);
+        if (!email || !email.includes('@')) {
+          return sendJSON(400, { error: 'Geçersiz e-posta adresi.' });
+        }
+        const subscribersPath = path.join(__dirname, 'subscribers.json');
+        let subscribers = [];
+        if (fs.existsSync(subscribersPath)) {
+          try { subscribers = JSON.parse(fs.readFileSync(subscribersPath, 'utf8')); } catch(e) {}
+        }
+        if (!subscribers.find(s => (typeof s === 'string' ? s : s.email) === email)) {
+          subscribers.push({ email, subscribedAt: new Date().toISOString() });
+          fs.writeFileSync(subscribersPath, JSON.stringify(subscribers, null, 2), 'utf8');
+        }
+        sendJSON(200, { success: true, message: 'Abonelik kaydedildi.' });
+      } catch (err) {
+        sendJSON(400, { error: err.message });
+      }
+    });
+    return;
+  }
+
+  // --- API: POST CONTACT MESSAGE ---
+  if (reqPath === '/api/contact' && req.method === 'POST') {
+    let body = '';
+    req.on('data', chunk => { body += chunk; });
+    req.on('end', () => {
+      try {
+        const msg = JSON.parse(body);
+        const messagesPath = path.join(__dirname, 'contact_messages.json');
+        let messages = [];
+        if (fs.existsSync(messagesPath)) {
+          try { messages = JSON.parse(fs.readFileSync(messagesPath, 'utf8')); } catch(e) {}
+        }
+        messages.push({ ...msg, receivedAt: new Date().toISOString() });
+        fs.writeFileSync(messagesPath, JSON.stringify(messages, null, 2), 'utf8');
+        sendJSON(200, { success: true, message: 'Mesaj iletildi.' });
+      } catch (err) {
+        sendJSON(400, { error: err.message });
+      }
+    });
+    return;
+  }
+
+  // --- STATIC FILE SERVER WITH CLEAN URL SUPPORT ---
   let filePath = path.join(__dirname, reqPath === '/' ? 'index.html' : reqPath);
+
+  // If URL has no extension and a matching .html file exists, serve it
+  if (!path.extname(filePath) && fs.existsSync(filePath + '.html')) {
+    filePath += '.html';
+  }
 
   fs.stat(filePath, (err, stats) => {
     if (err || !stats.isFile()) {

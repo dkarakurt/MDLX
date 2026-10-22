@@ -13,3 +13,7 @@ Desktop.ini
 # IDE / Editor
 .vscode/
 .idea/
+
+# Local Data / Messages
+contact_messages.json
+subscribers.json
