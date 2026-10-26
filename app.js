@@ -661,21 +661,35 @@ function applyCustomContent(c) {
     if (el) el.innerHTML = c.storyFounderTR.replace(/\n/g, '<br>');
   }
 
+  // Helper for setting responsive picture source and img src
+  const updatePictureImage = (imgId, src) => {
+    const img = document.getElementById(imgId);
+    if (!img) return;
+    const cleanSrc = src.split('?')[0];
+    const webpSrc = cleanSrc.replace(/\.(jpe?g|png)$/i, '.webp');
+    const picture = img.closest('picture');
+    if (picture) {
+      const source = picture.querySelector('source');
+      if (source) source.srcset = webpSrc;
+    }
+    img.src = src;
+  };
+
   // Images
-  if (c.heroSlide1) document.getElementById('heroImg1')?.setAttribute('src', c.heroSlide1);
-  if (c.heroSlide2) document.getElementById('heroImg2')?.setAttribute('src', c.heroSlide2);
-  if (c.heroSlide3) document.getElementById('heroImg3')?.setAttribute('src', c.heroSlide3);
-  if (c.sigImage) document.getElementById('sigImage')?.setAttribute('src', c.sigImage);
-  if (c.wolfImage) document.getElementById('wolfImage')?.setAttribute('src', c.wolfImage);
-  if (c.journalImage) document.getElementById('journalImage')?.setAttribute('src', c.journalImage);
+  if (c.heroSlide1) updatePictureImage('heroImg1', c.heroSlide1);
+  if (c.heroSlide2) updatePictureImage('heroImg2', c.heroSlide2);
+  if (c.heroSlide3) updatePictureImage('heroImg3', c.heroSlide3);
+  if (c.sigImage) updatePictureImage('sigImage', c.sigImage);
+  if (c.wolfImage) updatePictureImage('wolfImage', c.wolfImage);
+  if (c.journalImage) updatePictureImage('journalImage', c.journalImage);
   // Pillar cards
   let c1 = c.card1Image || 'assets/images/quality_label_hd.jpg';
   if (c1.includes('quality_label.jpg')) c1 = 'assets/images/quality_label_hd.jpg';
-  document.getElementById('card1Image')?.setAttribute('src', c1.split('?')[0] + '?t=179248');
+  updatePictureImage('card1Image', c1.split('?')[0] + '?t=179248');
 
   let c2 = c.card2Image || 'assets/images/tailoring_fit_hd.jpg';
   if (c2.includes('tailoring_back.jpg')) c2 = 'assets/images/tailoring_fit_hd.jpg';
-  document.getElementById('card2Image')?.setAttribute('src', c2.split('?')[0] + '?t=179248');
+  updatePictureImage('card2Image', c2.split('?')[0] + '?t=179248');
 
   // Categories images
   if (c.catImages) {
@@ -684,12 +698,12 @@ function applyCustomContent(c) {
       if (!u.includes('_hd')) u = fallback;
       return u.split('?')[0] + '?t=179249';
     };
-    document.getElementById('catImgBlazers')?.setAttribute('src', getCatUrl(c.catImages.blazers, 'assets/images/cat_blazers_hd.jpg'));
-    document.getElementById('catImgTrousers')?.setAttribute('src', getCatUrl(c.catImages.trousers, 'assets/images/cat_trousers_hd.jpg'));
-    document.getElementById('catImgShirts')?.setAttribute('src', getCatUrl(c.catImages.shirts, 'assets/images/cat_shirts_hd.jpg'));
-    document.getElementById('catImgTops')?.setAttribute('src', getCatUrl(c.catImages.tops, 'assets/images/cat_tops_hd.jpg'));
-    document.getElementById('catImgDresses')?.setAttribute('src', getCatUrl(c.catImages.dresses, 'assets/images/cat_dresses_hd.jpg'));
-    document.getElementById('catImgSkirts')?.setAttribute('src', getCatUrl(c.catImages.skirts, 'assets/images/cat_skirts_hd.jpg'));
+    updatePictureImage('catImgBlazers', getCatUrl(c.catImages.blazers, 'assets/images/cat_blazers_hd.jpg'));
+    updatePictureImage('catImgTrousers', getCatUrl(c.catImages.trousers, 'assets/images/cat_trousers_hd.jpg'));
+    updatePictureImage('catImgShirts', getCatUrl(c.catImages.shirts, 'assets/images/cat_shirts_hd.jpg'));
+    updatePictureImage('catImgTops', getCatUrl(c.catImages.tops, 'assets/images/cat_tops_hd.jpg'));
+    updatePictureImage('catImgDresses', getCatUrl(c.catImages.dresses, 'assets/images/cat_dresses_hd.jpg'));
+    updatePictureImage('catImgSkirts', getCatUrl(c.catImages.skirts, 'assets/images/cat_skirts_hd.jpg'));
   }
 }
 
@@ -1177,10 +1191,17 @@ function renderProducts() {
       ? product.images
       : [product.primaryImage, product.secondaryImage || product.primaryImage];
 
+    const primaryFallback = images[0];
+    const primaryClean = primaryFallback.split('?')[0];
+    const primaryWebp = primaryClean.replace(/\.(jpe?g|png)$/i, '.webp');
+
     return `
       <div class="product-card" data-id="${product.id}">
         <div class="product-img-container" onclick="openQuickView('${product.id}')">
-          <img src="${images[0]}" alt="${title}" class="product-img primary" id="cardImg-${product.id}" loading="lazy">
+          <picture>
+            <source srcset="${primaryWebp}" type="image/webp">
+            <img src="${primaryWebp}" onerror="this.onerror=null; this.src='${primaryFallback}';" alt="${title}" class="product-img primary" id="cardImg-${product.id}" loading="lazy" width="400" height="533">
+          </picture>
           <span class="product-badge">${badgeText}</span>
           
           <button class="wishlist-heart-btn ${isWishlisted ? 'active' : ''}" 
@@ -1234,12 +1255,68 @@ function renderProducts() {
 
 function switchCardPreviewImage(productId, imgSrc, dotEl) {
   const img = document.getElementById(`cardImg-${productId}`);
-  if (img) img.src = imgSrc;
+  if (img) {
+    const clean = imgSrc.split('?')[0];
+    const webpSrc = clean.replace(/\.(jpe?g|png)$/i, '.webp');
+    const picture = img.closest('picture');
+    if (picture) {
+      const source = picture.querySelector('source');
+      if (source) source.srcset = webpSrc;
+    }
+    img.src = webpSrc;
+    img.onerror = () => { img.onerror = null; img.src = imgSrc; };
+  }
 
   const parent = dotEl.parentElement;
   if (parent) {
     parent.querySelectorAll('.card-dot-pill').forEach(d => d.classList.remove('active'));
     dotEl.classList.add('active');
+  }
+}
+
+// ==========================================================================
+// ACCESSIBILITY (A11Y) FOCUS TRAP & KEYBOARD CONTROLS
+// ==========================================================================
+let lastFocusedElement = null;
+const FOCUSABLE_SELECTOR = 'a[href], button:not([disabled]), input:not([disabled]), select:not([disabled]), textarea:not([disabled]), [tabindex]:not([tabindex="-1"])';
+
+function trapFocusToModal(containerEl) {
+  if (!containerEl) return;
+  lastFocusedElement = document.activeElement;
+  setTimeout(() => {
+    const focusable = Array.from(containerEl.querySelectorAll(FOCUSABLE_SELECTOR)).filter(el => el.offsetParent !== null);
+    if (focusable.length > 0) {
+      focusable[0].focus();
+    }
+  }, 50);
+}
+
+function restoreLastFocus() {
+  if (lastFocusedElement && typeof lastFocusedElement.focus === 'function') {
+    try {
+      lastFocusedElement.focus();
+    } catch (e) {}
+    lastFocusedElement = null;
+  }
+}
+
+function handleModalFocusTrap(e, containerEl) {
+  if (e.key !== 'Tab' || !containerEl) return;
+  const focusable = Array.from(containerEl.querySelectorAll(FOCUSABLE_SELECTOR)).filter(el => el.offsetParent !== null);
+  if (focusable.length === 0) return;
+  const first = focusable[0];
+  const last = focusable[focusable.length - 1];
+
+  if (e.shiftKey) {
+    if (document.activeElement === first || !containerEl.contains(document.activeElement)) {
+      e.preventDefault();
+      last.focus();
+    }
+  } else {
+    if (document.activeElement === last || !containerEl.contains(document.activeElement)) {
+      e.preventDefault();
+      first.focus();
+    }
   }
 }
 
@@ -1462,6 +1539,7 @@ function openQuickView(productId, initialImageIndex = 0) {
 
   document.getElementById('quickViewModal').classList.add('active');
   document.body.style.overflow = 'hidden';
+  trapFocusToModal(document.getElementById('quickViewModal'));
 }
 
 function selectQvSize(size, btnEl) {
@@ -1481,6 +1559,7 @@ function openSizeGuideModal() {
   if (modal) {
     modal.classList.add('active');
     document.body.style.overflow = 'hidden';
+    trapFocusToModal(modal);
   }
 }
 window.openSizeGuideModal = openSizeGuideModal;
@@ -1494,6 +1573,7 @@ function closeSizeGuideModal() {
       document.body.style.overflow = '';
     }
   }
+  restoreLastFocus();
 }
 window.closeSizeGuideModal = closeSizeGuideModal;
 
@@ -1504,6 +1584,7 @@ function closeQuickViewModal(scrollToTop = false) {
   }
   qvActiveProduct = null;
   document.body.style.overflow = '';
+  restoreLastFocus();
 
   if (scrollToTop) {
     window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -1556,22 +1637,43 @@ function navigateQvImage(direction) {
   switchQvImage(nextIndex);
 }
 
-// Keyboard arrow navigation and ESC key for quick view modal
+// Accessible Keyboard Navigation & Modal Focus Trap
 document.addEventListener('keydown', (e) => {
-  const modal = document.getElementById('quickViewModal');
-  if (!modal || !modal.classList.contains('active')) return;
+  const activeOverlay = [
+    document.getElementById('sizeGuideModal'),
+    document.getElementById('quickViewModal'),
+    document.getElementById('storyModal'),
+    document.getElementById('journalModal'),
+    document.getElementById('searchDrawer'),
+    document.getElementById('cartDrawer')
+  ].find(el => el && el.classList.contains('active'));
 
-  if (e.key === 'ArrowLeft') {
-    navigateQvImage(-1);
-  } else if (e.key === 'ArrowRight') {
-    navigateQvImage(1);
-  } else if (e.key === 'Escape') {
-    const sgModal = document.getElementById('sizeGuideModal');
-    if (sgModal && sgModal.classList.contains('active')) {
+  if (!activeOverlay) return;
+
+  if (e.key === 'Escape') {
+    e.preventDefault();
+    if (activeOverlay.id === 'sizeGuideModal') {
       closeSizeGuideModal();
-      return;
+    } else if (activeOverlay.id === 'quickViewModal') {
+      closeQuickViewModal(false);
+    } else if (activeOverlay.id === 'storyModal') {
+      closeStoryModal();
+    } else if (activeOverlay.id === 'journalModal') {
+      closeJournalModal();
+    } else {
+      closeAllDrawers();
     }
-    closeQuickViewModal(false);
+    return;
+  }
+
+  if (e.key === 'Tab') {
+    handleModalFocusTrap(e, activeOverlay);
+  } else if (activeOverlay.id === 'quickViewModal') {
+    if (e.key === 'ArrowLeft') {
+      navigateQvImage(-1);
+    } else if (e.key === 'ArrowRight') {
+      navigateQvImage(1);
+    }
   }
 });
 
@@ -1726,6 +1828,7 @@ function renderCart() {
 function openCartDrawer() {
   document.getElementById('cartDrawer').classList.add('active');
   document.getElementById('drawerBackdrop').classList.add('active');
+  trapFocusToModal(document.getElementById('cartDrawer'));
 }
 
 function proceedToCheckout() {
@@ -1767,7 +1870,8 @@ function updateWishlistBadge() {
 document.getElementById('btnOpenSearch').addEventListener('click', () => {
   document.getElementById('searchDrawer').classList.add('active');
   document.getElementById('drawerBackdrop').classList.add('active');
-  document.getElementById('liveSearchInput').focus();
+  trapFocusToModal(document.getElementById('searchDrawer'));
+  document.getElementById('liveSearchInput')?.focus();
 });
 
 function handleLiveSearch(query) {
@@ -1793,7 +1897,7 @@ function handleLiveSearch(query) {
 
   resultsBox.innerHTML = matches.map(p => `
     <div style="display: flex; gap: 12px; cursor: pointer; background: #18181b; padding: 8px;" onclick="closeAllDrawers(); openQuickView('${p.id}')">
-      <img src="${p.primaryImage}" style="width: 50px; height: 65px; object-fit: cover;">
+      <img src="${p.primaryImage}" alt="${STATE.currentLang === 'TR' ? (p.nameTr || p.name) : p.name}" style="width: 50px; height: 65px; object-fit: cover;" loading="lazy">
       <div>
         <div style="font-size: 0.85rem; font-family: var(--font-serif);">${STATE.currentLang === 'TR' ? (p.nameTr || p.name) : p.name}</div>
         <div style="font-size: 0.75rem; color: #a1a1aa;">${formatPrice(p.priceTRY)}</div>
@@ -1807,20 +1911,26 @@ function handleLiveSearch(query) {
 // ==========================================================================
 function openStoryModal() {
   closeAllDrawers();
-  document.getElementById('storyModal').classList.add('active');
+  const modal = document.getElementById('storyModal');
+  modal.classList.add('active');
+  trapFocusToModal(modal);
 }
 
 function closeStoryModal() {
   document.getElementById('storyModal').classList.remove('active');
+  restoreLastFocus();
 }
 
 function openJournalModal() {
   closeAllDrawers();
-  document.getElementById('journalModal').classList.add('active');
+  const modal = document.getElementById('journalModal');
+  modal.classList.add('active');
+  trapFocusToModal(modal);
 }
 
 function closeJournalModal() {
   document.getElementById('journalModal').classList.remove('active');
+  restoreLastFocus();
 }
 
 function openAtelierModal() {
@@ -1835,10 +1945,12 @@ function closeAllDrawers() {
   document.getElementById('cartDrawer').classList.remove('active');
   document.getElementById('searchDrawer').classList.remove('active');
   document.getElementById('drawerBackdrop').classList.remove('active');
-  closeStoryModal();
-  closeJournalModal();
-  closeQuickViewModal();
-  closeSizeGuideModal();
+  document.getElementById('storyModal')?.classList.remove('active');
+  document.getElementById('journalModal')?.classList.remove('active');
+  document.getElementById('quickViewModal')?.classList.remove('active');
+  document.getElementById('sizeGuideModal')?.classList.remove('active');
+  document.body.style.overflow = '';
+  restoreLastFocus();
 }
 
 document.getElementById('btnOpenCart').addEventListener('click', openCartDrawer);

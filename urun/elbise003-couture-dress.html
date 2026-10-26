@@ -76,6 +76,8 @@
 }
   </script>
 
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="/styles.css">
   <link rel="icon" type="image/png" href="/assets/images/logo-black.png">
 </head>
@@ -152,30 +154,48 @@
       <div class="pdp-thumb-rail">
         
           <div class="pdp-thumb-item active" onclick="switchPdpImage('/assets/images/uploaded_1791792223485_WhatsApp_Image_2026-10-12_at_09.51.56__1_.jpeg', this)" title="Açı 01">
-            <img src="/assets/images/uploaded_1791792223485_WhatsApp_Image_2026-10-12_at_09.51.56__1_.jpeg" alt="ELBISE 003 Görsel 1">
+            <picture>
+              <source srcset="/assets/images/uploaded_1791792223485_WhatsApp_Image_2026-10-12_at_09.51.56__1_.webp" type="image/webp">
+              <img src="/assets/images/uploaded_1791792223485_WhatsApp_Image_2026-10-12_at_09.51.56__1_.jpeg" alt="ELBISE 003 Görsel 1" loading="lazy" width="70" height="93">
+            </picture>
           </div>
         
           <div class="pdp-thumb-item " onclick="switchPdpImage('/assets/images/uploaded_1791792229067_Screenshot_34.jpg', this)" title="Açı 02">
-            <img src="/assets/images/uploaded_1791792229067_Screenshot_34.jpg" alt="ELBISE 003 Görsel 2">
+            <picture>
+              <source srcset="/assets/images/uploaded_1791792229067_Screenshot_34.webp" type="image/webp">
+              <img src="/assets/images/uploaded_1791792229067_Screenshot_34.jpg" alt="ELBISE 003 Görsel 2" loading="lazy" width="70" height="93">
+            </picture>
           </div>
         
           <div class="pdp-thumb-item " onclick="switchPdpImage('/assets/images/uploaded_1791792232384_Screenshot_33.jpg', this)" title="Açı 03">
-            <img src="/assets/images/uploaded_1791792232384_Screenshot_33.jpg" alt="ELBISE 003 Görsel 3">
+            <picture>
+              <source srcset="/assets/images/uploaded_1791792232384_Screenshot_33.webp" type="image/webp">
+              <img src="/assets/images/uploaded_1791792232384_Screenshot_33.jpg" alt="ELBISE 003 Görsel 3" loading="lazy" width="70" height="93">
+            </picture>
           </div>
         
           <div class="pdp-thumb-item " onclick="switchPdpImage('/assets/images/uploaded_1791792235284_Screenshot_35.jpg', this)" title="Açı 04">
-            <img src="/assets/images/uploaded_1791792235284_Screenshot_35.jpg" alt="ELBISE 003 Görsel 4">
+            <picture>
+              <source srcset="/assets/images/uploaded_1791792235284_Screenshot_35.webp" type="image/webp">
+              <img src="/assets/images/uploaded_1791792235284_Screenshot_35.jpg" alt="ELBISE 003 Görsel 4" loading="lazy" width="70" height="93">
+            </picture>
           </div>
         
           <div class="pdp-thumb-item " onclick="switchPdpImage('/assets/images/uploaded_1791792248355_Gemini_Generated_Image_3w5gec3w5gec3w5g__1_.jpg', this)" title="Açı 05">
-            <img src="/assets/images/uploaded_1791792248355_Gemini_Generated_Image_3w5gec3w5gec3w5g__1_.jpg" alt="ELBISE 003 Görsel 5">
+            <picture>
+              <source srcset="/assets/images/uploaded_1791792248355_Gemini_Generated_Image_3w5gec3w5gec3w5g__1_.webp" type="image/webp">
+              <img src="/assets/images/uploaded_1791792248355_Gemini_Generated_Image_3w5gec3w5gec3w5g__1_.jpg" alt="ELBISE 003 Görsel 5" loading="lazy" width="70" height="93">
+            </picture>
           </div>
         
       </div>
 
       <!-- Main Stage Viewport -->
       <div class="pdp-main-stage">
-        <img src="/assets/images/uploaded_1791792223485_WhatsApp_Image_2026-10-12_at_09.51.56__1_.jpeg" alt="ELBISE 003" id="pdpMainImg" class="pdp-main-img">
+        <picture id="pdpMainPicture">
+          <source srcset="/assets/images/uploaded_1791792223485_WhatsApp_Image_2026-10-12_at_09.51.56__1_.webp" type="image/webp">
+          <img src="/assets/images/uploaded_1791792223485_WhatsApp_Image_2026-10-12_at_09.51.56__1_.jpeg" alt="ELBISE 003" id="pdpMainImg" class="pdp-main-img" width="600" height="800" fetchpriority="high">
+        </picture>
       </div>
     </div>
 

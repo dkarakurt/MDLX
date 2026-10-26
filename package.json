@@ -8,8 +8,11 @@
     "test:phase3": "node test_phase3_audit.js",
     "test:phase4": "node test_phase4_audit.js",
     "test:phase5": "node test_phase5_audit.js",
+    "test:phase6": "node test_phase6_audit.js",
+    "test:all": "node test_phase3_audit.js && node test_phase4_audit.js && node test_phase5_audit.js && node test_phase6_audit.js",
     "build:pages": "node scripts/generate_product_pages.js",
-    "build:sitemap": "node scripts/generate_sitemap.js"
+    "build:sitemap": "node scripts/generate_sitemap.js",
+    "optimize:images": "node scripts/convert_images_to_webp.js"
   },
   "keywords": [
     "luxury",
@@ -19,5 +22,8 @@
     "maison-de-loup"
   ],
   "author": "Maison De Loup Atelier",
-  "license": "UNLICENSED"
+  "license": "UNLICENSED",
+  "devDependencies": {
+    "sharp": "^0.35.5"
+  }
 }

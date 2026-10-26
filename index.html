@@ -53,6 +53,8 @@
     ]
   }
   </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="styles.css">
   <link rel="icon" type="image/png" href="assets/images/logo-black.png">
 </head>
@@ -137,13 +139,22 @@
   <section class="hero-section" id="heroSection">
     <div class="hero-slider-bg">
       <div class="hero-slide active" data-index="0">
-        <img src="assets/images/uploaded_1791785047520_Gemini_Generated_Image_wpltxzwpltxzwplt.jpg" alt="Maison De Loup Atelier Signature Look" id="heroImg1">
+        <picture>
+          <source srcset="assets/images/uploaded_1791785047520_Gemini_Generated_Image_wpltxzwpltxzwplt-800w.webp 800w, assets/images/uploaded_1791785047520_Gemini_Generated_Image_wpltxzwpltxzwplt.webp 1920w" sizes="100vw" type="image/webp">
+          <img src="assets/images/uploaded_1791785047520_Gemini_Generated_Image_wpltxzwpltxzwplt.jpg" alt="Maison De Loup Atelier Signature Look" id="heroImg1" width="1920" height="1080" fetchpriority="high">
+        </picture>
       </div>
       <div class="hero-slide" data-index="1">
-        <img src="assets/images/product_blazer_noir.jpg" alt="Maison De Loup Atelier Noir Blazer" id="heroImg2">
+        <picture>
+          <source srcset="assets/images/product_blazer_noir.webp" type="image/webp">
+          <img src="assets/images/product_blazer_noir.jpg" alt="Maison De Loup Atelier Noir Blazer" id="heroImg2" width="1920" height="1080" loading="lazy">
+        </picture>
       </div>
       <div class="hero-slide" data-index="2">
-        <img src="assets/images/product_blazer_ecru.jpg" alt="Maison De Loup Atelier Ecru Sculpted Blazer" id="heroImg3">
+        <picture>
+          <source srcset="assets/images/product_blazer_ecru.webp" type="image/webp">
+          <img src="assets/images/product_blazer_ecru.jpg" alt="Maison De Loup Atelier Ecru Sculpted Blazer" id="heroImg3" width="1920" height="1080" loading="lazy">
+        </picture>
       </div>
     </div>
 
@@ -179,7 +190,10 @@
   <section class="split-showcase-section" id="splitSection">
     <!-- Left Column: The Signature Blazer -->
     <div class="split-col-left">
-      <img src="assets/images/uploaded_1791788751605_Gemini_Generated_Image_fn3h8jfn3h8jfn3h.jpg" alt="The Signature Blazer" class="split-bg-img" id="sigImage">
+      <picture>
+        <source srcset="assets/images/uploaded_1791788751605_Gemini_Generated_Image_fn3h8jfn3h8jfn3h-800w.webp 800w, assets/images/uploaded_1791788751605_Gemini_Generated_Image_fn3h8jfn3h8jfn3h.webp 1200w" sizes="(max-width: 900px) 100vw, 50vw" type="image/webp">
+        <img src="assets/images/uploaded_1791788751605_Gemini_Generated_Image_fn3h8jfn3h8jfn3h.jpg" alt="The Signature Blazer — Modern Kadın Giyim" class="split-bg-img" id="sigImage" loading="lazy" width="800" height="1000">
+      </picture>
       <div class="split-gradient-overlay"></div>
       <div class="split-left-content">
         <div class="split-pretitle" id="sigPretitle">İMZA TASARIM</div>
@@ -203,7 +217,10 @@
         </a>
       </div>
       <div class="wolf-art-wrapper">
-        <img src="assets/images/uploaded_1791784507432_Gemini_Generated_Image_1bwikn1bwikn1bwi.jpg" alt="The Wolf — Maison De Loup Atelier Emblem" id="wolfImage">
+        <picture>
+          <source srcset="assets/images/uploaded_1791784507432_Gemini_Generated_Image_1bwikn1bwikn1bwi-800w.webp 800w, assets/images/uploaded_1791784507432_Gemini_Generated_Image_1bwikn1bwikn1bwi.webp 1200w" sizes="(max-width: 900px) 100vw, 50vw" type="image/webp">
+          <img src="assets/images/uploaded_1791784507432_Gemini_Generated_Image_1bwikn1bwikn1bwi.jpg" alt="The Wolf — Maison De Loup Atelier Emblem" id="wolfImage" loading="lazy" width="800" height="800">
+        </picture>
       </div>
     </div>
   </section>
@@ -221,7 +238,10 @@
     <div class="category-grid" id="categoryGrid">
       <a href="#catalog" class="category-card" onclick="filterCatalog('blazers')">
         <div class="category-img-box">
-          <img src="assets/images/cat_blazers_hd.jpg?t=179249" alt="Blazer Ceket" id="catImgBlazers">
+          <picture>
+            <source srcset="assets/images/cat_blazers_hd-400w.webp 400w, assets/images/cat_blazers_hd.webp 800w" sizes="(max-width: 768px) 50vw, 300px" type="image/webp">
+            <img src="assets/images/cat_blazers_hd.jpg" alt="Blazer Ceket Koleksiyonu" id="catImgBlazers" loading="lazy" width="400" height="500">
+          </picture>
           <span class="category-badge-core" id="catBadgeCore">İMZA KOLEKSİYON</span>
         </div>
         <div class="category-name-row">
@@ -232,7 +252,10 @@
 
       <a href="#catalog" class="category-card" onclick="filterCatalog('trousers')">
         <div class="category-img-box">
-          <img src="assets/images/cat_trousers_hd.jpg?t=179249" alt="Pantolon" id="catImgTrousers">
+          <picture>
+            <source srcset="assets/images/cat_trousers_hd-400w.webp 400w, assets/images/cat_trousers_hd.webp 800w" sizes="(max-width: 768px) 50vw, 300px" type="image/webp">
+            <img src="assets/images/cat_trousers_hd.jpg" alt="Pantolon Koleksiyonu" id="catImgTrousers" loading="lazy" width="400" height="500">
+          </picture>
         </div>
         <div class="category-name-row">
           <span id="catNameTrousers">PANTOLON</span>
@@ -242,7 +265,10 @@
 
       <a href="#catalog" class="category-card" onclick="filterCatalog('shirts')">
         <div class="category-img-box">
-          <img src="assets/images/cat_shirts_hd.jpg?t=179249" alt="Gömlek" id="catImgShirts">
+          <picture>
+            <source srcset="assets/images/cat_shirts_hd-400w.webp 400w, assets/images/cat_shirts_hd.webp 800w" sizes="(max-width: 768px) 50vw, 300px" type="image/webp">
+            <img src="assets/images/cat_shirts_hd.jpg" alt="Gömlek Koleksiyonu" id="catImgShirts" loading="lazy" width="400" height="500">
+          </picture>
         </div>
         <div class="category-name-row">
           <span id="catNameShirts">GÖMLEK</span>
@@ -252,7 +278,10 @@
 
       <a href="#catalog" class="category-card" onclick="filterCatalog('tops')">
         <div class="category-img-box">
-          <img src="assets/images/cat_tops_hd.jpg?t=179249" alt="Triko ve Üst" id="catImgTops">
+          <picture>
+            <source srcset="assets/images/cat_tops_hd-400w.webp 400w, assets/images/cat_tops_hd.webp 800w" sizes="(max-width: 768px) 50vw, 300px" type="image/webp">
+            <img src="assets/images/cat_tops_hd.jpg" alt="Triko ve Üst Koleksiyonu" id="catImgTops" loading="lazy" width="400" height="500">
+          </picture>
         </div>
         <div class="category-name-row">
           <span id="catNameTops">TRİKO &amp; ÜST</span>
@@ -262,7 +291,10 @@
 
       <a href="#catalog" class="category-card" onclick="filterCatalog('dresses')">
         <div class="category-img-box">
-          <img src="assets/images/cat_dresses_hd.jpg?t=179249" alt="Elbise" id="catImgDresses">
+          <picture>
+            <source srcset="assets/images/cat_dresses_hd-400w.webp 400w, assets/images/cat_dresses_hd.webp 800w" sizes="(max-width: 768px) 50vw, 300px" type="image/webp">
+            <img src="assets/images/cat_dresses_hd.jpg" alt="Elbise Koleksiyonu" id="catImgDresses" loading="lazy" width="400" height="500">
+          </picture>
         </div>
         <div class="category-name-row">
           <span id="catNameDresses">ELBİSE</span>
@@ -272,7 +304,10 @@
 
       <a href="#catalog" class="category-card" onclick="filterCatalog('skirts')">
         <div class="category-img-box">
-          <img src="assets/images/cat_skirts_hd.jpg?t=179249" alt="Etek" id="catImgSkirts">
+          <picture>
+            <source srcset="assets/images/cat_skirts_hd-400w.webp 400w, assets/images/cat_skirts_hd.webp 800w" sizes="(max-width: 768px) 50vw, 300px" type="image/webp">
+            <img src="assets/images/cat_skirts_hd.jpg" alt="Etek Koleksiyonu" id="catImgSkirts" loading="lazy" width="400" height="500">
+          </picture>
         </div>
         <div class="category-name-row">
           <span id="catNameSkirts">ETEK</span>
@@ -327,7 +362,10 @@
        EDITORIAL JOURNAL BANNER (Matching Image 2 Fourth Section)
        ========================================================================= -->
   <section class="editorial-journal-section" id="journalSection">
-    <img src="assets/images/uploaded_1791784583979_Gemini_Generated_Image_h3b9z6h3b9z6h3b9.jpg" alt="Maison De Loup Atelier Journal" class="journal-bg-img" id="journalImage">
+    <picture>
+      <source srcset="assets/images/uploaded_1791784583979_Gemini_Generated_Image_h3b9z6h3b9z6h3b9.webp" type="image/webp">
+      <img src="assets/images/uploaded_1791784583979_Gemini_Generated_Image_h3b9z6h3b9z6h3b9.jpg" alt="Maison De Loup Atelier Journal" class="journal-bg-img" id="journalImage" loading="lazy" width="1440" height="600">
+    </picture>
     <div class="journal-overlay"></div>
     <div class="journal-content">
       <h2 class="journal-title" id="journalHeading">THE JOURNAL</h2>
@@ -346,7 +384,10 @@
       <!-- Card 1: Woven Label / Quality Detail -->
       <div class="pillar-card">
         <div class="pillar-img-box">
-          <img src="assets/images/quality_label_hd.jpg?t=179248" alt="Quality in Every Detail" id="card1Image">
+          <picture>
+            <source srcset="assets/images/quality_label_hd-400w.webp 400w, assets/images/quality_label_hd.webp 800w" type="image/webp">
+            <img src="assets/images/quality_label_hd.jpg?t=179248" alt="Quality in Every Detail" id="card1Image" loading="lazy" width="400" height="250">
+          </picture>
         </div>
         <h3 class="pillar-title" id="card1Title">HER DETAYDA MÜKEMMELİYET</h3>
         <p class="pillar-copy" id="card1Text">
@@ -360,7 +401,10 @@
       <!-- Card 2: Anatomy of Fit (Tailored Silhouette) -->
       <div class="pillar-card">
         <div class="pillar-img-box">
-          <img src="assets/images/tailoring_fit_hd.jpg?t=179248" alt="The Anatomy of Fit" id="card2Image">
+          <picture>
+            <source srcset="assets/images/tailoring_fit_hd-400w.webp 400w, assets/images/tailoring_fit_hd.webp 800w" type="image/webp">
+            <img src="assets/images/tailoring_fit_hd.jpg?t=179248" alt="The Anatomy of Fit" id="card2Image" loading="lazy" width="400" height="250">
+          </picture>
         </div>
         <h3 class="pillar-title" id="card2Title">MİMARİ TERZİLİK & KALIP</h3>
         <p class="pillar-copy" id="card2Text">
@@ -533,10 +577,10 @@
   <!-- =========================================================================
        OUR STORY / THE HOUSE OF THE WOLF (BRAND VISION & MISSION MODAL)
        ========================================================================= -->
-  <div class="story-modal" id="storyModal">
+  <div class="story-modal" id="storyModal" role="dialog" aria-modal="true" aria-label="Maison De Loup Atelier Hikayesi">
     <div class="story-modal-overlay" onclick="closeStoryModal()"></div>
     <div class="story-modal-card">
-      <button class="story-modal-close" onclick="closeStoryModal()">&times;</button>
+      <button class="story-modal-close" onclick="closeStoryModal()" aria-label="Kapat">&times;</button>
 
       <div class="story-header">
         <img src="assets/images/logo-black.png" alt="Maison De Loup Atelier" class="story-logo-img">
@@ -733,10 +777,10 @@
   <!-- =========================================================================
        EDITORIAL JOURNAL MODAL
        ========================================================================= -->
-  <div class="story-modal" id="journalModal">
+  <div class="story-modal" id="journalModal" role="dialog" aria-modal="true" aria-label="The Journal Editoryal Yazılar">
     <div class="story-modal-overlay" onclick="closeJournalModal()"></div>
     <div class="story-modal-card">
-      <button class="story-modal-close" onclick="closeJournalModal()">&times;</button>
+      <button class="story-modal-close" onclick="closeJournalModal()" aria-label="Kapat">&times;</button>
       <div class="story-header">
         <h2 class="story-main-title">THE JOURNAL</h2>
         <p class="story-subtitle">MAISON DE LOUP ATELIER &bull; SAYI 01 &bull; 2026</p>

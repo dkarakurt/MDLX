@@ -35,18 +35,73 @@ document.addEventListener('DOMContentLoaded', () => {
     PDP_STATE.selectedSize = firstSizeBtn.getAttribute('data-size') || '36';
   }
 
-  // Escape key closes modals/drawers
+  // Focus trap & Escape key navigation
   document.addEventListener('keydown', (e) => {
+    const activeModal = [
+      document.getElementById('sizeGuideModal'),
+      document.getElementById('cartDrawer')
+    ].find(el => el && el.classList.contains('active'));
+
+    if (!activeModal) return;
+
     if (e.key === 'Escape') {
-      const sgModal = document.getElementById('sizeGuideModal');
-      if (sgModal && sgModal.classList.contains('active')) {
+      e.preventDefault();
+      if (activeModal.id === 'sizeGuideModal') {
         closeSizeGuideModal();
-        return;
+      } else {
+        closeAllDrawers();
       }
-      closeAllDrawers();
+      return;
+    }
+
+    if (e.key === 'Tab') {
+      handlePdpFocusTrap(e, activeModal);
     }
   });
 });
+
+let lastPdpFocusedElement = null;
+const PDP_FOCUSABLE_SELECTOR = 'a[href], button:not([disabled]), input:not([disabled]), select:not([disabled]), textarea:not([disabled]), [tabindex]:not([tabindex="-1"])';
+
+function trapPdpFocus(containerEl) {
+  if (!containerEl) return;
+  lastPdpFocusedElement = document.activeElement;
+  setTimeout(() => {
+    const focusable = Array.from(containerEl.querySelectorAll(PDP_FOCUSABLE_SELECTOR)).filter(el => el.offsetParent !== null);
+    if (focusable.length > 0) {
+      focusable[0].focus();
+    }
+  }, 50);
+}
+
+function restorePdpFocus() {
+  if (lastPdpFocusedElement && typeof lastPdpFocusedElement.focus === 'function') {
+    try {
+      lastPdpFocusedElement.focus();
+    } catch (e) {}
+    lastPdpFocusedElement = null;
+  }
+}
+
+function handlePdpFocusTrap(e, containerEl) {
+  if (e.key !== 'Tab' || !containerEl) return;
+  const focusable = Array.from(containerEl.querySelectorAll(PDP_FOCUSABLE_SELECTOR)).filter(el => el.offsetParent !== null);
+  if (focusable.length === 0) return;
+  const first = focusable[0];
+  const last = focusable[focusable.length - 1];
+
+  if (e.shiftKey) {
+    if (document.activeElement === first || !containerEl.contains(document.activeElement)) {
+      e.preventDefault();
+      last.focus();
+    }
+  } else {
+    if (document.activeElement === last || !containerEl.contains(document.activeElement)) {
+      e.preventDefault();
+      first.focus();
+    }
+  }
+}
 
 function formatPdpPrice(tryAmount) {
   const cur = PDP_CURRENCY_RATES[PDP_STATE.currentCurrency] || PDP_CURRENCY_RATES.TRY;
@@ -88,7 +143,15 @@ function updatePriceDisplay() {
 function switchPdpImage(src, thumbEl) {
   const mainImg = document.getElementById('pdpMainImg');
   if (mainImg) {
-    mainImg.src = src;
+    const clean = src.split('?')[0];
+    const webpSrc = clean.replace(/\.(jpe?g|png)$/i, '.webp');
+    const picture = mainImg.closest('picture');
+    if (picture) {
+      const source = picture.querySelector('source');
+      if (source) source.srcset = webpSrc;
+    }
+    mainImg.src = webpSrc;
+    mainImg.onerror = () => { mainImg.onerror = null; mainImg.src = src; };
   }
   document.querySelectorAll('.pdp-thumb-item').forEach(el => el.classList.remove('active'));
   if (thumbEl) {
@@ -235,7 +298,10 @@ function renderCart() {
 function openCartDrawer() {
   const drawer = document.getElementById('cartDrawer');
   const backdrop = document.getElementById('drawerBackdrop');
-  if (drawer) drawer.classList.add('active');
+  if (drawer) {
+    drawer.classList.add('active');
+    trapPdpFocus(drawer);
+  }
   if (backdrop) backdrop.classList.add('active');
   renderCart();
 }
@@ -246,6 +312,7 @@ function openSizeGuideModal() {
   if (modal) {
     modal.classList.add('active');
     document.body.style.overflow = 'hidden';
+    trapPdpFocus(modal);
   }
 }
 window.openSizeGuideModal = openSizeGuideModal;
@@ -256,6 +323,7 @@ function closeSizeGuideModal() {
     modal.classList.remove('active');
     document.body.style.overflow = '';
   }
+  restorePdpFocus();
 }
 window.closeSizeGuideModal = closeSizeGuideModal;
 
@@ -265,6 +333,7 @@ function closeAllDrawers() {
   if (drawer) drawer.classList.remove('active');
   if (backdrop) backdrop.classList.remove('active');
   closeSizeGuideModal();
+  restorePdpFocus();
 }
 window.closeAllDrawers = closeAllDrawers;
 

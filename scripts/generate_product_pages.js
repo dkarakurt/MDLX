@@ -149,6 +149,8 @@ products.forEach(product => {
 ${JSON.stringify(jsonLd, null, 2)}
   </script>
 
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="/styles.css">
   <link rel="icon" type="image/png" href="/assets/images/logo-black.png">
 </head>
@@ -223,16 +225,25 @@ ${JSON.stringify(jsonLd, null, 2)}
     <div class="pdp-gallery">
       <!-- Thumbnails Rail -->
       <div class="pdp-thumb-rail">
-        ${allImages.map((img, idx) => `
+        ${allImages.map((img, idx) => {
+          const clean = img.split('?')[0];
+          const webpImg = clean.replace(/\.(jpe?g|png)$/i, '.webp');
+          return `
           <div class="pdp-thumb-item ${idx === 0 ? 'active' : ''}" onclick="switchPdpImage('/${img}', this)" title="Açı 0${idx + 1}">
-            <img src="/${img}" alt="${escapeHtml(product.nameTr)} Görsel ${idx + 1}">
+            <picture>
+              <source srcset="/${webpImg}" type="image/webp">
+              <img src="/${img}" alt="${escapeHtml(product.nameTr)} Görsel ${idx + 1}" loading="lazy" width="70" height="93">
+            </picture>
           </div>
-        `).join('')}
+        `;}).join('')}
       </div>
 
       <!-- Main Stage Viewport -->
       <div class="pdp-main-stage">
-        <img src="/${allImages[0]}" alt="${escapeHtml(product.nameTr)}" id="pdpMainImg" class="pdp-main-img">
+        <picture id="pdpMainPicture">
+          <source srcset="/${allImages[0].split('?')[0].replace(/\.(jpe?g|png)$/i, '.webp')}" type="image/webp">
+          <img src="/${allImages[0]}" alt="${escapeHtml(product.nameTr)}" id="pdpMainImg" class="pdp-main-img" width="600" height="800" fetchpriority="high">
+        </picture>
       </div>
     </div>
 

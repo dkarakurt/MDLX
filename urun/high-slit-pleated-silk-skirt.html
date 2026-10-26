@@ -73,6 +73,8 @@
 }
   </script>
 
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="/styles.css">
   <link rel="icon" type="image/png" href="/assets/images/logo-black.png">
 </head>
@@ -149,18 +151,27 @@
       <div class="pdp-thumb-rail">
         
           <div class="pdp-thumb-item active" onclick="switchPdpImage('/assets/images/product_skirt_silk.jpg', this)" title="Açı 01">
-            <img src="/assets/images/product_skirt_silk.jpg" alt="Yırtmaçlı Pili Detaylı İpek Maxi Etek Görsel 1">
+            <picture>
+              <source srcset="/assets/images/product_skirt_silk.webp" type="image/webp">
+              <img src="/assets/images/product_skirt_silk.jpg" alt="Yırtmaçlı Pili Detaylı İpek Maxi Etek Görsel 1" loading="lazy" width="70" height="93">
+            </picture>
           </div>
         
           <div class="pdp-thumb-item " onclick="switchPdpImage('/assets/images/cat_skirts.jpg', this)" title="Açı 02">
-            <img src="/assets/images/cat_skirts.jpg" alt="Yırtmaçlı Pili Detaylı İpek Maxi Etek Görsel 2">
+            <picture>
+              <source srcset="/assets/images/cat_skirts.webp" type="image/webp">
+              <img src="/assets/images/cat_skirts.jpg" alt="Yırtmaçlı Pili Detaylı İpek Maxi Etek Görsel 2" loading="lazy" width="70" height="93">
+            </picture>
           </div>
         
       </div>
 
       <!-- Main Stage Viewport -->
       <div class="pdp-main-stage">
-        <img src="/assets/images/product_skirt_silk.jpg" alt="Yırtmaçlı Pili Detaylı İpek Maxi Etek" id="pdpMainImg" class="pdp-main-img">
+        <picture id="pdpMainPicture">
+          <source srcset="/assets/images/product_skirt_silk.webp" type="image/webp">
+          <img src="/assets/images/product_skirt_silk.jpg" alt="Yırtmaçlı Pili Detaylı İpek Maxi Etek" id="pdpMainImg" class="pdp-main-img" width="600" height="800" fetchpriority="high">
+        </picture>
       </div>
     </div>
 
