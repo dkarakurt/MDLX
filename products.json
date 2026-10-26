@@ -32,8 +32,8 @@
       "40",
       "42"
     ],
-    "description": "",
-    "descriptionTr": "",
+    "description": "Crafted from 100% pure cashmere, this double-breasted atelier blazer delivers unparalleled elegance and warmth. Features sculpted shoulders and a fluid silhouette tailored to perfection.",
+    "descriptionTr": "Maison De Loup Atelier imzasını taşıyan, %100 saf kaşmir dokumasıyla soğuk havalarda benzersiz bir zarafet sunan lüks kruvaze blazer ceket. Keskin omuz yapısı ve akıcı silüetiyle zamansız bir duruş.",
     "fabric": "%100 KAŞMİR",
     "fabricTr": "%100 KAŞMİR",
     "fit": "Tailored structured fit.",
@@ -47,7 +47,8 @@
     "lining": "100% Cupro Silk & Italian Canvas Structured Lining",
     "liningTr": "%100 Cupro İpek & İtalyan Telalı Astar",
     "care": "Specialist dry clean only. Cool iron on reverse.",
-    "careTr": "Yalnızca uzman kuru temizleme. Düşük ısıda tersten ütüleyiniz."
+    "careTr": "Yalnızca uzman kuru temizleme. Düşük ısıda tersten ütüleyiniz.",
+    "slug": "ceket002-atelier-blazer"
   },
   {
     "id": "mdl-prod-1791792518739",
@@ -82,8 +83,8 @@
       "40",
       "42"
     ],
-    "description": "",
-    "descriptionTr": "",
+    "description": "High-waisted tailored trousers with an engineered drape and clean sartorial lines. Designed to seamlessly complement Maison De Loup blazers from boardroom to evening.",
+    "descriptionTr": "Yüksek bel, dökümlü paça kesimi ve kusursuz terzilik çizgileriyle blazer ceketleri tamamlayan modern kadın kumaş pantolonu. Gün boyu konfor ve asil bir duruş.",
     "fabric": "%100 KETEN",
     "fabricTr": "%100 KETEN",
     "fit": "Tailored structured fit.",
@@ -97,7 +98,8 @@
     "lining": "Pocket and inner waistband cupro lining",
     "liningTr": "Ceplik ve bel içi cupro terzi astarı",
     "care": "Specialist dry clean recommended. Cool iron.",
-    "careTr": "Kuru temizleme önerilir. Düşük ısıda ütüleyiniz."
+    "careTr": "Kuru temizleme önerilir. Düşük ısıda ütüleyiniz.",
+    "slug": "pntln002-tailored-trousers"
   },
   {
     "id": "mdl-prod-1791792265725",
@@ -132,8 +134,8 @@
       "40",
       "42"
     ],
-    "description": "",
-    "descriptionTr": "",
+    "description": "An atelier couture dress merging clean architectural lines with fluid femininity. A versatile luxury piece created for discerning occasions.",
+    "descriptionTr": "Minimalist mimari hatlar ve feminen dökümün buluştuğu atelier couture elbise. Özel davetlerden modern şehir yaşamına uzanan lüks ve zamansız tasarım.",
     "fabric": "%100 Pamuk",
     "fabricTr": "%100 Pamuk",
     "fit": "Tailored structured fit.",
@@ -147,7 +149,8 @@
     "lining": "100% Habotai Silk Breathable Lining",
     "liningTr": "%100 Habotai İpek Nefes Alan Astar",
     "care": "Gentle hand wash at 30°C or dry clean.",
-    "careTr": "30°C hassas elde yıkama veya kuru temizleme."
+    "careTr": "30°C hassas elde yıkama veya kuru temizleme.",
+    "slug": "elbise003-couture-dress"
   },
   {
     "id": "mdl-prod-1791785220112",
@@ -175,8 +178,8 @@
       "40",
       "42"
     ],
-    "description": "",
-    "descriptionTr": "",
+    "description": "A tailored classic blazer in crisp white, crafted with canvassed construction and luminous tonal buttons. A commanding wardrobe cornerstone for every season.",
+    "descriptionTr": "Saf beyazın zamansız zarafetiyle tasarlanmış klasik terzi işi blazer ceket. Akıcı kumaş dokusu, kusursuz telalı kalıbı ve sedef tonlu düğme detaylarıyla gardırobun vazgeçilmezi.",
     "fabric": "%100 Saf Anadolu Yünü",
     "fabricTr": "%100 Saf Anadolu Yünü",
     "fit": "Tailored structured fit.",
@@ -197,7 +200,8 @@
     "lining": "100% Bemberg Cupro Silk Monogram Lining",
     "liningTr": "%100 Bemberg Cupro İpek Jakarlı Astar",
     "care": "Specialist dry clean only. Steam iron.",
-    "careTr": "Yalnızca uzman kuru temizleme. Buharlı ütüleme önerilir."
+    "careTr": "Yalnızca uzman kuru temizleme. Buharlı ütüleme önerilir.",
+    "slug": "white-classic-blazer"
   },
   {
     "id": "mdl-blz-01",
@@ -250,7 +254,8 @@
     "lining": "100% Bemberg Cupro Silk Italian Canvassed Lining",
     "liningTr": "%100 Bemberg Cupro İpek & İtalyan Telalı Astar",
     "care": "Specialist dry clean only. Cool iron on reverse.",
-    "careTr": "Yalnızca uzman kuru temizleme. Düşük ısıda tersten ütüleyiniz."
+    "careTr": "Yalnızca uzman kuru temizleme. Düşük ısıda tersten ütüleyiniz.",
+    "slug": "noir-atelier-blazer"
   },
   {
     "id": "mdl-blz-02",
@@ -302,7 +307,8 @@
     "lining": "100% Fine Viscose Tailored Breathable Lining",
     "liningTr": "%100 İnce Viskon Terzilik Astarı",
     "care": "Specialist dry clean only. Cool iron on reverse.",
-    "careTr": "Yalnızca uzman kuru temizleme. Düşük ısıda tersten ütüleyiniz."
+    "careTr": "Yalnızca uzman kuru temizleme. Düşük ısıda tersten ütüleyiniz.",
+    "slug": "sculpted-hourglass-wool-blazer"
   },
   {
     "id": "mdl-blz-03",
@@ -355,7 +361,8 @@
     "lining": "100% Bemberg Cupro Silk Half-Canvassed Lining",
     "liningTr": "%100 Bemberg Cupro İpek & Yarı Telalı Terzi Astarı",
     "care": "Specialist dry clean only. Do not wash.",
-    "careTr": "Yalnızca uzman kuru temizleme. Su ile temas ettirmeyiniz."
+    "careTr": "Yalnızca uzman kuru temizleme. Su ile temas ettirmeyiniz.",
+    "slug": "peak-lapel-camel-wool-blazer"
   },
   {
     "id": "mdl-blz-04",
@@ -403,7 +410,8 @@
     "lining": "100% Mulberry Silk Habotai Lining",
     "liningTr": "%100 Saf Dut İpeği Habotai Astar",
     "care": "Specialist dry clean only. Cool iron on reverse.",
-    "careTr": "Yalnızca uzman kuru temizleme. Düşük ısıda tersten ütüleyiniz."
+    "careTr": "Yalnızca uzman kuru temizleme. Düşük ısıda tersten ütüleyiniz.",
+    "slug": "architectural-tuxedo-blazer-dress"
   },
   {
     "id": "mdl-trs-01",
@@ -456,7 +464,8 @@
     "lining": "Half-lined to the knee with 100% Cupro",
     "liningTr": "Dize kadar %100 Cupro yarım astar",
     "care": "Specialist dry clean only. Medium iron with press cloth.",
-    "careTr": "Yalnızca uzman kuru temizleme. Ütü bezi ile orta ısıda ütüleyiniz."
+    "careTr": "Yalnızca uzman kuru temizleme. Ütü bezi ile orta ısıda ütüleyiniz.",
+    "slug": "pleated-wide-leg-wool-trousers"
   },
   {
     "id": "mdl-shr-01",
@@ -508,7 +517,8 @@
     "lining": "Unlined bespoke single-needle construction",
     "liningTr": "Astarsız, tek iğne ince terzi dikişi",
     "care": "Delicate wash at 30°C or dry clean. Hang dry.",
-    "careTr": "30°C hassas yıkama veya kuru temizleme. Asarak kurutunuz."
+    "careTr": "30°C hassas yıkama veya kuru temizleme. Asarak kurutunuz.",
+    "slug": "loversize-cotton-poplin-shirt"
   },
   {
     "id": "mdl-top-01",
@@ -560,7 +570,8 @@
     "lining": "Unlined seamless fine luxury knitwear",
     "liningTr": "Astarsız, dikişsiz ekstra ince lüks triko dokuma",
     "care": "Gentle hand wash cold with wool detergent. Dry flat.",
-    "careTr": "Soğuk suda yün şampuanı ile elde nazikçe yıkayınız. Sererek kurutunuz."
+    "careTr": "Soğuk suda yün şampuanı ile elde nazikçe yıkayınız. Sererek kurutunuz.",
+    "slug": "fine-gauge-ribbed-knit-top"
   },
   {
     "id": "mdl-skt-01",
@@ -608,6 +619,7 @@
     "lining": "100% Breathable Silk-Feel Viscose Slip Lining",
     "liningTr": "%100 İpek Dokulu Nefes Alan Viskon İç Astar",
     "care": "Specialist dry clean recommended. Cool iron.",
-    "careTr": "Uzman kuru temizleme önerilir. Düşük ısıda ütüleyiniz."
+    "careTr": "Uzman kuru temizleme önerilir. Düşük ısıda ütüleyiniz.",
+    "slug": "high-slit-pleated-silk-skirt"
   }
 ]

@@ -1,0 +1,23 @@
+{
+  "name": "maison-de-loup-atelier",
+  "version": "1.0.0",
+  "description": "Maison De Loup Atelier — The Art of the Blazer",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "test:phase3": "node test_phase3_audit.js",
+    "test:phase4": "node test_phase4_audit.js",
+    "test:phase5": "node test_phase5_audit.js",
+    "build:pages": "node scripts/generate_product_pages.js",
+    "build:sitemap": "node scripts/generate_sitemap.js"
+  },
+  "keywords": [
+    "luxury",
+    "fashion",
+    "blazers",
+    "atelier",
+    "maison-de-loup"
+  ],
+  "author": "Maison De Loup Atelier",
+  "license": "UNLICENSED"
+}

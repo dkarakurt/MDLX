@@ -1215,7 +1215,9 @@ function renderProducts() {
 
         <div class="product-info">
           <div class="product-meta-row">
-            <h3 class="product-title" onclick="openQuickView('${product.id}')">${title}</h3>
+            <h3 class="product-title" onclick="openQuickView('${product.id}')">
+              <a href="/urun/${product.slug || product.id}" onclick="event.stopPropagation()" style="color: inherit; text-decoration: none;">${title}</a>
+            </h3>
             <span class="product-price">${formatPrice(product.priceTRY)}</span>
           </div>
           <span class="product-fabric-hint">${fabric}</span>
@@ -1441,8 +1443,12 @@ function openQuickView(productId, initialImageIndex = 0) {
           </div>
         </div>
 
-        <!-- Dedicated Exit / Return to Home Button at bottom of inspection -->
-        <div class="qv-footer-nav-row">
+        <!-- Dedicated Product Page & Exit Buttons at bottom of inspection -->
+        <div class="qv-footer-nav-row" style="display: flex; flex-direction: column; gap: 8px;">
+          <a href="/urun/${product.slug || product.id}" class="qv-product-page-link" style="display: flex; align-items: center; justify-content: center; gap: 8px; width: 100%; padding: 12px; background: rgba(255,255,255,0.04); border: 1px solid rgba(197,168,128,0.3); color: var(--color-gold); font-size: 0.72rem; letter-spacing: 0.15em; text-transform: uppercase; text-decoration: none; transition: all 0.2s ease;">
+            <span>${isTr ? 'ÜRÜN DETAY SAYFASINA GİT' : 'VIEW PRODUCT PAGE'}</span>
+            <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+          </a>
           <button class="qv-back-to-home-full-btn" onclick="closeQuickViewModal(true)">
             <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/>
