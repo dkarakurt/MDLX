@@ -56,8 +56,9 @@ body {
 }
 
 .admin-brand img {
-  height: 44px;
+  height: 176px; /* 4X enlarged from 44px */
   width: auto;
+  object-fit: contain;
 }
 
 .admin-tag {
@@ -456,4 +457,15 @@ textarea.form-control {
 @keyframes slideIn {
   from { transform: translateY(10px); opacity: 0; }
   to { transform: translateY(0); opacity: 1; }
+}
+
+@media (max-width: 768px) {
+  .admin-navbar {
+    padding: 12px 20px;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+  .admin-brand img {
+    height: 110px;
+  }
 }
