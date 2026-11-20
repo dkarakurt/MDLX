@@ -17,3 +17,6 @@ Desktop.ini
 # Local Data / Messages
 contact_messages.json
 subscribers.json
+
+# Wrangler local state
+.wrangler/
