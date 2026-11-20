@@ -599,6 +599,7 @@ ${JSON.stringify(jsonLd, null, 2)}
     })};
   </script>
   <script src="/product-page.js"></script>
+  <script src="/site-nav.js" defer></script>
 </body>
 </html>`;
 

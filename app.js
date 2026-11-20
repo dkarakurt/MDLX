@@ -79,7 +79,7 @@ const DEFAULT_CONTENT = {
 
 // Application State
 const STATE = {
-  currentCategory: 'blazers',
+  currentCategory: 'all',
   currentCurrency: 'TRY',
   currentLang: 'TR',
   currentHeroSlide: 0,
@@ -114,6 +114,17 @@ const BADGE_MAP = {
     'ATELIER': 'ATELIER'
   }
 };
+
+// Merges locale JSON over the built-in dictionary without dropping nested keys
+// (a shallow Object.assign replaced whole objects like `footer`, breaking the page).
+function deepMerge(base, extra) {
+  const out = Array.isArray(base) ? base.slice() : Object.assign({}, base);
+  Object.keys(extra || {}).forEach(k => {
+    const b = out[k], e = extra[k];
+    out[k] = (b && e && typeof b === 'object' && typeof e === 'object' && !Array.isArray(e)) ? deepMerge(b, e) : e;
+  });
+  return out;
+}
 
 // Language Dictionary (with fallback for static / offline execution)
 const TRANSLATIONS = {
@@ -490,13 +501,13 @@ async function loadCustomContentAndProducts() {
     if (trRes.ok) {
       const trData = await trRes.json();
       if (trData && trData.nav) {
-        TRANSLATIONS.TR = Object.assign({}, TRANSLATIONS.TR, trData);
+        TRANSLATIONS.TR = deepMerge(TRANSLATIONS.TR, trData);
       }
     }
     if (enRes.ok) {
       const enData = await enRes.json();
       if (enData && enData.nav) {
-        TRANSLATIONS.EN = Object.assign({}, TRANSLATIONS.EN, enData);
+        TRANSLATIONS.EN = deepMerge(TRANSLATIONS.EN, enData);
       }
     }
   } catch(e) {}
