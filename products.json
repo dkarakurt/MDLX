@@ -1,10 +1,10 @@
 [
   {
     "id": "mdl-prod-1791792766078",
-    "name": "CEKET002",
-    "nameTr": "CEKET002",
+    "name": "Le Frangé Belted Check Blazer",
+    "nameTr": "Le Frangé Ekose Kemerli Blazer",
     "category": "blazers",
-    "badge": "HERO PIECE",
+    "badge": "NEW SEASON",
     "isHero": true,
     "priceTRY": 14500,
     "priceEUR": 384,
@@ -21,8 +21,8 @@
     ],
     "colors": [
       {
-        "name": "Noir",
-        "hex": "#111111"
+        "name": "Mocha Check",
+        "hex": "#6B5443"
       }
     ],
     "sizes": [
@@ -32,17 +32,23 @@
       "40",
       "42"
     ],
-    "description": "Crafted from 100% pure cashmere, this double-breasted atelier blazer delivers unparalleled elegance and warmth. Features sculpted shoulders and a fluid silhouette tailored to perfection.",
-    "descriptionTr": "Maison De Loup Atelier imzasını taşıyan, %100 saf kaşmir dokumasıyla soğuk havalarda benzersiz bir zarafet sunan lüks kruvaze blazer ceket. Keskin omuz yapısı ve akıcı silüetiyle zamansız bir duruş.",
-    "fabric": "%100 KAŞMİR",
-    "fabricTr": "%100 KAŞMİR",
-    "fit": "Tailored structured fit.",
-    "fitTr": "Kalıplı terzi formu.",
+    "description": "A Prince of Wales check blazer in warm mocha tones, cinched with a self-tie belt and finished with a hand-loomed fringe hem. Classic tailoring with an unhurried, modern attitude: the new-season signature of the house.",
+    "descriptionTr": "Sıcak kahve tonlarında Galler Prensi ekosesi, bele oturan bağcıklı kemer ve saçaklı etek ucu. Klasik terzi yakasını serbest ve modern bir tavırla buluşturan, Maison De Loup'un yeni sezon imza parçası.",
+    "fabric": "100% Cashmere",
+    "fabricTr": "%100 Kaşmir",
+    "fit": "Relaxed tailored fit, belted at the waist.",
+    "fitTr": "Bele oturan kemerli, rahat terzi kalıbı.",
     "details": [
-      "Maison De Loup Atelier özel üretimi"
+      "Prince of Wales check",
+      "Self-tie fabric belt",
+      "Fringed hem",
+      "Flap side pockets"
     ],
     "detailsTr": [
-      "Maison De Loup Atelier özel üretimi"
+      "Galler Prensi ekose desen",
+      "Bağcıklı kumaş kemer",
+      "Saçaklı etek ucu",
+      "Kapaklı yan cepler"
     ],
     "lining": "100% Cupro Silk & Italian Canvas Structured Lining",
     "liningTr": "%100 Cupro İpek & İtalyan Telalı Astar",
@@ -52,10 +58,10 @@
   },
   {
     "id": "mdl-prod-1791792518739",
-    "name": "PNTLN002",
-    "nameTr": "PNTLN002",
+    "name": "Le Frangé Check Trousers",
+    "nameTr": "Le Frangé Ekose Pantolon",
     "category": "trousers",
-    "badge": "HERO PIECE",
+    "badge": "NEW SEASON",
     "isHero": false,
     "priceTRY": 9900,
     "priceEUR": 262,
@@ -72,8 +78,8 @@
     ],
     "colors": [
       {
-        "name": "Noir",
-        "hex": "#111111"
+        "name": "Mocha Check",
+        "hex": "#6B5443"
       }
     ],
     "sizes": [
@@ -83,17 +89,23 @@
       "40",
       "42"
     ],
-    "description": "High-waisted tailored trousers with an engineered drape and clean sartorial lines. Designed to seamlessly complement Maison De Loup blazers from boardroom to evening.",
-    "descriptionTr": "Yüksek bel, dökümlü paça kesimi ve kusursuz terzilik çizgileriyle blazer ceketleri tamamlayan modern kadın kumaş pantolonu. Gün boyu konfor ve asil bir duruş.",
-    "fabric": "%100 KETEN",
-    "fabricTr": "%100 KETEN",
-    "fit": "Tailored structured fit.",
-    "fitTr": "Kalıplı terzi formu.",
+    "description": "Straight-leg trousers in the house's mocha Prince of Wales check, finished with a fringed hem that moves with every step. Wear them with the Le Frangé blazer as a suit, or alone with a sharp black jacket.",
+    "descriptionTr": "Galler Prensi ekosesinde, her adımda hareket eden saçaklı paçalarıyla düz kesim pantolon. Le Frangé blazer ile takım olarak ya da keskin siyah bir ceketle tek başına.",
+    "fabric": "100% Linen",
+    "fabricTr": "%100 Keten",
+    "fit": "High-rise, straight leg.",
+    "fitTr": "Yüksek bel, düz paça.",
     "details": [
-      "Maison De Loup Atelier özel üretimi"
+      "Prince of Wales check",
+      "Fringed hem",
+      "Slanted side pockets",
+      "Pairs with the Le Frangé blazer"
     ],
     "detailsTr": [
-      "Maison De Loup Atelier özel üretimi"
+      "Galler Prensi ekose desen",
+      "Saçaklı paça",
+      "Eğik yan cepler",
+      "Le Frangé blazer ile takım olur"
     ],
     "lining": "Pocket and inner waistband cupro lining",
     "liningTr": "Ceplik ve bel içi cupro terzi astarı",
@@ -103,10 +115,10 @@
   },
   {
     "id": "mdl-prod-1791792265725",
-    "name": "ELBISE 003",
-    "nameTr": "ELBISE 003",
+    "name": "La Côte Ribbed Knit Maxi Dress",
+    "nameTr": "La Côte Fitilli Triko Maxi Elbise",
     "category": "dresses",
-    "badge": "HERO PIECE",
+    "badge": "NEW SEASON",
     "isHero": false,
     "priceTRY": 5500,
     "priceEUR": 146,
@@ -123,8 +135,8 @@
     ],
     "colors": [
       {
-        "name": "Noir",
-        "hex": "#111111"
+        "name": "Sand Beige",
+        "hex": "#D9CBB6"
       }
     ],
     "sizes": [
@@ -134,17 +146,23 @@
       "40",
       "42"
     ],
-    "description": "An atelier couture dress merging clean architectural lines with fluid femininity. A versatile luxury piece created for discerning occasions.",
-    "descriptionTr": "Minimalist mimari hatlar ve feminen dökümün buluştuğu atelier couture elbise. Özel davetlerden modern şehir yaşamına uzanan lüks ve zamansız tasarım.",
-    "fabric": "%100 Pamuk",
+    "description": "A rib-knit turtleneck maxi dress that follows the body in one clean line, drawn in at the waist with a slim tasselled belt. Quietly sculptural, from daytime to evening.",
+    "descriptionTr": "Vücudu tek ve temiz bir çizgiyle takip eden fitilli triko balıkçı yaka maxi elbise; belde ince, püsküllü bir kemerle tamamlanır. Gündüzden geceye sessizce heykelsi bir duruş.",
+    "fabric": "100% Cotton",
     "fabricTr": "%100 Pamuk",
-    "fit": "Tailored structured fit.",
-    "fitTr": "Kalıplı terzi formu.",
+    "fit": "Body-skimming, ankle length.",
+    "fitTr": "Vücuda oturan, bilek boyu.",
     "details": [
-      "Maison De Loup Atelier özel üretimi"
+      "Rib-knit texture",
+      "Turtleneck",
+      "Slim tasselled belt",
+      "Ankle length"
     ],
     "detailsTr": [
-      "Maison De Loup Atelier özel üretimi"
+      "Fitilli triko doku",
+      "Balıkçı yaka",
+      "İnce püsküllü kemer",
+      "Bilek boyu"
     ],
     "lining": "100% Habotai Silk Breathable Lining",
     "liningTr": "%100 Habotai İpek Nefes Alan Astar",
@@ -154,8 +172,8 @@
   },
   {
     "id": "mdl-prod-1791785220112",
-    "name": "WHITE CLASSIC",
-    "nameTr": "BEYAZ KLASIK",
+    "name": "L'Ivoire Classic Blazer",
+    "nameTr": "L'Ivoire Klasik Blazer Ceket",
     "category": "blazers",
     "badge": "SIGNATURE",
     "isHero": true,
@@ -167,8 +185,8 @@
     "secondaryImage": "assets/images/uploaded_1791786960676_Screenshot_30.jpg",
     "colors": [
       {
-        "name": "Noir",
-        "hex": "#111111"
+        "name": "Ivoire",
+        "hex": "#EEE8DC"
       }
     ],
     "sizes": [
@@ -180,7 +198,7 @@
     ],
     "description": "A tailored classic blazer in crisp white, crafted with canvassed construction and luminous tonal buttons. A commanding wardrobe cornerstone for every season.",
     "descriptionTr": "Saf beyazın zamansız zarafetiyle tasarlanmış klasik terzi işi blazer ceket. Akıcı kumaş dokusu, kusursuz telalı kalıbı ve sedef tonlu düğme detaylarıyla gardırobun vazgeçilmezi.",
-    "fabric": "%100 Saf Anadolu Yünü",
+    "fabric": "100% Pure Anatolian Wool",
     "fabricTr": "%100 Saf Anadolu Yünü",
     "fit": "Tailored structured fit.",
     "fitTr": "Kalıplı terzi formu.",

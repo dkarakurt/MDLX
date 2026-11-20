@@ -10,7 +10,7 @@ const DEFAULT_CONTENT = {
   "heroTitle": "MAISON DE LOUP ATELIER",
   "heroSubTR": "THE ART OF THE BLAZER",
   "heroSubEN": "THE ART OF THE BLAZER",
-  "heroProvTR": "Designed in Türkiye<br>Made for the world.",
+  "heroProvTR": "Türkiye'de tasarlandı,<br>dünya için yaratıldı.",
   "heroProvEN": "Designed in Türkiye<br>Made for the world.",
   "heroCtaTR": "KOLEKSİYONU KEŞFET",
   "heroCtaEN": "EXPLORE COLLECTION",
@@ -19,7 +19,7 @@ const DEFAULT_CONTENT = {
   "heroSlide3": "assets/images/product_blazer_ecru.jpg",
   "sigPretitleTR": "İMZA TASARIM",
   "sigPretitleEN": "SIGNATURE PIECE",
-  "sigTitleTR": "MODERN KADIN GİYİM",
+  "sigTitleTR": "MODERN KADIN GİYİMİ",
   "sigTitleEN": "THE SIGNATURE BLAZER",
   "sigDescTR": "Zamansız silüetler. Modern tavır.",
   "sigDescEN": "Timeless shapes. Modern attitude.",
@@ -100,6 +100,7 @@ const BADGE_MAP = {
     'BESTSELLER': 'ÇOK SATAN',
     'DNA ACCESSIBLE': 'ERİŞİLEBİLİR LÜKS',
     'LIMITED RUN': 'SINIRLI SAYIDA',
+    'NEW SEASON': 'YENİ SEZON',
     'ATELIER': 'ATELIER'
   },
   EN: {
@@ -111,6 +112,7 @@ const BADGE_MAP = {
     'BESTSELLER': 'BESTSELLER',
     'DNA ACCESSIBLE': 'ACCESSIBLE LUXURY',
     'LIMITED RUN': 'LIMITED RUN',
+    'NEW SEASON': 'NEW SEASON',
     'ATELIER': 'ATELIER'
   }
 };
@@ -140,11 +142,11 @@ const TRANSLATIONS = {
       contact: "İLETİŞİM"
     },
     heroSub: "THE ART OF THE BLAZER",
-    heroProv: "Designed in Türkiye<br>Made for the world.",
+    heroProv: "Türkiye'de tasarlandı,<br>dünya için yaratıldı.",
     heroCta: "KOLEKSİYONU KEŞFET",
     heroStoryTag: "ATELIER HİKAYESİ",
     sigPretitle: "İMZA TASARIM",
-    sigTitle: "MODERN KADIN GİYİM",
+    sigTitle: "MODERN KADIN GİYİMİ",
     sigDesc: "Zamansız silüetler. Modern tavır.",
     sigLink: "ÜRÜNLERİ İNCELE",
     wolfTitle: "KURDUN EVİ — THE HOUSE OF THE WOLF",
@@ -197,7 +199,7 @@ const TRANSLATIONS = {
     emptyCartSub: "Koleksiyonumuzdaki imza parçaları keşfedin.",
     subtotal: "ARA TOPLAM",
     checkout: "GÜVENLİ ÖDEMEYE GEÇ",
-    quickView: "HIZLI BAKIŞ (5 GÖRSEL)",
+    quickView: "HIZLI BAKIŞ",
     addToBag: "ÇANTAYA EKLE",
     storyModal: {
       subtitle: "KURDUN EVİ • THE HOUSE OF THE WOLF",
@@ -334,7 +336,7 @@ const TRANSLATIONS = {
     emptyCartSub: "Discover the signature creations in our collection.",
     subtotal: "SUBTOTAL",
     checkout: "PROCEED TO SECURE CHECKOUT",
-    quickView: "QUICK VIEW (5 PHOTOS)",
+    quickView: "QUICK VIEW",
     addToBag: "ADD TO BAG",
     storyModal: {
       subtitle: "THE HOUSE OF THE WOLF",
@@ -1197,7 +1199,7 @@ function renderProducts() {
     const isWishlisted = STATE.wishlist.includes(product.id);
     const title = STATE.currentLang === 'TR' ? (product.nameTr || product.name) : product.name;
     const fabric = STATE.currentLang === 'TR' ? (product.fabricTr || product.fabric) : product.fabric;
-    const badgeText = BADGE_MAP[STATE.currentLang]?.[product.badge] || product.badge || 'ATELIER';
+    const badgeText = product.badge ? (BADGE_MAP[STATE.currentLang]?.[product.badge] || product.badge) : '';
     const images = (product.images && product.images.length > 0)
       ? product.images
       : [product.primaryImage, product.secondaryImage || product.primaryImage];
@@ -1213,12 +1215,12 @@ function renderProducts() {
             <source srcset="${primaryWebp}" type="image/webp">
             <img src="${primaryWebp}" onerror="this.onerror=null; this.src='${primaryFallback}';" alt="${title}" class="product-img primary" id="cardImg-${product.id}" loading="lazy" width="400" height="533">
           </picture>
-          <span class="product-badge">${badgeText}</span>
+          ${badgeText ? `<span class="product-badge">${badgeText}</span>` : ''}
           
           <button class="wishlist-heart-btn ${isWishlisted ? 'active' : ''}" 
                   onclick="event.stopPropagation(); toggleWishlist('${product.id}')" 
                   aria-label="Favorilere ekle">
-            <svg width="16" height="16" fill="${isWishlisted ? '#e11d48' : 'none'}" viewBox="0 0 24 24" stroke="currentColor">
+            <svg width="16" height="16" fill="${isWishlisted ? '#c5a880' : 'none'}" viewBox="0 0 24 24" stroke="currentColor">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
             </svg>
           </button>
@@ -1235,7 +1237,7 @@ function renderProducts() {
 
           <div class="quick-action-overlay">
             <button class="btn-quick-view" onclick="event.stopPropagation(); openQuickView('${product.id}')">
-              ${STATE.currentLang === 'TR' ? 'HIZLI BAKIŞ (5 GÖRSEL)' : 'QUICK VIEW (5 PHOTOS)'}
+              ${STATE.currentLang === 'TR' ? 'HIZLI BAKIŞ' : 'QUICK VIEW'}
             </button>
             <div class="size-quick-select" onclick="event.stopPropagation()">
               ${(product.sizes || ["36"]).map(size => `
@@ -1505,7 +1507,7 @@ function openQuickView(productId, initialImageIndex = 0) {
             ${isTr ? 'ÇANTAYA EKLE' : 'ADD TO BAG'} &bull; ${formatPrice(product.priceTRY)}
           </button>
           <button class="qv-wishlist-toggle" onclick="toggleWishlist('${product.id}')" aria-label="Favorilere ekle">
-            <svg width="20" height="20" fill="${STATE.wishlist.includes(product.id) ? '#e11d48' : 'none'}" viewBox="0 0 24 24" stroke="currentColor">
+            <svg width="20" height="20" fill="${STATE.wishlist.includes(product.id) ? '#c5a880' : 'none'}" viewBox="0 0 24 24" stroke="currentColor">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
             </svg>
           </button>

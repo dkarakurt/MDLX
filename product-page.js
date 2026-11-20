@@ -351,7 +351,7 @@ function togglePdpWishlist() {
   localStorage.setItem('mdl_wishlist', JSON.stringify(PDP_STATE.wishlist));
   const svg = document.querySelector('#pdpWishBtn svg');
   if (svg) {
-    svg.setAttribute('fill', idx > -1 ? 'none' : '#e11d48');
+    svg.setAttribute('fill', idx > -1 ? 'none' : '#c5a880');
   }
 }
 window.togglePdpWishlist = togglePdpWishlist;
