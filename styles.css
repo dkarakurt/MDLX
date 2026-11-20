@@ -3346,6 +3346,7 @@ html, body { overflow-x: clip; }
 .nav-link { white-space: nowrap; }
 
 /* Large logo on arrival, compact once the header becomes sticky */
+.site-header.scrolled { min-height: 0; }
 .site-header.scrolled .brand-logo img,
 .site-header.scrolled #headerLogo { height: 76px; }
 
