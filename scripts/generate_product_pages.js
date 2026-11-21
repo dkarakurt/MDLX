@@ -365,7 +365,7 @@ ${JSON.stringify(jsonLd, null, 2)}
             <span class="acc-icon">+</span>
           </div>
           <div class="pdp-acc-content">
-            <p>Maison De Loup Atelier parçaları siparişinize özel lüks koruma kılıfı ve imza kutusuyla sevk edilir. Tüm siparişlerde 14 gün koşulsuz iade ve değişim güvencesi sunulmaktadır. İstanbul içi aynı gün veya ertesi gün ekspres kurye imkanı mevcuttur.</p>
+            <p>Maison De Loup Atelier parçaları siparişinize özel lüks koruma kılıfı ve imza kutusuyla sevk edilir. Tüm siparişlerde 14 gün koşulsuz iade ve değişim güvencesi sunulmaktadır. İstanbul içi aynı gün veya ertesi gün ekspres kurye imkânı mevcuttur.</p>
           </div>
         </div>
       </div>
@@ -458,7 +458,7 @@ ${JSON.stringify(jsonLd, null, 2)}
         <div class="size-guide-measure-list">
           <div>
             <strong style="color: #fff;" id="sgBustTitle">1. Göğüs Ölçüsü:</strong>
-            <p id="sgBustDesc">Mezurayı sırtınızdan öne doğru, göğsünüzün en dolgun noktasından geçirerek yere paralel tutarak ölçünüz.</p>
+            <p id="sgBustDesc">Mezurayı sırtınızdan öne doğru, göğsünüzün en dolgun noktasından geçirip yere paralel tutarak ölçünüz.</p>
           </div>
           <div>
             <strong style="color: #fff;" id="sgWaistTitle">2. Bel Ölçüsü:</strong>
@@ -466,11 +466,11 @@ ${JSON.stringify(jsonLd, null, 2)}
           </div>
           <div>
             <strong style="color: #fff;" id="sgHipsTitle">3. Basen Ölçüsü:</strong>
-            <p id="sgHipsDesc">Ayaklarınız bitişik vaziyette dururken, kalçanızın en geniş ve dolgun noktasından çevre ölçüsü alınız.</p>
+            <p id="sgHipsDesc">Ayaklarınız bitişik dururken, kalçanızın en geniş ve dolgun noktasından çevre ölçüsü alınız.</p>
           </div>
           <div>
             <strong style="color: #fff;" id="sgFitTitle">4. Terzilik &amp; Kalıp Notu:</strong>
-            <p id="sgFitDesc">Blazer ceketlerimiz İtalyan mimari omuz vatkalı kesime sahiptir. İki beden arasında kaldığınızda ceketlerde bir üst bedeni tercih etmeniz önerilir.</p>
+            <p id="sgFitDesc">Blazer ceketlerimiz İtalyan usulü vatkalı, yapılandırılmış omuz kesimine sahiptir. İki beden arasında kaldığınızda ceketlerde bir üst bedeni tercih etmeniz önerilir.</p>
           </div>
         </div>
       </div>
@@ -564,7 +564,7 @@ ${JSON.stringify(jsonLd, null, 2)}
         <h4 class="footer-heading">ATELIER &amp; İLETİŞİM</h4>
         <ul class="footer-links">
           <li><a href="/iletisim">Showroom &amp; Randevu</a></li>
-          <li><a href="/#splitSection">Hikayemiz: Kurdun Evi</a></li>
+          <li><a href="/#splitSection">Hikâyemiz: Kurdun Evi</a></li>
           <li><a href="/#journalSection">The Journal (Editoryal)</a></li>
           <li><a href="/kargo-ve-teslimat">Kargo &amp; Teslimat</a></li>
           <li><a href="/iade-ve-degisim">İade &amp; Değişim</a></li>

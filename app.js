@@ -30,7 +30,7 @@ const DEFAULT_CONTENT = {
   "wolfTitleEN": "THE HOUSE OF THE WOLF",
   "wolfTextTR": "Maison de Loup, 'Kurdun Evi' anlamına gelir. Özgürlük, güç, bağımsızlık ve yol göstericiliği temsil eden kurt sembolünden ilham alan Maison De Loup Atelier, Türk tasarımını global moda dünyasıyla buluşturan modern ve zamansız bir kadın giyim markasıdır.",
   "wolfTextEN": "Maison de Loup translates to 'The House of the Wolf'. Inspired by the wolf's profound symbolism of freedom, power, and independence in Turkish culture, Maison De Loup Atelier merges Turkish design mastery with global high-fashion silhouettes.",
-  "wolfLinkTR": "HİKAYEMİZ",
+  "wolfLinkTR": "HİKÂYEMİZ",
   "wolfLinkEN": "OUR STORY",
   "wolfImage": "assets/images/uploaded_1791784507432_Gemini_Generated_Image_1bwikn1bwikn1bwi.jpg",
   "catTitleTR": "KATEGORİLERE GÖRE KEŞFET",
@@ -74,7 +74,7 @@ const DEFAULT_CONTENT = {
   "newsletterDescEN": "Be the first to know about new arrivals, private salon presentations and limited drops.",
   "storyVisionTR": "Maison de Loup… Fransızca karşılığıyla “Kurdun Evi.”\n\nMarkanın çıkış noktası, kurdun Türk kültüründeki güçlü ve sembolik anlamından ilham alıyor. Kurt; özgürlüğü, gücü, bağımsızlığı ve yol göstericiliği temsil ediyor. Biz bu güçlü sembolü, modern ve global bir moda markasının kimliğine dönüştürmek istiyoruz.\n\nMaison De Loup Atelier’nin amacı; Türk tasarımını yalnızca Türkiye’de değil, dünyanın farklı noktalarında erişilebilir ve tercih edilir hale getirmek. Bunu yaparken en önemli değerlerimizden biri kalite. Tasarımdan kumaşa, işçilikten ürün deneyimine kadar her aşamada kaliteden ödün vermeden; güncel trendleri takip eden ancak onları birebir kopyalamak yerine kendi kimliğiyle yorumlayan bir marka yaratmayı hedefliyoruz.",
   "storyMissionTR": "Türk tasarım kültüründen ve yerel üretim gücünden beslenerek; çağdaş tasarım anlayışını yüksek kalite, özgünlük ve erişilebilirlik ile buluşturmak.\n\nFarklı coğrafyalardaki kadınların ihtiyaçlarını ve yaşam tarzlarını anlayarak, onların stiline ilham veren, güçlü ve zamansız ürünler tasarlamak.\n\nMaison De Loup Atelier olarak misyonumuz; Türk tasarımının özgün karakterini global moda dünyasının dinamikleriyle birleştirerek, uluslararası ölçekte değer yaratan ve kadınların kendilerini ifade etmelerine alan açan bir moda markası olmak.",
-  "storyFounderTR": "Yaklaşık 20 yılı aşkın tekstil ve moda sektöründeki deneyimim, Maison De Loup Atelier’nin en güçlü yapı taşlarından biri olacak. Kariyerim boyunca triko, dokuma, denim ve deri gibi farklı ürün gruplarıyla çalışırken tasarımın ve üretimin bütününe hakim bir deneyim kazandım.\n\nHedefim sadece güzel ürünler tasarlayan bir marka değil; hangi ürünün neden üretileceğini, hangi müşteriye hitap edeceğini bilen sürdürülebilir bir global moda markası kurmak."
+  "storyFounderTR": "20 yılı aşkın tekstil ve moda sektöründeki deneyimim, Maison De Loup Atelier’nin en güçlü yapı taşlarından biri olacak. Kariyerim boyunca triko, dokuma, denim ve deri gibi farklı ürün gruplarıyla çalışırken tasarımın ve üretimin bütününe hakim bir deneyim kazandım.\n\nHedefim sadece güzel ürünler tasarlayan bir marka değil; hangi ürünün neden üretileceğini, hangi müşteriye hitap edeceğini bilen sürdürülebilir bir global moda markası kurmak."
 };
 
 // Application State
@@ -144,14 +144,14 @@ const TRANSLATIONS = {
     heroSub: "THE ART OF THE BLAZER",
     heroProv: "Türkiye'de tasarlandı,<br>dünya için yaratıldı.",
     heroCta: "KOLEKSİYONU KEŞFET",
-    heroStoryTag: "ATELIER HİKAYESİ",
+    heroStoryTag: "ATELIER HİKÂYESİ",
     sigPretitle: "İMZA TASARIM",
     sigTitle: "MODERN KADIN GİYİMİ",
     sigDesc: "Zamansız silüetler. Modern tavır.",
     sigLink: "ÜRÜNLERİ İNCELE",
     wolfTitle: "KURDUN EVİ — THE HOUSE OF THE WOLF",
     wolfText: "Maison de Loup, 'Kurdun Evi' anlamına gelir. Özgürlük, güç, bağımsızlık ve yol göstericiliği temsil eden kurt sembolünden ilham alan Maison De Loup Atelier, Türk tasarımını global moda dünyasıyla buluşturan modern ve zamansız bir kadın giyim markasıdır.",
-    wolfLink: "HİKAYEMİZ",
+    wolfLink: "HİKÂYEMİZ",
     catTitle: "KATEGORİLERE GÖRE KEŞFET",
     catBadge: "İMZA KOLEKSİYON",
     categories: {
@@ -215,7 +215,7 @@ const TRANSLATIONS = {
       strategyAxes: "<strong>Ürün Stratejimizin 3 Temel Ekseni:</strong><br><strong>1. İmza Ürünler:</strong> Üst segment terzilik ve saf yün işçiliğiyle üretilen imza blazer ceketler.<br><strong>2. Tamamlayıcı Koleksiyon:</strong> Blazer silüetini kusursuz tamamlayan pantolon, poplin gömlek, ipek etek ve elbiseler.<br><strong>3. Markanın DNA’sını Taşıyan Erişilebilir Ürünler:</strong> Genç tüketicilerin dinamik beklentilerine cevap veren, kaliteden ödün vermeyen erişilebilir lüks parçalar.",
       founderBadge: "KURUCU VİZYONU",
       founderTitle: "20 Yılı Aşkın Tekstil ve Moda Birikimi",
-      founderText: "Yaklaşık <strong>20 yılı aşkın tekstil ve moda sektöründeki deneyim</strong>, Maison De Loup Atelier’nin en güçlü yapı taşlarından biridir. Kariyer boyunca triko, dokuma, denim ve deri gibi farklı ürün gruplarında, kumaşlarda ve üretim tekniklerinde edinilen uzmanlık; koleksiyon oluşturma sürecinin tasarım aşamasından üretime kadar bütününü mükemmeliyetle yönetmeyi sağlamaktadır.<br><br>En büyük hedefimiz; markanın her koleksiyonunda aynı kimliği hissettiren ancak kendini tekrar etmeyen; güncel, özgün ve zamansız tasarımlar ortaya koymak. Tasarım ile ticari bakış açısını bir arada harmanlayarak, Türk tasarımını gururla temsil eden global bir moda evi inşa ediyoruz."
+      founderText: "<strong>20 yılı aşkın tekstil ve moda sektöründeki deneyim</strong>, Maison De Loup Atelier’nin en güçlü yapı taşlarından biridir. Kariyer boyunca triko, dokuma, denim ve deri gibi farklı ürün gruplarında, kumaşlarda ve üretim tekniklerinde edinilen uzmanlık; koleksiyon oluşturma sürecinin tasarım aşamasından üretime kadar bütününü mükemmeliyetle yönetmeyi sağlamaktadır.<br><br>En büyük hedefimiz; markanın her koleksiyonunda aynı kimliği hissettiren ancak kendini tekrar etmeyen; güncel, özgün ve zamansız tasarımlar ortaya koymak. Tasarım ile ticari bakış açısını bir arada harmanlayarak, Türk tasarımını gururla temsil eden global bir moda evi inşa ediyoruz."
     },
     footer: {
       copyright: "© 2026 Maison De Loup Atelier. Tüm hakları saklıdır. Türkiye'de Tasarlandı.",
@@ -252,13 +252,13 @@ const TRANSLATIONS = {
       thLength: "Ceket Boyu (cm)",
       measureTitle: "DOĞRU BEDEN NASIL ÖLÇÜLÜR?",
       bustTitle: "1. Göğüs Ölçüsü:",
-      bustDesc: "Mezurayı sırtınızdan öne doğru, göğsünüzün en dolgun noktasından geçirerek yere paralel tutarak ölçünüz.",
+      bustDesc: "Mezurayı sırtınızdan öne doğru, göğsünüzün en dolgun noktasından geçirip yere paralel tutarak ölçünüz.",
       waistTitle: "2. Bel Ölçüsü:",
       waistDesc: "Doğal bel kıvrımınızın en dar noktasından, mezurayı aşırı sıkmadan ve gevşetmeden ölçünüz.",
       hipsTitle: "3. Basen Ölçüsü:",
-      hipsDesc: "Ayaklarınız bitişik vaziyette dururken, kalçanızın en geniş ve dolgun noktasından çevre ölçüsü alınız.",
+      hipsDesc: "Ayaklarınız bitişik dururken, kalçanızın en geniş ve dolgun noktasından çevre ölçüsü alınız.",
       fitTitle: "4. Terzilik & Kalıp Notu:",
-      fitDesc: "Blazer ceketlerimiz İtalyan mimari omuz vatkalı kesime sahiptir. İki beden arasında kaldığınızda ceketlerde bir üst bedeni tercih etmeniz önerilir."
+      fitDesc: "Blazer ceketlerimiz İtalyan usulü vatkalı, yapılandırılmış omuz kesimine sahiptir. İki beden arasında kaldığınızda ceketlerde bir üst bedeni tercih etmeniz önerilir."
     },
     trust: {
       ssl: "256-Bit SSL Güvenli Ödeme",
@@ -1354,7 +1354,7 @@ function openQuickView(productId, initialImageIndex = 0) {
   const desc = isTr ? (product.descriptionTr || product.description) : product.description;
   const fabric = isTr ? (product.fabricTr || product.fabric || 'Saf Yün Dokuma') : (product.fabric || '100% Virgin Wool');
   const fit = isTr ? (product.fitTr || product.fit || 'Mimari Kalıp') : (product.fit || 'Architectural Fit');
-  const lining = isTr ? (product.liningTr || product.lining || '%100 Jakar Cupro Astar') : (product.lining || '100% Jacquard Cupro Lining');
+  const lining = isTr ? (product.liningTr || product.lining || '%100 kupro jakarlı astar') : (product.lining || '100% Jacquard Cupro Lining');
   const care = isTr ? (product.careTr || product.care || 'Sadece Kuru Temizleme') : (product.care || 'Dry Clean Only');
 
   const categoryObj = CATEGORIES_DATA.find(c => c.id === product.category);

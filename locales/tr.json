@@ -24,18 +24,18 @@
     "slogan": "THE ART OF THE BLAZER",
     "provenance": "Türkiye'de tasarlandı,<br>dünya için yaratıldı.",
     "cta": "KOLEKSİYONU KEŞFET",
-    "storyTag": "ATELIER HİKAYESİ"
+    "storyTag": "ATELIER HİKÂYESİ"
   },
   "signature": {
     "badge": "İMZA TASARIM",
-    "title": "MODERN KADIN GİYİM",
+    "title": "MODERN KADIN GİYİMİ",
     "desc": "Zamansız silüetler. Modern tavır.",
     "link": "ÜRÜNLERİ İNCELE"
   },
   "wolf": {
     "title": "KURDUN EVİ — THE HOUSE OF THE WOLF",
     "text": "Maison de Loup, 'Kurdun Evi' anlamına gelir. Özgürlük, güç, bağımsızlık ve yol göstericiliği temsil eden kurt sembolünden ilham alan Maison De Loup Atelier, Türk tasarımını global moda dünyasıyla buluşturan modern ve zamansız bir kadın giyim markasıdır.",
-    "link": "HİKAYEMİZ"
+    "link": "HİKÂYEMİZ"
   },
   "categories": {
     "title": "KATEGORİLERE GÖRE KEŞFET",
@@ -68,7 +68,7 @@
       "dresses": "ELBİSE",
       "skirts": "ETEK"
     },
-    "quickViewBtn": "HIZLI BAKIŞ (5 GÖRSEL)"
+    "quickViewBtn": "HIZLI BAKIŞ"
   },
   "journal": {
     "title": "THE JOURNAL",
@@ -108,7 +108,7 @@
     "strategyAxes": "<strong>Ürün Stratejimizin 3 Temel Ekseni:</strong><br><strong>1. İmza Ürünler:</strong> Üst segment terzilik ve saf yün işçiliğiyle üretilen imza blazer ceketler.<br><strong>2. Tamamlayıcı Koleksiyon:</strong> Blazer silüetini kusursuz tamamlayan pantolon, poplin gömlek, ipek etek ve elbiseler.<br><strong>3. Markanın DNA’sını Taşıyan Erişilebilir Ürünler:</strong> Genç tüketicilerin dinamik beklentilerine cevap veren, kaliteden ödün vermeyen erişilebilir lüks parçalar.",
     "founderBadge": "KURUCU VİZYONU",
     "founderTitle": "20 Yılı Aşkın Tekstil ve Moda Birikimi",
-    "founderText": "Yaklaşık <strong>20 yılı aşkın tekstil ve moda sektöründeki deneyim</strong>, Maison De Loup Atelier’nin en güçlü yapı taşlarından biridir. Kariyer boyunca triko, dokuma, denim ve deri gibi farklı ürün gruplarında, kumaşlarda ve üretim tekniklerinde edinilen uzmanlık; koleksiyon oluşturma sürecinin tasarım aşamasından üretime kadar bütününü mükemmeliyetle yönetmeyi sağlamaktadır.<br><br>En büyük hedefimiz; markanın her koleksiyonunda aynı kimliği hissettiren ancak kendini tekrar etmeyen; güncel, özgün ve zamansız tasarımlar ortaya koymak. Tasarım ile ticari bakış açısını bir arada harmanlayarak, Türk tasarımını gururla temsil eden global bir moda evi inşa ediyoruz."
+    "founderText": "<strong>20 yılı aşkın tekstil ve moda sektöründeki deneyim</strong>, Maison De Loup Atelier’nin en güçlü yapı taşlarından biridir. Kariyer boyunca triko, dokuma, denim ve deri gibi farklı ürün gruplarında, kumaşlarda ve üretim tekniklerinde edinilen uzmanlık; koleksiyon oluşturma sürecinin tasarım aşamasından üretime kadar bütününü mükemmeliyetle yönetmeyi sağlamaktadır.<br><br>En büyük hedefimiz; markanın her koleksiyonunda aynı kimliği hissettiren ancak kendini tekrar etmeyen; güncel, özgün ve zamansız tasarımlar ortaya koymak. Tasarım ile ticari bakış açısını bir arada harmanlayarak, Türk tasarımını gururla temsil eden global bir moda evi inşa ediyoruz."
   },
   "cart": {
     "title": "ALIŞVERİŞ ÇANTASI",
@@ -162,13 +162,13 @@
     "thLength": "Ceket Boyu (cm)",
     "measureTitle": "DOĞRU BEDEN NASIL ÖLÇÜLÜR?",
     "bustTitle": "1. Göğüs Ölçüsü:",
-    "bustDesc": "Mezurayı sırtınızdan öne doğru, göğsünüzün en dolgun noktasından geçirerek yere paralel tutarak ölçünüz.",
+    "bustDesc": "Mezurayı sırtınızdan öne doğru, göğsünüzün en dolgun noktasından geçirip yere paralel tutarak ölçünüz.",
     "waistTitle": "2. Bel Ölçüsü:",
     "waistDesc": "Doğal bel kıvrımınızın en dar noktasından, mezurayı aşırı sıkmadan ve gevşetmeden ölçünüz.",
     "hipsTitle": "3. Basen Ölçüsü:",
-    "hipsDesc": "Ayaklarınız bitişik vaziyette dururken, kalçanızın en geniş ve dolgun noktasından çevre ölçüsü alınız.",
+    "hipsDesc": "Ayaklarınız bitişik dururken, kalçanızın en geniş ve dolgun noktasından çevre ölçüsü alınız.",
     "fitTitle": "4. Terzilik & Kalıp Notu:",
-    "fitDesc": "Blazer ceketlerimiz İtalyan mimari omuz vatkalı kesime sahiptir. İki beden arasında kaldığınızda ceketlerde bir üst bedeni tercih etmeniz önerilir."
+    "fitDesc": "Blazer ceketlerimiz İtalyan usulü vatkalı, yapılandırılmış omuz kesimine sahiptir. İki beden arasında kaldığınızda ceketlerde bir üst bedeni tercih etmeniz önerilir."
   },
   "trust": {
     "ssl": "256-Bit SSL Güvenli Ödeme",
