@@ -47,8 +47,8 @@ it('index.html içinde Organization ve WebSite JSON-LD şemaları bulunmalı', (
 console.log('\n2. Statik Ürün Sayfaları (/urun/{slug}.html)');
 const products = JSON.parse(fs.readFileSync('products.json', 'utf8'));
 
-it('12 ürünün her biri için urun/ dizininde .html sayfası oluşturulmuş olmalı', () => {
-  assert.strictEqual(products.length, 12, '12 ürün bulunmalı');
+it('27 ürünün her biri için urun/ dizininde .html sayfası oluşturulmuş olmalı', () => {
+  assert.strictEqual(products.length, 27, '27 ürün bulunmalı');
   products.forEach(p => {
     const filePath = path.join('urun', `${p.slug}.html`);
     assert.ok(fs.existsSync(filePath), `Ürün sayfası eksik: ${filePath}`);
@@ -103,9 +103,9 @@ it('sitemap.xml kök dizinde mevcut ve geçerli XML formatında olmalı', () => 
   assert.ok(sitemapXml.includes('<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'), 'urlset şeması eksik');
 });
 
-it('sitemap.xml içinde tam 20 adet URL bulunmalı (Ana Sayfa + 7 Yasal Sayfa + 12 Ürün)', () => {
+it('sitemap.xml içinde tam 35 adet URL bulunmalı (Ana Sayfa + 7 Yasal Sayfa + 27 Ürün)', () => {
   const urlMatches = sitemapXml.match(/<url>/g) || [];
-  assert.strictEqual(urlMatches.length, 20, `20 URL bekleniyordu, ${urlMatches.length} bulundu`);
+  assert.strictEqual(urlMatches.length, 35, `35 URL bekleniyordu, ${urlMatches.length} bulundu`);
   
   // Ana sayfa ve yasal sayfalar kontrolü
   assert.ok(sitemapXml.includes('<loc>https://maisondeloup.com/</loc>'), 'Ana sayfa linki eksik');
@@ -117,7 +117,7 @@ it('sitemap.xml içinde tam 20 adet URL bulunmalı (Ana Sayfa + 7 Yasal Sayfa + 
   assert.ok(sitemapXml.includes('<loc>https://maisondeloup.com/iade-ve-degisim</loc>'), 'İade ve değişim linki eksik');
   assert.ok(sitemapXml.includes('<loc>https://maisondeloup.com/kargo-ve-teslimat</loc>'), 'Kargo ve teslimat linki eksik');
 
-  // 12 ürün kontrolü
+  // 27 ürün kontrolü
   products.forEach(p => {
     assert.ok(sitemapXml.includes(`<loc>https://maisondeloup.com/urun/${p.slug}</loc>`), `Sitemap içinde ${p.slug} eksik`);
   });
@@ -127,9 +127,9 @@ it('sitemap.xml içindeki her kayıtta lastmod, changefreq ve priority bulunmal�
   const lastmodCount = (sitemapXml.match(/<lastmod>/g) || []).length;
   const changefreqCount = (sitemapXml.match(/<changefreq>/g) || []).length;
   const priorityCount = (sitemapXml.match(/<priority>/g) || []).length;
-  assert.strictEqual(lastmodCount, 20, 'lastmod sayısı 20 olmalı');
-  assert.strictEqual(changefreqCount, 20, 'changefreq sayısı 20 olmalı');
-  assert.strictEqual(priorityCount, 20, 'priority sayısı 20 olmalı');
+  assert.strictEqual(lastmodCount, 35, 'lastmod sayısı 35 olmalı');
+  assert.strictEqual(changefreqCount, 35, 'changefreq sayısı 35 olmalı');
+  assert.strictEqual(priorityCount, 35, 'priority sayısı 35 olmalı');
 });
 
 // 4. Sunucu MIME Type ve Yönlendirme Desteği

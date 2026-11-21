@@ -22,7 +22,8 @@ const CATEGORY_NAMES = {
   shirts: { tr: "Gömlek", en: "Shirts" },
   tops: { tr: "Triko & Üst", en: "Knitwear & Tops" },
   dresses: { tr: "Elbise", en: "Dresses" },
-  skirts: { tr: "Etek", en: "Skirts" }
+  skirts: { tr: "Etek", en: "Skirts" },
+  accessories: { tr: "Aksesuar", en: "Accessories" }
 };
 
 const BADGE_MAP = {
@@ -35,6 +36,7 @@ const BADGE_MAP = {
   "DNA ACCESSIBLE": "ERİŞİLEBİLİR LÜKS",
   "LIMITED RUN": "SINIRLI SAYIDA",
   "NEW SEASON": "YENİ SEZON",
+  "SS27": "SS27",
   "ATELIER": "ATELIER"
 };
 
@@ -187,7 +189,7 @@ ${JSON.stringify(jsonLd, null, 2)}
 
     <!-- Center Navigation Links -->
     <nav class="main-nav" aria-label="Ana Menü">
-      <a href="/?kategori=all" class="nav-link" id="navNewIn">YENİ GELENLER</a>
+      <a href="/?kategori=ss27" class="nav-link" id="navNewIn">YENİ GELENLER</a>
       <a href="/?kategori=blazers" class="nav-link ${product.category === 'blazers' ? 'active' : ''}" id="navBlazers">BLAZER CEKET</a>
       <a href="/#categorySection" class="nav-link" id="navClothing">GİYİM</a>
       <a href="/#splitSection" class="nav-link" id="navCollections">KOLEKSİYONLAR</a>
@@ -557,6 +559,7 @@ ${JSON.stringify(jsonLd, null, 2)}
           <li><a href="/?kategori=tops">Triko &amp; Üst</a></li>
           <li><a href="/?kategori=dresses">Elbise</a></li>
           <li><a href="/?kategori=skirts">Etek</a></li>
+          <li><a href="/?kategori=accessories">Aksesuar</a></li>
         </ul>
       </div>
 
