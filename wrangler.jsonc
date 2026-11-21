@@ -6,5 +6,7 @@
   "assets": {
     "directory": ".",
     "html_handling": "auto-trailing-slash"
-  }
+  },
+  // Required by the `wrangler preview` command that Workers Builds runs on PR branches
+  "previews": {}
 }
