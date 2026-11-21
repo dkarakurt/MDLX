@@ -3629,3 +3629,66 @@ body.mobile-nav-open .mobile-drawer { transform: none; visibility: visible; }
 @media (prefers-reduced-motion: reduce) {
   .hero-slide.active img, .hero-step.active::after { animation: none; }
 }
+
+/* ==========================================================================
+   SCROLL-LINKED HEADER
+   site-nav.js writes --hp (0 → 1) on every animation frame while the first
+   ~200px scroll by, so the header glides up, the logo shrinks and the bar
+   turns into translucent glass continuously instead of snapping.
+   ========================================================================== */
+.site-header {
+  --hp: 0;
+  --bar-h: 33px;
+  --logo-max: 208px;
+  --logo-min: 76px;
+  top: calc(var(--bar-h) * (1 - var(--hp)));
+  background: transparent;
+  isolation: isolate;
+  transition: padding 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: top;
+}
+.site-header::before,
+.site-header::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+}
+/* Arrival: soft fade from the top so the logo reads over the hero */
+.site-header::before {
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0) 100%);
+  opacity: calc(1 - var(--hp));
+}
+/* Scrolled: see-through smoked glass */
+.site-header::after {
+  background: rgba(12, 12, 12, 0.42);
+  backdrop-filter: blur(20px) saturate(140%);
+  -webkit-backdrop-filter: blur(20px) saturate(140%);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+  opacity: var(--hp);
+}
+.site-header.scrolled {
+  top: calc(var(--bar-h) * (1 - var(--hp)));
+  background: transparent;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  border-bottom: 0;
+  box-shadow: none;
+}
+.site-header .brand-logo img,
+.site-header #headerLogo,
+.site-header.scrolled .brand-logo img,
+.site-header.scrolled #headerLogo {
+  height: calc(var(--logo-max) - (var(--logo-max) - var(--logo-min)) * var(--hp));
+  transition: none;
+}
+@media (max-width: 1024px) {
+  .site-header { --logo-max: 120px; --logo-min: 64px; }
+}
+@media (max-width: 768px) {
+  .site-header { --bar-h: 29px; }
+}
+@media (max-width: 640px) {
+  .site-header { --logo-max: 88px; --logo-min: 52px; }
+}

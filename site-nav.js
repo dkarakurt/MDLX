@@ -70,7 +70,22 @@
     document.body.appendChild(drawer);
 
     // Compact sticky header once the page scrolls (same threshold as app.js)
-    var onScroll = function () { header.classList.toggle('scrolled', window.scrollY > 40); };
+    // Scroll-linked header: progress 0 → 1 over the first RANGE pixels,
+    // eased and smoothed per frame so the motion never snaps.
+    var RANGE = 200, target = 0, current = 0, raf = 0;
+    var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var ease = function (t) { return 1 - Math.pow(1 - t, 3); };
+    var paint = function () {
+      current += (target - current) * (reduce ? 1 : 0.18);
+      if (Math.abs(target - current) < 0.002) current = target;
+      header.style.setProperty('--hp', current.toFixed(4));
+      header.classList.toggle('scrolled', current > 0.2);
+      raf = current === target ? 0 : requestAnimationFrame(paint);
+    };
+    var onScroll = function () {
+      target = ease(Math.min(Math.max(window.scrollY / RANGE, 0), 1));
+      if (!raf) raf = requestAnimationFrame(paint);
+    };
     window.addEventListener('scroll', onScroll, { passive: true });
     onScroll();
   }
