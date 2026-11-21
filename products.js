@@ -69,10 +69,9 @@ const PRODUCTS_DATA = [
     "priceUSD": 575,
     "priceGBP": 454,
     "primaryImage": "assets/images/ss27/look-01.jpg",
-    "secondaryImage": "assets/images/ss27/look-06.jpg",
+    "secondaryImage": "assets/images/ss27/look-01.jpg",
     "images": [
-      "assets/images/ss27/look-01.jpg",
-      "assets/images/ss27/look-06.jpg"
+      "assets/images/ss27/look-01.jpg"
     ],
     "colors": [
       {
@@ -110,115 +109,6 @@ const PRODUCTS_DATA = [
     "care": "Dry clean only.",
     "careTr": "Yalnızca kuru temizleme.",
     "slug": "le-grand-oversize-blazer"
-  },
-  {
-    "id": "ss27-top-tulle",
-    "name": "Draped Tulle Top",
-    "nameTr": "Drapeli Tül Bluz",
-    "category": "tops",
-    "badge": "SS27",
-    "isHero": false,
-    "season": "SS27",
-    "look": 1,
-    "priceTRY": 6900,
-    "priceEUR": 183,
-    "priceUSD": 199,
-    "priceGBP": 157,
-    "primaryImage": "assets/images/ss27/look-01.jpg",
-    "secondaryImage": "assets/images/ss27/look-01.jpg",
-    "images": [
-      "assets/images/ss27/look-01.jpg"
-    ],
-    "colors": [
-      {
-        "name": "Nude",
-        "hex": "#D8B9A0"
-      }
-    ],
-    "sizes": [
-      "XS",
-      "S",
-      "M",
-      "L"
-    ],
-    "description": "A sheer nude tulle top with soft horizontal draping, made to be layered under a blazer.",
-    "descriptionTr": "Yatay yumuşak drapeli, şeffaf ten rengi tül bluz. Blazerın altına katman olarak giyilmek üzere.",
-    "fabric": "Tulle",
-    "fabricTr": "Tül",
-    "fit": "Close fit.",
-    "fitTr": "Vücuda oturan kalıp.",
-    "details": [
-      "Sheer tulle",
-      "Horizontal draping",
-      "Long sleeves",
-      "Cropped length"
-    ],
-    "detailsTr": [
-      "Şeffaf tül",
-      "Yatay drapeler",
-      "Uzun kollar",
-      "Kısa boy"
-    ],
-    "lining": "Unlined",
-    "liningTr": "Astarsız",
-    "care": "Hand wash cold.",
-    "careTr": "Elde soğuk yıkayınız.",
-    "slug": "draped-tulle-top-nude"
-  },
-  {
-    "id": "ss27-trouser-creme",
-    "name": "Pleated Wide-Leg Trousers",
-    "nameTr": "Pileli Geniş Paça Pantolon",
-    "category": "trousers",
-    "badge": "SS27",
-    "isHero": false,
-    "season": "SS27",
-    "look": 1,
-    "priceTRY": 9400,
-    "priceEUR": 249,
-    "priceUSD": 272,
-    "priceGBP": 214,
-    "primaryImage": "assets/images/ss27/look-01.jpg",
-    "secondaryImage": "assets/images/ss27/look-01.jpg",
-    "images": [
-      "assets/images/ss27/look-01.jpg"
-    ],
-    "colors": [
-      {
-        "name": "Cream",
-        "hex": "#EDE5D6"
-      }
-    ],
-    "sizes": [
-      "34",
-      "36",
-      "38",
-      "40",
-      "42"
-    ],
-    "description": "Cream wide-leg trousers with deep front pleats and a fluid drape, worn low with a slim belt.",
-    "descriptionTr": "Önden derin pileli, akışkan dökümlü krem geniş paça pantolon. İnce bir kemerle belin biraz altında giyilir.",
-    "fabric": "Fluid twill",
-    "fabricTr": "Akışkan twill",
-    "fit": "Mid rise, wide leg.",
-    "fitTr": "Normal bel, geniş paça.",
-    "details": [
-      "Deep front pleats",
-      "Belt loops",
-      "Side pockets",
-      "Floor-grazing wide leg"
-    ],
-    "detailsTr": [
-      "Derin önden pili",
-      "Kemer köprüleri",
-      "Yan cepler",
-      "Yere değen geniş paça"
-    ],
-    "lining": "Unlined",
-    "liningTr": "Astarsız",
-    "care": "Dry clean only.",
-    "careTr": "Yalnızca kuru temizleme.",
-    "slug": "pleated-wide-leg-trousers-cream"
   },
   {
     "id": "ss27-jacket-peplum",
@@ -276,61 +166,6 @@ const PRODUCTS_DATA = [
     "slug": "la-taille-peplum-jacket"
   },
   {
-    "id": "ss27-skirt-column",
-    "name": "Column Maxi Skirt",
-    "nameTr": "Kalem Maksi Etek",
-    "category": "skirts",
-    "badge": "SS27",
-    "isHero": false,
-    "season": "SS27",
-    "look": 5,
-    "priceTRY": 8400,
-    "priceEUR": 223,
-    "priceUSD": 243,
-    "priceGBP": 192,
-    "primaryImage": "assets/images/ss27/look-05.jpg",
-    "secondaryImage": "assets/images/ss27/look-05.jpg",
-    "images": [
-      "assets/images/ss27/look-05.jpg"
-    ],
-    "colors": [
-      {
-        "name": "Ice Blue",
-        "hex": "#A9D3D8"
-      }
-    ],
-    "sizes": [
-      "34",
-      "36",
-      "38",
-      "40",
-      "42"
-    ],
-    "description": "A straight column skirt in ice blue that completes the peplum jacket as a suit. Ankle length with a back walking slit.",
-    "descriptionTr": "Peplum ceketle takım olan, buz mavisi düz kalem etek. Bilek boyu, arkada yürümeyi kolaylaştıran yırtmaç.",
-    "fabric": "Textured wool blend",
-    "fabricTr": "Dokulu yün karışımı",
-    "fit": "High rise, straight column.",
-    "fitTr": "Yüksek bel, düz kalem form.",
-    "details": [
-      "Straight column cut",
-      "Back walking slit",
-      "Concealed back zip",
-      "Pairs with the La Taille jacket"
-    ],
-    "detailsTr": [
-      "Düz kalem kesim",
-      "Arka yırtmaç",
-      "Gizli arka fermuar",
-      "La Taille ceket ile takım olur"
-    ],
-    "lining": "Fully lined",
-    "liningTr": "Tam astarlı",
-    "care": "Dry clean only.",
-    "careTr": "Yalnızca kuru temizleme.",
-    "slug": "column-maxi-skirt-ice-blue"
-  },
-  {
     "id": "ss27-dress-halter",
     "name": "Draped Halter Maxi Dress",
     "nameTr": "Halter Yaka Drapeli Maksi Elbise",
@@ -386,61 +221,6 @@ const PRODUCTS_DATA = [
     "slug": "draped-halter-maxi-dress"
   },
   {
-    "id": "ss27-shirt-blanche",
-    "name": "Long-Cuff Poplin Shirt",
-    "nameTr": "Uzun Manşetli Poplin Gömlek",
-    "category": "shirts",
-    "badge": "SS27",
-    "isHero": false,
-    "season": "SS27",
-    "look": 2,
-    "priceTRY": 5900,
-    "priceEUR": 156,
-    "priceUSD": 171,
-    "priceGBP": 135,
-    "primaryImage": "assets/images/ss27/look-02.jpg",
-    "secondaryImage": "assets/images/ss27/look-02.jpg",
-    "images": [
-      "assets/images/ss27/look-02.jpg"
-    ],
-    "colors": [
-      {
-        "name": "Optic White",
-        "hex": "#FFFFFF"
-      }
-    ],
-    "sizes": [
-      "34",
-      "36",
-      "38",
-      "40",
-      "42"
-    ],
-    "description": "A crisp white poplin shirt with an open collar and elongated cuffs, designed to be worn under the satin corset belt.",
-    "descriptionTr": "Açık yakalı ve uzatılmış manşetli, tok beyaz poplin gömlek. Saten korse kuşakla birlikte giyilmek üzere tasarlandı.",
-    "fabric": "Cotton poplin",
-    "fabricTr": "Pamuk poplin",
-    "fit": "Relaxed fit.",
-    "fitTr": "Rahat kalıp.",
-    "details": [
-      "Open collar",
-      "Elongated cuffs",
-      "Concealed placket",
-      "Relaxed body"
-    ],
-    "detailsTr": [
-      "Açık yaka",
-      "Uzatılmış manşetler",
-      "Gizli pat",
-      "Rahat beden"
-    ],
-    "lining": "Unlined",
-    "liningTr": "Astarsız",
-    "care": "Machine wash 30°C. Iron on medium.",
-    "careTr": "30°C'de yıkayınız. Orta ısıda ütüleyiniz.",
-    "slug": "long-cuff-poplin-shirt-white"
-  },
-  {
     "id": "ss27-belt-corset",
     "name": "Draped Satin Corset Belt",
     "nameTr": "Drapeli Saten Korse Kuşak",
@@ -492,61 +272,6 @@ const PRODUCTS_DATA = [
     "care": "Dry clean only.",
     "careTr": "Yalnızca kuru temizleme.",
     "slug": "draped-satin-corset-belt"
-  },
-  {
-    "id": "ss27-trouser-noir",
-    "name": "High-Rise Tailored Trousers",
-    "nameTr": "Yüksek Bel Terzi Pantolon",
-    "category": "trousers",
-    "badge": "SS27",
-    "isHero": false,
-    "season": "SS27",
-    "look": 2,
-    "priceTRY": 8900,
-    "priceEUR": 236,
-    "priceUSD": 257,
-    "priceGBP": 203,
-    "primaryImage": "assets/images/ss27/look-02.jpg",
-    "secondaryImage": "assets/images/ss27/look-02.jpg",
-    "images": [
-      "assets/images/ss27/look-02.jpg"
-    ],
-    "colors": [
-      {
-        "name": "Black",
-        "hex": "#111111"
-      }
-    ],
-    "sizes": [
-      "34",
-      "36",
-      "38",
-      "40",
-      "42"
-    ],
-    "description": "Black tailored trousers with a high rise, pressed front creases and a long straight leg.",
-    "descriptionTr": "Yüksek bel, önden ütü çizgili ve uzun düz paçalı siyah terzi pantolon.",
-    "fabric": "Wool blend",
-    "fabricTr": "Yün karışımı",
-    "fit": "High rise, straight leg.",
-    "fitTr": "Yüksek bel, düz paça.",
-    "details": [
-      "Pressed front creases",
-      "Slant pockets",
-      "Hook-and-bar closure",
-      "Long straight leg"
-    ],
-    "detailsTr": [
-      "Önden ütü çizgisi",
-      "Verev cepler",
-      "Kanca kopça kapama",
-      "Uzun düz paça"
-    ],
-    "lining": "Half-lined",
-    "liningTr": "Yarım astarlı",
-    "care": "Dry clean only.",
-    "careTr": "Yalnızca kuru temizleme.",
-    "slug": "high-rise-tailored-trousers-black"
   },
   {
     "id": "ss27-skirt-tulle",
@@ -602,61 +327,6 @@ const PRODUCTS_DATA = [
     "care": "Hand wash cold or dry clean.",
     "careTr": "Elde soğuk yıkama veya kuru temizleme.",
     "slug": "tulle-maxi-skirt"
-  },
-  {
-    "id": "ss27-shirt-lavande",
-    "name": "Oversize Cotton Shirt",
-    "nameTr": "Oversize Pamuk Gömlek",
-    "category": "shirts",
-    "badge": "SS27",
-    "isHero": false,
-    "season": "SS27",
-    "look": 7,
-    "priceTRY": 5600,
-    "priceEUR": 148,
-    "priceUSD": 162,
-    "priceGBP": 128,
-    "primaryImage": "assets/images/ss27/look-07.jpg",
-    "secondaryImage": "assets/images/ss27/look-07.jpg",
-    "images": [
-      "assets/images/ss27/look-07.jpg"
-    ],
-    "colors": [
-      {
-        "name": "Lavender Blue",
-        "hex": "#B7C3E8"
-      }
-    ],
-    "sizes": [
-      "34",
-      "36",
-      "38",
-      "40",
-      "42"
-    ],
-    "description": "A relaxed lavender-blue cotton shirt with a soft point collar and rolled sleeves, made to be tucked into high-waisted trousers.",
-    "descriptionTr": "Yumuşak sivri yakalı, kolları kıvrılabilen lavanta mavisi pamuk gömlek. Yüksek bel pantolonların içine giyilmek üzere rahat kalıp.",
-    "fabric": "Cotton",
-    "fabricTr": "Pamuk",
-    "fit": "Relaxed oversize fit.",
-    "fitTr": "Rahat oversize kalıp.",
-    "details": [
-      "Point collar",
-      "Chest pocket",
-      "Rolled-sleeve styling",
-      "Curved hem"
-    ],
-    "detailsTr": [
-      "Sivri yaka",
-      "Göğüs cebi",
-      "Kıvrılabilen kollar",
-      "Kavisli etek ucu"
-    ],
-    "lining": "Unlined",
-    "liningTr": "Astarsız",
-    "care": "Machine wash 30°C. Hang to dry.",
-    "careTr": "30°C'de yıkayınız. Asarak kurutunuz.",
-    "slug": "oversize-cotton-shirt-lavender"
   },
   {
     "id": "ss27-trouser-botanique",
@@ -766,61 +436,6 @@ const PRODUCTS_DATA = [
     "care": "Hand wash cold. Dry flat.",
     "careTr": "Elde soğuk yıkayınız. Sererek kurutunuz.",
     "slug": "ribbed-shrug-tank-set-khaki"
-  },
-  {
-    "id": "ss27-trouser-cargo",
-    "name": "Wide-Leg Cargo Trousers",
-    "nameTr": "Kargo Cepli Geniş Paça Pantolon",
-    "category": "trousers",
-    "badge": "SS27",
-    "isHero": false,
-    "season": "SS27",
-    "look": 3,
-    "priceTRY": 7900,
-    "priceEUR": 209,
-    "priceUSD": 228,
-    "priceGBP": 180,
-    "primaryImage": "assets/images/ss27/look-03.jpg",
-    "secondaryImage": "assets/images/ss27/look-03.jpg",
-    "images": [
-      "assets/images/ss27/look-03.jpg"
-    ],
-    "colors": [
-      {
-        "name": "Khaki",
-        "hex": "#5E5A45"
-      }
-    ],
-    "sizes": [
-      "34",
-      "36",
-      "38",
-      "40",
-      "42"
-    ],
-    "description": "Utility made feminine: wide-leg khaki trousers with front pleats and bellowed cargo pockets.",
-    "descriptionTr": "Kullanışlılığın kadınsı yorumu: önden pilili, körüklü kargo cepli haki geniş paça pantolon.",
-    "fabric": "Cotton twill",
-    "fabricTr": "Pamuk twill",
-    "fit": "Mid rise, wide leg.",
-    "fitTr": "Normal bel, geniş paça.",
-    "details": [
-      "Front pleats",
-      "Bellowed cargo pockets",
-      "Belt loops",
-      "Wide leg"
-    ],
-    "detailsTr": [
-      "Önden pili",
-      "Körüklü kargo cepler",
-      "Kemer köprüleri",
-      "Geniş paça"
-    ],
-    "lining": "Unlined",
-    "liningTr": "Astarsız",
-    "care": "Machine wash 30°C.",
-    "careTr": "30°C'de yıkayınız.",
-    "slug": "wide-leg-cargo-trousers-khaki"
   },
   {
     "id": "mdl-prod-1791792766078",
@@ -1477,7 +1092,7 @@ const CATEGORIES_DATA = [
     "name": "BLAZERS",
     "nameTr": "BLAZER CEKET",
     "image": "assets/images/cat_blazers.jpg",
-    "count": 4,
+    "count": 7,
     "isHero": true
   },
   {
@@ -1485,14 +1100,14 @@ const CATEGORIES_DATA = [
     "name": "TROUSERS",
     "nameTr": "PANTOLON",
     "image": "assets/images/cat_trousers.jpg",
-    "count": 2
+    "count": 3
   },
   {
     "id": "shirts",
     "name": "SHIRTS",
     "nameTr": "GÖMLEK",
     "image": "assets/images/cat_shirts.jpg",
-    "count": 2
+    "count": 1
   },
   {
     "id": "tops",
@@ -1506,7 +1121,7 @@ const CATEGORIES_DATA = [
     "name": "DRESSES",
     "nameTr": "ELBİSE",
     "image": "assets/images/cat_dresses.jpg",
-    "count": 2
+    "count": 4
   },
   {
     "id": "skirts",

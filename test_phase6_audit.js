@@ -156,7 +156,7 @@ async function runPhase6Audit() {
   // Test 6: Static PDP Pages & Generator Audit
   console.log('\n6. Static PDP Pages & Generator Audit:');
   const pdpFiles = fs.readdirSync(path.join(__dirname, 'urun')).filter(f => f.endsWith('.html'));
-  assert(pdpFiles.length === 27, 'All 27 product static pages exist in /urun/');
+  assert(pdpFiles.length === 20, 'All 20 product static pages exist in /urun/');
 
   const samplePdp = fs.readFileSync(path.join(__dirname, 'urun', 'noir-atelier-blazer.html'), 'utf8');
   assert(
