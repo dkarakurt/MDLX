@@ -1232,7 +1232,7 @@ function renderProducts() {
       <div class="product-card" data-id="${product.id}">
         <div class="product-img-container" onclick="openQuickView('${product.id}')">
           <picture>
-            <source srcset="${primaryWebp}" type="image/webp">
+            <source srcset="${ss27Srcset(primaryWebp)}" sizes="(max-width: 640px) 50vw, 25vw" type="image/webp">
             <img src="${primaryWebp}" onerror="this.onerror=null; this.src='${primaryFallback}';" alt="${title}" class="product-img primary" id="cardImg-${product.id}" loading="lazy" width="400" height="533">
           </picture>
           ${badgeText ? `<span class="product-badge">${badgeText}</span>` : ''}
@@ -1287,6 +1287,12 @@ function renderProducts() {
 }
 
 // SS27 lookbook: one card per look, listing the pieces worn in it
+// SS27 images ship in two widths (600w and 1200w); others have a single file.
+function ss27Srcset(webp) {
+  if (!/\/ss27\/look-\d+\.webp$/.test(webp)) return webp;
+  return `${webp.replace(/\.webp$/, '-600.webp')} 600w, ${webp} 1200w`;
+}
+
 function renderLookbook() {
   const wrap = document.getElementById('ss27Looks');
   if (!wrap) return;
@@ -1309,8 +1315,8 @@ function renderLookbook() {
       <article class="ss27-look">
         <a class="ss27-look-img" href="/urun/${look.items[0].slug || look.items[0].id}" aria-label="Look ${num}">
           <picture>
-            <source srcset="${webp}" type="image/webp">
-            <img src="${look.img}" alt="SS27 Look ${num}" loading="lazy" width="631" height="842">
+            <source srcset="${ss27Srcset(webp)}" sizes="(max-width: 640px) 72vw, (max-width: 1024px) 50vw, 300px" type="image/webp">
+            <img src="${look.img}" alt="SS27 Look ${num}" loading="lazy" width="1200" height="1600">
           </picture>
         </a>
         <span class="ss27-look-num">LOOK ${num}</span>
