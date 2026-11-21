@@ -3337,3 +3337,148 @@ img.footer-logo {
   }
 }
 
+
+/* ==========================================================================
+   HEADER, MOBILE NAVIGATION & OVERFLOW FIXES
+   ========================================================================== */
+html, body { overflow-x: clip; }
+
+.nav-link { white-space: nowrap; }
+
+/* Large logo on arrival, compact once the header becomes sticky */
+.site-header.scrolled { min-height: 0; }
+.site-header.scrolled .brand-logo img,
+.site-header.scrolled #headerLogo { height: 76px; }
+
+@media (max-width: 1360px) {
+  .main-nav { gap: 22px; }
+  .nav-link { letter-spacing: 0.14em; font-size: 0.7rem; }
+  .site-header { padding-left: 32px; padding-right: 32px; }
+}
+
+/* Mobile menu button (injected by site-nav.js) */
+.mobile-menu-btn {
+  display: none;
+  width: 40px;
+  height: 40px;
+  padding: 10px 8px;
+  background: none;
+  border: 0;
+  cursor: pointer;
+  flex-direction: column;
+  justify-content: center;
+  gap: 7px;
+}
+.mobile-menu-btn span {
+  display: block;
+  height: 1px;
+  width: 100%;
+  background: currentColor;
+}
+.mobile-menu-btn span:last-child { width: 65%; }
+
+.mobile-drawer-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.35s ease, visibility 0.35s ease;
+  z-index: 1090;
+}
+.mobile-drawer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: min(84vw, 360px);
+  background: #0c0b0a;
+  border-right: 1px solid rgba(197, 168, 128, 0.18);
+  transform: translateX(-100%);
+  visibility: hidden;
+  transition: transform 0.45s cubic-bezier(0.4, 0, 0.2, 1), visibility 0.45s;
+  z-index: 1100;
+  padding: 88px 32px 40px;
+  overflow-y: auto;
+}
+.mobile-drawer-close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 40px;
+  height: 40px;
+  font-size: 1.8rem;
+  line-height: 1;
+  color: #e4e4e7;
+  background: none;
+  border: 0;
+  cursor: pointer;
+}
+.mobile-drawer-links { display: flex; flex-direction: column; }
+.mobile-drawer-links a {
+  font-family: var(--font-serif);
+  font-size: 1.15rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #f7f5f0;
+  padding: 16px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+}
+.mobile-drawer-links a:hover { color: var(--color-gold); }
+body.mobile-nav-open { overflow: hidden; }
+body.mobile-nav-open .mobile-drawer-overlay { opacity: 1; visibility: visible; }
+body.mobile-nav-open .mobile-drawer { transform: none; visibility: visible; }
+
+.footer-nav { flex-wrap: wrap; row-gap: 14px; }
+
+@media (max-width: 1024px) {
+  .mobile-menu-btn { display: flex; color: var(--color-white); }
+  .site-header { gap: 12px; }
+  .brand-logo { margin-right: auto; }
+  .brand-logo img,
+  #headerLogo { height: 120px; max-width: none; }
+  .site-header.scrolled .brand-logo img,
+  .site-header.scrolled #headerLogo { height: 64px; }
+}
+
+@media (max-width: 768px) {
+  /* Keep only language & currency in the top bar on small screens */
+  .announcement-bar { justify-content: center; padding: 6px 12px; }
+  .announcement-bar > span,
+  .announcement-bar > div:last-child:not(.currency-lang-toggle) { display: none !important; }
+  .site-header { top: 29px; }
+  .footer-nav { justify-content: center; gap: 14px 22px; }
+  .hero-stories-tag { display: none; }
+  .hero-slide img { object-position: 68% 20%; }
+  .hero-overlay {
+    background: linear-gradient(180deg, rgba(10,10,10,0.25) 0%, rgba(10,10,10,0.35) 45%, rgba(10,10,10,0.85) 100%);
+  }
+  .hero-section { align-items: flex-end; padding-bottom: 96px; }
+  .hero-content { margin-top: 0; }
+  .category-section { padding: 56px 16px; }
+  .category-header-divider { gap: 16px; margin-bottom: 32px; }
+  .category-section-title { font-size: 1rem; letter-spacing: 0.25em; text-align: center; }
+  .catalog-section,
+  .brand-pillars-section { padding: 56px 16px; }
+  .catalog-title-row { flex-direction: column; align-items: flex-start; gap: 16px; }
+  .catalog-title { font-size: 1.7rem; }
+  .pillars-grid { grid-template-columns: 1fr; gap: 40px; }
+  .pillar-card, .pillar-img-box, .pillar-card img { min-width: 0; max-width: 100%; }
+}
+
+@media (max-width: 640px) {
+  :root { --header-height: 112px; }
+  .site-header,
+  .site-header.scrolled { padding: 6px 12px; }
+  .brand-logo img,
+  #headerLogo { height: 88px; max-width: none; }
+  .site-header.scrolled .brand-logo img,
+  .site-header.scrolled #headerLogo { height: 52px; }
+  .nav-actions { gap: 2px; }
+  .action-btn { padding: 8px 6px; }
+  #btnOpenAccount { display: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .mobile-drawer, .mobile-drawer-overlay { transition: none; }
+}

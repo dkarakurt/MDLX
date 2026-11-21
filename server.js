@@ -3,8 +3,43 @@ const fs = require('fs');
 const path = require('path');
 
 const PORT = process.env.PORT || 3000;
+// Admin credentials must come from the environment. With no password set,
+// the admin panel and write APIs stay locked (no default password in code).
 const ADMIN_USER = process.env.MDL_ADMIN_USER || 'admin';
-const ADMIN_PASS = process.env.MDL_ADMIN_PASS || 'MDL_Atelier_2026!';
+const ADMIN_PASS = process.env.MDL_ADMIN_PASS || '';
+const MAX_BODY_BYTES = 12 * 1024 * 1024; // 12 MB (base64 image uploads)
+const ALLOWED_UPLOAD_EXT = ['.jpg', '.jpeg', '.png', '.webp'];
+const ROOT_DIR = path.resolve(__dirname);
+
+// Files that must never be served as static content (source, data, tooling)
+function isPrivatePath(relPath) {
+  const p = relPath.replace(/\\/g, '/').replace(/^\/+/, '').toLowerCase();
+  if (p.split('/').some(seg => seg.startsWith('.'))) return true; // .git, .env, .gitignore ...
+  if (/^(node_modules|scripts)(\/|$)/.test(p)) return true;
+  if (/^(server\.js|package(-lock)?\.json|test_[^/]*\.js|contact_messages\.json|subscribers\.json|_headers)$/.test(p)) return true;
+  if (/^assets\/[^/]*\.txt$/.test(p)) return true;
+  return false;
+}
+
+// Reads a request body with a size cap; responds 413 and aborts if exceeded
+function readBody(req, res, onDone) {
+  let body = '';
+  let size = 0;
+  let aborted = false;
+  req.on('data', chunk => {
+    if (aborted) return;
+    size += chunk.length;
+    if (size > MAX_BODY_BYTES) {
+      aborted = true;
+      res.writeHead(413, { 'Content-Type': 'application/json; charset=utf-8' });
+      res.end(JSON.stringify({ error: 'Payload too large' }));
+      req.destroy();
+      return;
+    }
+    body += chunk;
+  });
+  req.on('end', () => { if (!aborted) onDone(body); });
+}
 const OBSCURE_ADMIN_PATH = '/atelier-mgmt-x9k2.html';
 
 const MIME_TYPES = {
@@ -24,6 +59,7 @@ const MIME_TYPES = {
 
 // Helper to check HTTP Basic Auth
 function checkBasicAuth(req) {
+  if (!ADMIN_PASS) return false;
   const authHeader = req.headers['authorization'];
   if (!authHeader || !authHeader.startsWith('Basic ')) {
     return false;
@@ -123,7 +159,14 @@ function sendUnauthorizedHTML(res) {
 
 const server = http.createServer((req, res) => {
   const urlParts = req.url.split('?');
-  const reqPath = decodeURI(urlParts[0]);
+  let reqPath;
+  try {
+    reqPath = decodeURIComponent(urlParts[0]);
+  } catch (e) {
+    res.writeHead(400, { 'Content-Type': 'text/plain; charset=utf-8' });
+    res.end('400 Bad Request');
+    return;
+  }
 
   // Security Headers applied to all responses
   res.setHeader('X-Content-Type-Options', 'nosniff');
@@ -214,9 +257,7 @@ const server = http.createServer((req, res) => {
     if (!checkBasicAuth(req)) {
       return sendUnauthorizedAPI(res);
     }
-    let body = '';
-    req.on('data', chunk => { body += chunk; });
-    req.on('end', () => {
+    readBody(req, res, (body) => {
       try {
         const parsed = JSON.parse(body);
         const contentPath = path.join(__dirname, 'content.json');
@@ -246,9 +287,7 @@ const server = http.createServer((req, res) => {
     if (!checkBasicAuth(req)) {
       return sendUnauthorizedAPI(res);
     }
-    let body = '';
-    req.on('data', chunk => { body += chunk; });
-    req.on('end', () => {
+    readBody(req, res, (body) => {
       try {
         const products = JSON.parse(body);
         const jsonPath = path.join(__dirname, 'products.json');
@@ -271,9 +310,7 @@ const server = http.createServer((req, res) => {
     if (!checkBasicAuth(req)) {
       return sendUnauthorizedAPI(res);
     }
-    let body = '';
-    req.on('data', chunk => { body += chunk; });
-    req.on('end', () => {
+    readBody(req, res, (body) => {
       try {
         const { fileName, base64Data } = JSON.parse(body);
         if (!fileName || !base64Data) {
@@ -283,7 +320,11 @@ const server = http.createServer((req, res) => {
         const matches = base64Data.match(/^data:([A-Za-z-+\/]+);base64,(.+)$/);
         const buffer = matches ? Buffer.from(matches[2], 'base64') : Buffer.from(base64Data, 'base64');
         
-        const safeName = 'uploaded_' + Date.now() + '_' + fileName.replace(/[^a-zA-Z0-9._-]/g, '_');
+        const ext = path.extname(String(fileName)).toLowerCase();
+        if (!ALLOWED_UPLOAD_EXT.includes(ext)) {
+          return sendJSON(400, { error: 'Only JPG, PNG or WEBP images are allowed.' });
+        }
+        const safeName = 'uploaded_' + Date.now() + '_' + String(fileName).replace(/[^a-zA-Z0-9._-]/g, '_');
         const uploadDir = path.join(__dirname, 'assets', 'images');
         if (!fs.existsSync(uploadDir)) fs.mkdirSync(uploadDir, { recursive: true });
         
@@ -301,9 +342,7 @@ const server = http.createServer((req, res) => {
 
   // --- API: POST NEWSLETTER SUBSCRIBER ---
   if (reqPath === '/api/newsletter' && req.method === 'POST') {
-    let body = '';
-    req.on('data', chunk => { body += chunk; });
-    req.on('end', () => {
+    readBody(req, res, (body) => {
       try {
         const { email } = JSON.parse(body);
         if (!email || !email.includes('@')) {
@@ -328,9 +367,7 @@ const server = http.createServer((req, res) => {
 
   // --- API: POST CONTACT MESSAGE ---
   if (reqPath === '/api/contact' && req.method === 'POST') {
-    let body = '';
-    req.on('data', chunk => { body += chunk; });
-    req.on('end', () => {
+    readBody(req, res, (body) => {
       try {
         const msg = JSON.parse(body);
         const messagesPath = path.join(__dirname, 'contact_messages.json');
@@ -349,11 +386,21 @@ const server = http.createServer((req, res) => {
   }
 
   // --- STATIC FILE SERVER WITH CLEAN URL SUPPORT ---
-  let filePath = path.join(__dirname, reqPath === '/' ? 'index.html' : reqPath);
+  let filePath = path.resolve(ROOT_DIR, '.' + path.posix.normalize('/' + (reqPath === '/' ? 'index.html' : reqPath)));
+
 
   // If URL has no extension and a matching .html file exists, serve it
   if (!path.extname(filePath) && fs.existsSync(filePath + '.html')) {
     filePath += '.html';
+  }
+
+  // Block path traversal and private files (source code, customer data, tooling)
+  if ((filePath !== ROOT_DIR && !filePath.startsWith(ROOT_DIR + path.sep)) ||
+      isPrivatePath(path.relative(ROOT_DIR, filePath)) ||
+      filePath === path.join(ROOT_DIR, 'atelier-mgmt-x9k2.html')) {
+    res.writeHead(404, { 'Content-Type': 'text/plain; charset=utf-8' });
+    res.end('404 Not Found');
+    return;
   }
 
   fs.stat(filePath, (err, stats) => {
@@ -374,5 +421,7 @@ const server = http.createServer((req, res) => {
 server.listen(PORT, () => {
   console.log(`Maison De Loup Atelier server running at http://localhost:${PORT}`);
   console.log(`- Obscure Admin URL: http://localhost:${PORT}${OBSCURE_ADMIN_PATH}`);
-  console.log(`- Security: Basic Auth enabled for Admin & Mutation APIs`);
+  console.log(ADMIN_PASS
+    ? '- Security: Basic Auth enabled for Admin & Mutation APIs'
+    : '- Security: MDL_ADMIN_PASS is not set, admin panel and write APIs are locked');
 });

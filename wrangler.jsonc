@@ -1,0 +1,12 @@
+// Cloudflare Workers static-assets deploy for the Maison De Loup site.
+// Only public site files are uploaded; see .assetsignore for what is excluded.
+{
+  "name": "mdlx",
+  "compatibility_date": "2026-11-01",
+  "assets": {
+    "directory": ".",
+    "html_handling": "auto-trailing-slash"
+  },
+  // Required by the `wrangler preview` command that Workers Builds runs on PR branches
+  "previews": {}
+}

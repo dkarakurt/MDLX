@@ -1,0 +1,21 @@
+# Never publish source, tooling, data or repo metadata as static files
+.git
+.github
+.claude
+.gitignore
+.assetsignore
+wrangler.jsonc
+node_modules
+scripts
+server.js
+package.json
+package-lock.json
+test_*.js
+contact_messages.json
+subscribers.json
+atelier-mgmt-x9k2.html
+admin.js
+admin.css
+assets/*.txt
+assets/website_mockup_ref.jpg
+.wrangler
