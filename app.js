@@ -742,13 +742,8 @@ function initNavFilters() {
 
 function initHeaderScroll() {
   const header = document.getElementById('siteHeader');
-  window.addEventListener('scroll', () => {
-    if (window.scrollY > 40) {
-      header.classList.add('scrolled');
-    } else {
-      header.classList.remove('scrolled');
-    }
-  });
+  // The scroll-linked header (and its .scrolled class) is driven by site-nav.js.
+  if (!header) return;
 }
 
 // ==========================================================================
