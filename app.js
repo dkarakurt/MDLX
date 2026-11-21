@@ -12,8 +12,8 @@ const DEFAULT_CONTENT = {
   "heroSubEN": "THE ART OF THE BLAZER",
   "heroProvTR": "Türkiye'de tasarlandı,<br>dünya için yaratıldı.",
   "heroProvEN": "Designed in Türkiye<br>Made for the world.",
-  "heroCtaTR": "KOLEKSİYONU KEŞFET",
-  "heroCtaEN": "EXPLORE COLLECTION",
+  "heroCtaTR": "SS27 KOLEKSİYONU",
+  "heroCtaEN": "DISCOVER SS27",
   "heroSlide1": "assets/images/uploaded_1791785047520_Gemini_Generated_Image_wpltxzwpltxzwplt.jpg",
   "heroSlide2": "assets/images/product_blazer_noir.jpg",
   "heroSlide3": "assets/images/product_blazer_ecru.jpg",
@@ -101,6 +101,7 @@ const BADGE_MAP = {
     'DNA ACCESSIBLE': 'ERİŞİLEBİLİR LÜKS',
     'LIMITED RUN': 'SINIRLI SAYIDA',
     'NEW SEASON': 'YENİ SEZON',
+    'SS27': 'SS27',
     'ATELIER': 'ATELIER'
   },
   EN: {
@@ -113,6 +114,7 @@ const BADGE_MAP = {
     'DNA ACCESSIBLE': 'ACCESSIBLE LUXURY',
     'LIMITED RUN': 'LIMITED RUN',
     'NEW SEASON': 'NEW SEASON',
+    'SS27': 'SS27',
     'ATELIER': 'ATELIER'
   }
 };
@@ -143,7 +145,7 @@ const TRANSLATIONS = {
     },
     heroSub: "THE ART OF THE BLAZER",
     heroProv: "Türkiye'de tasarlandı,<br>dünya için yaratıldı.",
-    heroCta: "KOLEKSİYONU KEŞFET",
+    heroCta: "SS27 KOLEKSİYONU",
     heroStoryTag: "ATELIER HİKÂYESİ",
     sigPretitle: "İMZA TASARIM",
     sigTitle: "MODERN KADIN GİYİMİ",
@@ -172,6 +174,8 @@ const TRANSLATIONS = {
     },
     filterPills: {
       all: "TÜMÜ",
+      ss27: "SS27",
+      accessories: "AKSESUAR",
       blazers: "BLAZER CEKET (İMZA)",
       trousers: "PANTOLON",
       shirts: "GÖMLEK",
@@ -280,7 +284,7 @@ const TRANSLATIONS = {
     },
     heroSub: "THE ART OF THE BLAZER",
     heroProv: "Designed in Türkiye<br>Made for the world.",
-    heroCta: "EXPLORE COLLECTION",
+    heroCta: "DISCOVER SS27",
     heroStoryTag: "ATELIER STORY",
     sigPretitle: "SIGNATURE PIECE",
     sigTitle: "THE SIGNATURE BLAZER",
@@ -309,6 +313,8 @@ const TRANSLATIONS = {
     },
     filterPills: {
       all: "ALL",
+      ss27: "SS27",
+      accessories: "ACCESSORIES",
       blazers: "BLAZERS (SIGNATURE)",
       trousers: "TROUSERS",
       shirts: "SHIRTS",
@@ -410,6 +416,7 @@ const TRANSLATIONS = {
 document.addEventListener('DOMContentLoaded', async () => {
   await loadCustomContentAndProducts();
   initHeaderScroll();
+  initNavFilters();
   initHeroSlider();
   initCurrencyAndLang();
   initUrlState();
@@ -723,6 +730,16 @@ function applyCustomContent(c) {
 // ==========================================================================
 // HEADER SCROLL EFFECT
 // ==========================================================================
+// Header links that carry data-filter (e.g. "Yeni Gelenler" → SS27) filter the catalog
+function initNavFilters() {
+  document.querySelectorAll('a[data-filter]:not(.filter-btn)').forEach(a => {
+    a.addEventListener('click', (e) => {
+      e.preventDefault();
+      filterCatalog(a.getAttribute('data-filter'));
+    });
+  });
+}
+
 function initHeaderScroll() {
   const header = document.getElementById('siteHeader');
   window.addEventListener('scroll', () => {
@@ -1147,7 +1164,7 @@ function initUrlState() {
     const kat = params.get('kategori');
     const sirala = params.get('sirala');
 
-    const validCategories = ['all', 'blazers', 'trousers', 'shirts', 'tops', 'dresses', 'skirts'];
+    const validCategories = ['all', 'ss27', 'blazers', 'trousers', 'shirts', 'tops', 'dresses', 'skirts', 'accessories'];
     if (kat && validCategories.includes(kat)) {
       STATE.currentCategory = kat;
       const buttons = document.querySelectorAll('.filter-btn');
@@ -1171,13 +1188,16 @@ window.addEventListener('popstate', () => {
 });
 
 function renderProducts() {
+  renderLookbook();
   const grid = document.getElementById('productGrid');
   const sort = document.getElementById('sortSelect').value;
 
   let items = [...STATE.products];
 
   // Filter
-  if (STATE.currentCategory !== 'all') {
+  if (STATE.currentCategory === 'ss27') {
+    items = items.filter(p => p.season === 'SS27');
+  } else if (STATE.currentCategory !== 'all') {
     items = items.filter(p => p.category === STATE.currentCategory);
   }
 
@@ -1212,7 +1232,7 @@ function renderProducts() {
       <div class="product-card" data-id="${product.id}">
         <div class="product-img-container" onclick="openQuickView('${product.id}')">
           <picture>
-            <source srcset="${primaryWebp}" type="image/webp">
+            <source srcset="${ss27Srcset(primaryWebp)}" sizes="(max-width: 640px) 50vw, 25vw" type="image/webp">
             <img src="${primaryWebp}" onerror="this.onerror=null; this.src='${primaryFallback}';" alt="${title}" class="product-img primary" id="cardImg-${product.id}" loading="lazy" width="400" height="533">
           </picture>
           ${badgeText ? `<span class="product-badge">${badgeText}</span>` : ''}
@@ -1264,6 +1284,54 @@ function renderProducts() {
       </div>
     `;
   }).join('');
+}
+
+// SS27 lookbook: one card per look, listing the pieces worn in it
+// SS27 images ship in two widths (600w and 1200w); others have a single file.
+function ss27Srcset(webp) {
+  if (!/\/ss27\/look-\d+\.webp$/.test(webp)) return webp;
+  return `${webp.replace(/\.webp$/, '-600.webp')} 600w, ${webp} 1200w`;
+}
+
+function renderLookbook() {
+  const wrap = document.getElementById('ss27Looks');
+  if (!wrap) return;
+  const isTr = STATE.currentLang === 'TR';
+  const looks = {};
+  STATE.products.filter(p => p.season === 'SS27').forEach(p => {
+    (p.images || [p.primaryImage]).forEach(img => {
+      const m = /look-(\d+)\./.exec(img);
+      if (!m) return;
+      const n = parseInt(m[1], 10);
+      (looks[n] = looks[n] || { img, items: [] }).items.push(p);
+    });
+  });
+  wrap.innerHTML = Object.keys(looks).map(Number).sort((a, b) => a - b).map(n => {
+    const look = looks[n];
+    const webp = look.img.replace(/\.(jpe?g|png)$/i, '.webp');
+    const num = String(n).padStart(2, '0');
+    const links = look.items.map(p => `<li><a href="/urun/${p.slug || p.id}">${isTr ? (p.nameTr || p.name) : p.name}</a></li>`).join('');
+    return `
+      <article class="ss27-look">
+        <a class="ss27-look-img" href="/urun/${look.items[0].slug || look.items[0].id}" aria-label="Look ${num}">
+          <picture>
+            <source srcset="${ss27Srcset(webp)}" sizes="(max-width: 640px) 72vw, (max-width: 1024px) 50vw, 300px" type="image/webp">
+            <img src="${look.img}" alt="SS27 Look ${num}" loading="lazy" width="1200" height="1600">
+          </picture>
+        </a>
+        <span class="ss27-look-num">LOOK ${num}</span>
+        <ul class="ss27-look-items">${links}</ul>
+      </article>`;
+  }).join('');
+
+  const title = document.getElementById('ss27Title');
+  if (title) title.innerText = isTr ? 'YENİ KADINLIK' : 'NEW FEMININITY';
+  const sub = document.getElementById('ss27Sub');
+  if (sub) sub.innerText = isTr
+    ? 'Güçlü omuzlar, akışkan drapeler, şeffaf katmanlar. Yeni sezon sekiz görünümde.'
+    : 'Strong shoulders, fluid drapes, sheer layers. The new season in eight looks.';
+  const cta = document.getElementById('ss27Cta');
+  if (cta) cta.innerHTML = (isTr ? 'SS27 PARÇALARININ TÜMÜ' : 'SHOP ALL SS27') + ' <span>&rarr;</span>';
 }
 
 function switchCardPreviewImage(productId, imgSrc, dotEl) {

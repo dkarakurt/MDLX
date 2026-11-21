@@ -90,7 +90,7 @@
 
     <!-- Center Navigation Links -->
     <nav class="main-nav" aria-label="Ana Menü">
-      <a href="#catalog" class="nav-link" data-filter="all" id="navNewIn">YENİ GELENLER</a>
+      <a href="#catalog" class="nav-link" data-filter="ss27" id="navNewIn">YENİ GELENLER</a>
       <a href="#catalog" class="nav-link" data-filter="blazers" id="navBlazers">BLAZER CEKET</a>
       <a href="#categorySection" class="nav-link" id="navClothing">GİYİM</a>
       <a href="#splitSection" class="nav-link" id="navCollections">KOLEKSİYONLAR</a>
@@ -161,14 +161,15 @@
     <div class="hero-overlay"></div>
 
     <div class="hero-content">
+      <a href="#ss27Section" class="hero-season" id="heroSeason">SS27 — NEW FEMININITY</a>
       <h1 class="hero-title" id="heroTitle">MAISON DE LOUP ATELIER</h1>
       <p class="hero-subtitle" id="heroSub">THE ART OF THE BLAZER</p>
       <p class="hero-provenance" id="heroProv">
         Türkiye'de tasarlandı,<br>
         dünya için yaratıldı.
       </p>
-      <a href="#catalog" class="hero-cta" id="heroCta">
-        <span id="heroCtaText">KOLEKSİYONU KEŞFET</span>
+      <a href="#ss27Section" class="hero-cta" id="heroCta">
+        <span id="heroCtaText">SS27 KOLEKSİYONU</span>
         <span>&rarr;</span>
       </a>
     </div>
@@ -182,6 +183,27 @@
 
     <!-- Vertical Floating STORIES Tag -->
     <div class="hero-stories-tag" id="heroStoryTag" onclick="openStoryModal()">ATELIER HİKÂYESİ</div>
+  </section>
+
+  <!-- =========================================================================
+       SS27 — NEW FEMININITY (campaign + lookbook; looks rendered by app.js)
+       ========================================================================= -->
+  <section class="ss27-section" id="ss27Section" aria-labelledby="ss27Title">
+    <header class="ss27-head">
+      <span class="ss27-eyebrow">SS27 · NEW FEMININITY</span>
+      <h2 class="ss27-title" id="ss27Title">YENİ KADINLIK</h2>
+      <p class="ss27-sub" id="ss27Sub">Güçlü omuzlar, akışkan drapeler, şeffaf katmanlar. Yeni sezon sekiz görünümde.</p>
+    </header>
+    <figure class="ss27-campaign">
+      <picture>
+        <source srcset="assets/images/ss27/campaign-1280.webp 1280w, assets/images/ss27/campaign.webp 2400w" sizes="(max-width: 1376px) 100vw, 1280px" type="image/webp">
+        <img src="assets/images/ss27/campaign.jpg" alt="SS27 New Femininity koleksiyonundan sekiz görünüm" width="2400" height="1599" loading="lazy">
+      </picture>
+    </figure>
+    <div class="ss27-looks" id="ss27Looks"></div>
+    <div class="ss27-cta-row">
+      <a href="#catalog" class="ss27-cta" id="ss27Cta" data-filter="ss27">SS27 PARÇALARININ TÜMÜ <span>&rarr;</span></a>
+    </div>
   </section>
 
   <!-- =========================================================================
@@ -342,12 +364,14 @@
       <div class="catalog-controls">
         <div class="filter-pills" id="filterPillsContainer">
           <button class="filter-btn active" data-filter="all" onclick="filterCatalog('all')">TÜMÜ</button>
+          <button class="filter-btn filter-btn-season" data-filter="ss27" onclick="filterCatalog('ss27')">SS27</button>
           <button class="filter-btn" data-filter="blazers" onclick="filterCatalog('blazers')">BLAZER CEKET (İMZA)</button>
           <button class="filter-btn" data-filter="trousers" onclick="filterCatalog('trousers')">PANTOLON</button>
           <button class="filter-btn" data-filter="shirts" onclick="filterCatalog('shirts')">GÖMLEK</button>
           <button class="filter-btn" data-filter="tops" onclick="filterCatalog('tops')">TRİKO &amp; ÜST</button>
           <button class="filter-btn" data-filter="dresses" onclick="filterCatalog('dresses')">ELBİSE</button>
           <button class="filter-btn" data-filter="skirts" onclick="filterCatalog('skirts')">ETEK</button>
+          <button class="filter-btn" data-filter="accessories" onclick="filterCatalog('accessories')">AKSESUAR</button>
         </div>
       </div>
     </div>

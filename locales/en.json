@@ -23,7 +23,7 @@
     "title": "MAISON DE LOUP ATELIER",
     "slogan": "THE ART OF THE BLAZER",
     "provenance": "Designed in Türkiye<br>Made for the world.",
-    "cta": "EXPLORE COLLECTION",
+    "cta": "DISCOVER SS27",
     "storyTag": "OUR STORY"
   },
   "signature": {
@@ -66,7 +66,9 @@
       "shirts": "SHIRTS",
       "tops": "KNITWEAR & TOPS",
       "dresses": "DRESSES",
-      "skirts": "SKIRTS"
+      "skirts": "SKIRTS",
+      "ss27": "SS27",
+      "accessories": "ACCESSORIES"
     },
     "quickViewBtn": "QUICK VIEW (5 PHOTOS)"
   },

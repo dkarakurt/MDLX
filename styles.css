@@ -3532,3 +3532,144 @@ body.mobile-nav-open .mobile-drawer { transform: none; visibility: visible; }
 @media (max-width: 640px) {
   .product-grid { grid-template-columns: 1fr; gap: 48px; }
 }
+
+/* ==========================================================================
+   SS27 — NEW FEMININITY
+   Studio-grey canvas and a terracotta accent taken from the collection.
+   ========================================================================== */
+:root {
+  --ss27-studio: #e8e6e2;
+  --ss27-ink: #1a1918;
+  --ss27-terracotta: #b4532f;
+}
+
+.hero-season {
+  display: inline-block;
+  margin-bottom: 18px;
+  font-size: 0.7rem;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: #e9d9cf;
+  border-bottom: 1px solid rgba(233, 217, 207, 0.45);
+  padding-bottom: 6px;
+}
+.hero-season:hover { color: var(--color-white); border-bottom-color: var(--color-white); }
+
+.ss27-section {
+  background: var(--ss27-studio);
+  color: var(--ss27-ink);
+  padding: 110px 48px 100px;
+}
+.ss27-head {
+  max-width: 760px;
+  margin: 0 auto 56px;
+  text-align: center;
+}
+.ss27-eyebrow {
+  display: inline-block;
+  font-size: 0.68rem;
+  letter-spacing: 0.34em;
+  color: var(--ss27-terracotta);
+  margin-bottom: 18px;
+}
+.ss27-title {
+  font-family: var(--font-serif);
+  font-weight: 400;
+  font-size: clamp(2rem, 4.2vw, 3.4rem);
+  letter-spacing: 0.16em;
+  line-height: 1.1;
+  margin-bottom: 18px;
+}
+.ss27-sub {
+  font-size: 0.95rem;
+  line-height: 1.8;
+  color: #55524d;
+}
+.ss27-campaign {
+  max-width: 1280px;
+  margin: 0 auto 80px;
+}
+.ss27-campaign img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.ss27-looks {
+  max-width: 1280px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 56px 28px;
+}
+.ss27-look { display: flex; flex-direction: column; }
+.ss27-look-img {
+  display: block;
+  aspect-ratio: 3 / 4;
+  overflow: hidden;
+  background: #dcd9d4;
+  margin-bottom: 16px;
+}
+.ss27-look-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition-slow);
+}
+.ss27-look-img:hover img { transform: scale(1.035); }
+.ss27-look-num {
+  font-size: 0.64rem;
+  letter-spacing: 0.3em;
+  color: var(--ss27-terracotta);
+  margin-bottom: 8px;
+}
+.ss27-look-items { list-style: none; display: flex; flex-direction: column; gap: 4px; }
+.ss27-look-items a {
+  font-family: var(--font-serif);
+  font-size: 0.98rem;
+  line-height: 1.35;
+  color: var(--ss27-ink);
+  border-bottom: 1px solid transparent;
+  transition: border-color var(--transition-fast);
+}
+.ss27-look-items a:hover { border-bottom-color: currentColor; }
+.ss27-cta-row { text-align: center; margin-top: 72px; }
+.ss27-cta {
+  display: inline-flex;
+  gap: 12px;
+  align-items: center;
+  font-size: 0.72rem;
+  letter-spacing: 0.26em;
+  padding: 15px 30px;
+  border: 1px solid var(--ss27-ink);
+  color: var(--ss27-ink);
+  transition: background-color var(--transition-fast), color var(--transition-fast);
+}
+.ss27-cta:hover { background: var(--ss27-ink); color: var(--ss27-studio); }
+
+/* Season pill in the catalog */
+.filter-btn-season { border-color: rgba(180, 83, 47, 0.7); color: #e7b9a6; }
+.filter-btn-season.active { background: var(--ss27-terracotta); border-color: var(--ss27-terracotta); color: #fff; }
+
+@media (max-width: 1024px) {
+  .ss27-section { padding: 80px 24px; }
+  .ss27-looks { grid-template-columns: repeat(2, 1fr); gap: 44px 20px; }
+  .ss27-campaign { margin-bottom: 56px; }
+}
+@media (max-width: 640px) {
+  .ss27-section { padding: 64px 0 72px; }
+  .ss27-head { padding: 0 20px; margin-bottom: 36px; }
+  .ss27-title { letter-spacing: 0.1em; }
+  .ss27-campaign { margin-bottom: 40px; }
+  /* Horizontal swipe through the looks on phones */
+  .ss27-looks {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    gap: 14px;
+    padding: 0 20px 8px;
+    scrollbar-width: none;
+  }
+  .ss27-looks::-webkit-scrollbar { display: none; }
+  .ss27-look { flex: 0 0 72%; scroll-snap-align: start; }
+  .ss27-cta-row { margin-top: 44px; padding: 0 20px; }
+}
