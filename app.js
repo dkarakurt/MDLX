@@ -145,7 +145,7 @@ const TRANSLATIONS = {
     },
     heroSub: "THE ART OF THE BLAZER",
     heroProv: "Türkiye'de tasarlandı,<br>dünya için yaratıldı.",
-    heroCta: "SS27 KOLEKSİYONU",
+    heroCta: "KOLEKSİYONU KEŞFET",
     heroStoryTag: "ATELIER HİKÂYESİ",
     sigPretitle: "İMZA TASARIM",
     sigTitle: "MODERN KADIN GİYİMİ",
@@ -284,7 +284,7 @@ const TRANSLATIONS = {
     },
     heroSub: "THE ART OF THE BLAZER",
     heroProv: "Designed in Türkiye<br>Made for the world.",
-    heroCta: "DISCOVER SS27",
+    heroCta: "EXPLORE COLLECTION",
     heroStoryTag: "ATELIER STORY",
     sigPretitle: "SIGNATURE PIECE",
     sigTitle: "THE SIGNATURE BLAZER",
@@ -768,6 +768,14 @@ function initHeroSlider() {
     steps.forEach((st, idx) => {
       st.classList.toggle('active', idx === index);
     });
+    // Slide 0 carries the SS27 story; the others carry the house signature.
+    const ss27 = document.querySelector('.hero-content-ss27');
+    const brand = document.querySelector('.hero-content-brand');
+    document.getElementById('heroSection')?.classList.toggle('is-ss27', index === 0);
+    if (ss27 && brand) {
+      ss27.classList.toggle('is-active', index === 0);
+      brand.classList.toggle('is-active', index !== 0);
+    }
   };
 
   heroInterval = setInterval(() => {
@@ -1188,7 +1196,7 @@ window.addEventListener('popstate', () => {
 });
 
 function renderProducts() {
-  renderLookbook();
+  renderSeasonCopy();
   const grid = document.getElementById('productGrid');
   const sort = document.getElementById('sortSelect').value;
 
@@ -1293,45 +1301,15 @@ function ss27Srcset(webp) {
   return `${webp.replace(/\.webp$/, '-600.webp')} 600w, ${webp} 1200w`;
 }
 
-function renderLookbook() {
-  const wrap = document.getElementById('ss27Looks');
-  if (!wrap) return;
+// SS27 hero slide and category card copy (TR / EN)
+function renderSeasonCopy() {
   const isTr = STATE.currentLang === 'TR';
-  const looks = {};
-  STATE.products.filter(p => p.season === 'SS27').forEach(p => {
-    (p.images || [p.primaryImage]).forEach(img => {
-      const m = /look-(\d+)\./.exec(img);
-      if (!m) return;
-      const n = parseInt(m[1], 10);
-      (looks[n] = looks[n] || { img, items: [] }).items.push(p);
-    });
-  });
-  wrap.innerHTML = Object.keys(looks).map(Number).sort((a, b) => a - b).map(n => {
-    const look = looks[n];
-    const webp = look.img.replace(/\.(jpe?g|png)$/i, '.webp');
-    const num = String(n).padStart(2, '0');
-    const links = look.items.map(p => `<li><a href="/urun/${p.slug || p.id}">${isTr ? (p.nameTr || p.name) : p.name}</a></li>`).join('');
-    return `
-      <article class="ss27-look">
-        <a class="ss27-look-img" href="/urun/${look.items[0].slug || look.items[0].id}" aria-label="Look ${num}">
-          <picture>
-            <source srcset="${ss27Srcset(webp)}" sizes="(max-width: 640px) 72vw, (max-width: 1024px) 50vw, 300px" type="image/webp">
-            <img src="${look.img}" alt="SS27 Look ${num}" loading="lazy" width="1200" height="1600">
-          </picture>
-        </a>
-        <span class="ss27-look-num">LOOK ${num}</span>
-        <ul class="ss27-look-items">${links}</ul>
-      </article>`;
-  }).join('');
-
-  const title = document.getElementById('ss27Title');
-  if (title) title.innerText = isTr ? 'YENİ KADINLIK' : 'NEW FEMININITY';
-  const sub = document.getElementById('ss27Sub');
-  if (sub) sub.innerText = isTr
-    ? 'Güçlü omuzlar, akışkan drapeler, şeffaf katmanlar. Yeni sezon sekiz görünümde.'
-    : 'Strong shoulders, fluid drapes, sheer layers. The new season in eight looks.';
-  const cta = document.getElementById('ss27Cta');
-  if (cta) cta.innerHTML = (isTr ? 'SS27 PARÇALARININ TÜMÜ' : 'SHOP ALL SS27') + ' <span>&rarr;</span>';
+  const set = (id, html) => { const el = document.getElementById(id); if (el) el.innerHTML = html; };
+  set('ss27HeroTitle', isTr ? 'YENİ KADINLIK' : 'NEW FEMININITY');
+  set('ss27HeroSub', isTr ? 'İLKBAHAR / YAZ 2027' : 'SPRING / SUMMER 2027');
+  set('ss27HeroProv', isTr ? 'Güçlü omuzlar, akışkan drapeler.<br>Sekiz parça, tek sezon.' : 'Strong shoulders, fluid drapes.<br>Eight pieces, one season.');
+  set('ss27HeroCtaText', isTr ? "SS27'Yİ KEŞFET" : 'DISCOVER SS27');
+  set('catBadgeSS27', isTr ? 'YENİ SEZON' : 'NEW SEASON');
 }
 
 function switchCardPreviewImage(productId, imgSrc, dotEl) {

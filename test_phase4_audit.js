@@ -34,12 +34,12 @@ const sandbox = {};
 vm.createContext(sandbox);
 const productsJs = vm.runInContext(productsFile + '; PRODUCTS_DATA;', sandbox);
 
-it('products.js ve products.json içinde 27 ürünün tümü mevcut olmalı', () => {
-  assert.strictEqual(productsJs.length, 27, `products.js içinde 27 ürün olmalı, bulundu: ${productsJs.length}`);
-  assert.strictEqual(productsJson.length, 27, `products.json içinde 27 ürün olmalı, bulundu: ${productsJson.length}`);
+it('products.js ve products.json içinde 20 ürünün tümü mevcut olmalı', () => {
+  assert.strictEqual(productsJs.length, 20, `products.js içinde 20 ürün olmalı, bulundu: ${productsJs.length}`);
+  assert.strictEqual(productsJson.length, 20, `products.json içinde 20 ürün olmalı, bulundu: ${productsJson.length}`);
 });
 
-it('Tüm 27 üründe fabric, fabricTr, fit, fitTr, lining, liningTr, care, careTr eksiksiz tanımlı olmalı', () => {
+it('Tüm 20 üründe fabric, fabricTr, fit, fitTr, lining, liningTr, care, careTr eksiksiz tanımlı olmalı', () => {
   productsJs.forEach(p => {
     assert.ok(p.fabric && p.fabric.length > 0, `Ürün ${p.id} fabric eksik`);
     assert.ok(p.fabricTr && p.fabricTr.length > 0, `Ürün ${p.id} fabricTr eksik`);

@@ -136,21 +136,28 @@
   <!-- =========================================================================
        HERO SECTION (Matching Image 2 Top Section)
        ========================================================================= -->
-  <section class="hero-section" id="heroSection">
+  <section class="hero-section is-ss27" id="heroSection">
     <div class="hero-slider-bg">
-      <div class="hero-slide active" data-index="0">
+      <div class="hero-slide hero-slide-ss27 active" data-index="0">
         <picture>
-          <source srcset="assets/images/uploaded_1791785047520_Gemini_Generated_Image_wpltxzwpltxzwplt-800w.webp 800w, assets/images/uploaded_1791785047520_Gemini_Generated_Image_wpltxzwpltxzwplt.webp 1920w" sizes="100vw" type="image/webp">
-          <img src="assets/images/uploaded_1791785047520_Gemini_Generated_Image_wpltxzwpltxzwplt.jpg" alt="Maison De Loup Atelier Signature Look" id="heroImg1" width="1920" height="1080" fetchpriority="high">
+          <source media="(max-width: 768px)" srcset="assets/images/ss27/hero-ss27-mobile.webp" type="image/webp">
+          <source srcset="assets/images/ss27/hero-ss27-800w.webp 800w, assets/images/ss27/hero-ss27.webp 1920w" sizes="100vw" type="image/webp">
+          <img src="assets/images/ss27/hero-ss27.jpg" alt="SS27 New Femininity: La Taille peplum ceket, La Drapée saten elbise ve Le Grand blazer" id="heroImgSS27" width="1920" height="1080" fetchpriority="high">
         </picture>
       </div>
       <div class="hero-slide" data-index="1">
+        <picture>
+          <source srcset="assets/images/uploaded_1791785047520_Gemini_Generated_Image_wpltxzwpltxzwplt-800w.webp 800w, assets/images/uploaded_1791785047520_Gemini_Generated_Image_wpltxzwpltxzwplt.webp 1920w" sizes="100vw" type="image/webp">
+          <img src="assets/images/uploaded_1791785047520_Gemini_Generated_Image_wpltxzwpltxzwplt.jpg" alt="Maison De Loup Atelier Signature Look" id="heroImg1" width="1920" height="1080" loading="lazy">
+        </picture>
+      </div>
+      <div class="hero-slide" data-index="2">
         <picture>
           <source srcset="assets/images/product_blazer_noir.webp" type="image/webp">
           <img src="assets/images/product_blazer_noir.jpg" alt="Maison De Loup Atelier Noir Blazer" id="heroImg2" width="1920" height="1080" loading="lazy">
         </picture>
       </div>
-      <div class="hero-slide" data-index="2">
+      <div class="hero-slide" data-index="3">
         <picture>
           <source srcset="assets/images/product_blazer_ecru.webp" type="image/webp">
           <img src="assets/images/product_blazer_ecru.jpg" alt="Maison De Loup Atelier Ecru Sculpted Blazer" id="heroImg3" width="1920" height="1080" loading="lazy">
@@ -160,50 +167,41 @@
 
     <div class="hero-overlay"></div>
 
-    <div class="hero-content">
-      <a href="#ss27Section" class="hero-season" id="heroSeason">SS27 — NEW FEMININITY</a>
+    <div class="hero-copy">
+    <div class="hero-content hero-content-ss27 is-active" data-slide="0">
+      <span class="hero-season">SS27 &middot; NEW FEMININITY</span>
+      <p class="hero-title hero-title-ss27" id="ss27HeroTitle">YENİ KADINLIK</p>
+      <p class="hero-subtitle" id="ss27HeroSub">İLKBAHAR / YAZ 2027</p>
+      <p class="hero-provenance" id="ss27HeroProv">Güçlü omuzlar, akışkan drapeler.<br>Sekiz parça, tek sezon.</p>
+      <a href="/?kategori=ss27" class="hero-cta hero-cta-ss27" id="ss27HeroCta" data-filter="ss27">
+        <span id="ss27HeroCtaText">SS27'Yİ KEŞFET</span>
+        <span>&rarr;</span>
+      </a>
+    </div>
+    <div class="hero-content hero-content-brand" data-slide="brand">
       <h1 class="hero-title" id="heroTitle">MAISON DE LOUP ATELIER</h1>
       <p class="hero-subtitle" id="heroSub">THE ART OF THE BLAZER</p>
       <p class="hero-provenance" id="heroProv">
         Türkiye'de tasarlandı,<br>
         dünya için yaratıldı.
       </p>
-      <a href="#ss27Section" class="hero-cta" id="heroCta">
-        <span id="heroCtaText">SS27 KOLEKSİYONU</span>
+      <a href="#catalog" class="hero-cta" id="heroCta">
+        <span id="heroCtaText">KOLEKSİYONU KEŞFET</span>
         <span>&rarr;</span>
       </a>
+    </div>
     </div>
 
     <!-- 01 - 02 - 03 Slider Navigation -->
     <div class="hero-slider-nav">
-      <span class="hero-step active" onclick="switchHeroSlide(0)">01</span>
-      <span class="hero-step" onclick="switchHeroSlide(1)">02</span>
-      <span class="hero-step" onclick="switchHeroSlide(2)">03</span>
+      <span class="hero-step hero-step-ss27 active" onclick="switchHeroSlide(0)">SS27</span>
+      <span class="hero-step" onclick="switchHeroSlide(1)">01</span>
+      <span class="hero-step" onclick="switchHeroSlide(2)">02</span>
+      <span class="hero-step" onclick="switchHeroSlide(3)">03</span>
     </div>
 
     <!-- Vertical Floating STORIES Tag -->
     <div class="hero-stories-tag" id="heroStoryTag" onclick="openStoryModal()">ATELIER HİKÂYESİ</div>
-  </section>
-
-  <!-- =========================================================================
-       SS27 — NEW FEMININITY (campaign + lookbook; looks rendered by app.js)
-       ========================================================================= -->
-  <section class="ss27-section" id="ss27Section" aria-labelledby="ss27Title">
-    <header class="ss27-head">
-      <span class="ss27-eyebrow">SS27 · NEW FEMININITY</span>
-      <h2 class="ss27-title" id="ss27Title">YENİ KADINLIK</h2>
-      <p class="ss27-sub" id="ss27Sub">Güçlü omuzlar, akışkan drapeler, şeffaf katmanlar. Yeni sezon sekiz görünümde.</p>
-    </header>
-    <figure class="ss27-campaign">
-      <picture>
-        <source srcset="assets/images/ss27/campaign-1280.webp 1280w, assets/images/ss27/campaign.webp 2400w" sizes="(max-width: 1376px) 100vw, 1280px" type="image/webp">
-        <img src="assets/images/ss27/campaign.jpg" alt="SS27 New Femininity koleksiyonundan sekiz görünüm" width="2400" height="1599" loading="lazy">
-      </picture>
-    </figure>
-    <div class="ss27-looks" id="ss27Looks"></div>
-    <div class="ss27-cta-row">
-      <a href="#catalog" class="ss27-cta" id="ss27Cta" data-filter="ss27">SS27 PARÇALARININ TÜMÜ <span>&rarr;</span></a>
-    </div>
   </section>
 
   <!-- =========================================================================
@@ -258,6 +256,20 @@
     </div>
 
     <div class="category-grid" id="categoryGrid">
+      <a href="/?kategori=ss27" class="category-card category-card-season" data-filter="ss27">
+        <div class="category-img-box">
+          <picture>
+            <source srcset="assets/images/ss27/cat-ss27-750w.webp 750w, assets/images/ss27/cat-ss27.webp 1500w" sizes="(max-width: 768px) 100vw, 40vw" type="image/webp">
+            <img src="assets/images/ss27/cat-ss27.jpg" alt="SS27 New Femininity koleksiyonu" loading="lazy" width="1500" height="900">
+          </picture>
+          <span class="category-badge-core category-badge-season" id="catBadgeSS27">YENİ SEZON</span>
+        </div>
+        <div class="category-name-row">
+          <span>SS27 &middot; NEW FEMININITY</span>
+          <span>&rarr;</span>
+        </div>
+      </a>
+
       <a href="#catalog" class="category-card" onclick="filterCatalog('blazers')">
         <div class="category-img-box">
           <picture>
