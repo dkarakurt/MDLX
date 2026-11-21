@@ -81,7 +81,7 @@ assert(productsJsContent.includes('"TRİKO & ÜST"'), 'products.js CATEGORIES_DA
 // 4. Internal Badges Check: HERO CREATION and STORIES should NOT appear as user-facing badges
 const indexHtmlContent = fs.readFileSync(path.join(projectDir, 'index.html'), 'utf8');
 assert(!indexHtmlContent.includes('>HERO CREATION<'), 'index.html içerisinde kullanıcıya görünen HERO CREATION rozeti kalmamış (İMZA TASARIM ile değiştirildi)');
-assert(indexHtmlContent.includes('ATELIER HİKAYESİ'), 'index.html içerisinde hero rozeti "ATELIER HİKAYESİ" olarak konumlandırılmış');
+assert(indexHtmlContent.includes('ATELIER HİKÂYESİ'), 'index.html içerisinde hero rozeti "ATELIER HİKÂYESİ" olarak konumlandırılmış');
 
 // 5. Brand Invariants Check
 // Maison De Loup Atelier, THE ART OF THE BLAZER

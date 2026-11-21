@@ -117,7 +117,7 @@ async function runPhase6Audit() {
     indexHtml.includes('id="storyModal"') &&
     indexHtml.includes('role="dialog"') &&
     indexHtml.includes('aria-modal="true"') &&
-    indexHtml.includes('aria-label="Maison De Loup Atelier Hikayesi"'),
+    indexHtml.includes('aria-label="Maison De Loup Atelier Hikâyesi"'),
     'storyModal has role="dialog", aria-modal="true", and descriptive aria-label'
   );
 

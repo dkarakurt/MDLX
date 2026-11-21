@@ -2,10 +2,10 @@
 const PRODUCTS_DATA = [
   {
     "id": "mdl-prod-1791792766078",
-    "name": "CEKET002",
-    "nameTr": "CEKET002",
+    "name": "Le Frangé Belted Check Blazer",
+    "nameTr": "Le Frangé Ekose Kemerli Blazer",
     "category": "blazers",
-    "badge": "HERO PIECE",
+    "badge": "NEW SEASON",
     "isHero": true,
     "priceTRY": 14500,
     "priceEUR": 384,
@@ -22,8 +22,8 @@ const PRODUCTS_DATA = [
     ],
     "colors": [
       {
-        "name": "Noir",
-        "hex": "#111111"
+        "name": "Mocha Check",
+        "hex": "#6B5443"
       }
     ],
     "sizes": [
@@ -33,30 +33,36 @@ const PRODUCTS_DATA = [
       "40",
       "42"
     ],
-    "description": "Crafted from 100% pure cashmere, this double-breasted atelier blazer delivers unparalleled elegance and warmth. Features sculpted shoulders and a fluid silhouette tailored to perfection.",
-    "descriptionTr": "Maison De Loup Atelier imzasını taşıyan, %100 saf kaşmir dokumasıyla soğuk havalarda benzersiz bir zarafet sunan lüks kruvaze blazer ceket. Keskin omuz yapısı ve akıcı silüetiyle zamansız bir duruş.",
-    "fabric": "%100 KAŞMİR",
-    "fabricTr": "%100 KAŞMİR",
-    "fit": "Tailored structured fit.",
-    "fitTr": "Kalıplı terzi formu.",
+    "description": "A Prince of Wales check blazer in warm mocha tones, cinched with a self-tie belt and finished with a hand-loomed fringe hem. Classic tailoring with an unhurried, modern attitude: the new-season signature of the house.",
+    "descriptionTr": "Sıcak kahve tonlarında Prens dö Gal ekose, bele oturan bağlamalı kuşak ve saçaklı etek ucu. Klasik çentik yakayı serbest ve modern bir tavırla buluşturan, Maison De Loup'un yeni sezon imza parçası.",
+    "fabric": "100% Cashmere",
+    "fabricTr": "%100 Kaşmir",
+    "fit": "Relaxed tailored fit, belted at the waist.",
+    "fitTr": "Kuşakla bele oturan, rahat terzi kalıbı.",
     "details": [
-      "Maison De Loup Atelier özel üretimi"
+      "Prince of Wales check",
+      "Self-tie fabric belt",
+      "Fringed hem",
+      "Flap side pockets"
     ],
     "detailsTr": [
-      "Maison De Loup Atelier özel üretimi"
+      "Prens dö Gal ekose desen",
+      "Bağlamalı kumaş kuşak",
+      "Saçaklı etek ucu",
+      "Kapaklı yan cepler"
     ],
-    "lining": "100% Cupro Silk & Italian Canvas Structured Lining",
-    "liningTr": "%100 Cupro İpek & İtalyan Telalı Astar",
+    "lining": "100% cupro lining, Italian canvas",
+    "liningTr": "%100 kupro astar, İtalyan telası",
     "care": "Specialist dry clean only. Cool iron on reverse.",
     "careTr": "Yalnızca uzman kuru temizleme. Düşük ısıda tersten ütüleyiniz.",
     "slug": "ceket002-atelier-blazer"
   },
   {
     "id": "mdl-prod-1791792518739",
-    "name": "PNTLN002",
-    "nameTr": "PNTLN002",
+    "name": "Le Frangé Check Trousers",
+    "nameTr": "Le Frangé Ekose Pantolon",
     "category": "trousers",
-    "badge": "HERO PIECE",
+    "badge": "NEW SEASON",
     "isHero": false,
     "priceTRY": 9900,
     "priceEUR": 262,
@@ -73,8 +79,8 @@ const PRODUCTS_DATA = [
     ],
     "colors": [
       {
-        "name": "Noir",
-        "hex": "#111111"
+        "name": "Mocha Check",
+        "hex": "#6B5443"
       }
     ],
     "sizes": [
@@ -84,30 +90,36 @@ const PRODUCTS_DATA = [
       "40",
       "42"
     ],
-    "description": "High-waisted tailored trousers with an engineered drape and clean sartorial lines. Designed to seamlessly complement Maison De Loup blazers from boardroom to evening.",
-    "descriptionTr": "Yüksek bel, dökümlü paça kesimi ve kusursuz terzilik çizgileriyle blazer ceketleri tamamlayan modern kadın kumaş pantolonu. Gün boyu konfor ve asil bir duruş.",
-    "fabric": "%100 KETEN",
-    "fabricTr": "%100 KETEN",
-    "fit": "Tailored structured fit.",
-    "fitTr": "Kalıplı terzi formu.",
+    "description": "Straight-leg trousers in the house's mocha Prince of Wales check, finished with a fringed hem that moves with every step. Wear them with the Le Frangé blazer as a suit, or alone with a sharp black jacket.",
+    "descriptionTr": "Prens dö Gal ekose desenli, her adımda hareket eden saçaklı paçalarıyla düz kesim pantolon. Le Frangé blazer ile takım olarak ya da keskin siyah bir ceketle tek başına giyilebilir.",
+    "fabric": "100% Linen",
+    "fabricTr": "%100 Keten",
+    "fit": "High-rise, straight leg.",
+    "fitTr": "Yüksek bel, düz paça.",
     "details": [
-      "Maison De Loup Atelier özel üretimi"
+      "Prince of Wales check",
+      "Fringed hem",
+      "Slanted side pockets",
+      "Pairs with the Le Frangé blazer"
     ],
     "detailsTr": [
-      "Maison De Loup Atelier özel üretimi"
+      "Prens dö Gal ekose desen",
+      "Saçaklı paça",
+      "Verev yan cepler",
+      "Le Frangé blazer ile takım olur"
     ],
     "lining": "Pocket and inner waistband cupro lining",
-    "liningTr": "Ceplik ve bel içi cupro terzi astarı",
+    "liningTr": "Cep torbası ve bel içi kupro astar",
     "care": "Specialist dry clean recommended. Cool iron.",
     "careTr": "Kuru temizleme önerilir. Düşük ısıda ütüleyiniz.",
     "slug": "pntln002-tailored-trousers"
   },
   {
     "id": "mdl-prod-1791792265725",
-    "name": "ELBISE 003",
-    "nameTr": "ELBISE 003",
+    "name": "La Côte Ribbed Knit Maxi Dress",
+    "nameTr": "La Côte Fitilli Triko Maksi Elbise",
     "category": "dresses",
-    "badge": "HERO PIECE",
+    "badge": "NEW SEASON",
     "isHero": false,
     "priceTRY": 5500,
     "priceEUR": 146,
@@ -124,8 +136,8 @@ const PRODUCTS_DATA = [
     ],
     "colors": [
       {
-        "name": "Noir",
-        "hex": "#111111"
+        "name": "Sand Beige",
+        "hex": "#D9CBB6"
       }
     ],
     "sizes": [
@@ -135,28 +147,34 @@ const PRODUCTS_DATA = [
       "40",
       "42"
     ],
-    "description": "An atelier couture dress merging clean architectural lines with fluid femininity. A versatile luxury piece created for discerning occasions.",
-    "descriptionTr": "Minimalist mimari hatlar ve feminen dökümün buluştuğu atelier couture elbise. Özel davetlerden modern şehir yaşamına uzanan lüks ve zamansız tasarım.",
-    "fabric": "%100 Pamuk",
+    "description": "A rib-knit turtleneck maxi dress that follows the body in one clean line, drawn in at the waist with a slim tasselled belt. Quietly sculptural, from daytime to evening.",
+    "descriptionTr": "Vücudu tek ve temiz bir çizgiyle takip eden, fitilli örgü balıkçı yaka maksi elbise. Belde ince, püsküllü bir kemerle tamamlanır. Gündüzden geceye sakin ve heykelsi bir duruş.",
+    "fabric": "100% Cotton",
     "fabricTr": "%100 Pamuk",
-    "fit": "Tailored structured fit.",
-    "fitTr": "Kalıplı terzi formu.",
+    "fit": "Body-skimming, ankle length.",
+    "fitTr": "Vücuda oturan, bilek boyu.",
     "details": [
-      "Maison De Loup Atelier özel üretimi"
+      "Rib-knit texture",
+      "Turtleneck",
+      "Slim tasselled belt",
+      "Ankle length"
     ],
     "detailsTr": [
-      "Maison De Loup Atelier özel üretimi"
+      "Fitilli (rib) örgü",
+      "Balıkçı yaka",
+      "İnce püsküllü kemer",
+      "Bilek boyu"
     ],
-    "lining": "100% Habotai Silk Breathable Lining",
-    "liningTr": "%100 Habotai İpek Nefes Alan Astar",
+    "lining": "100% habotai silk lining",
+    "liningTr": "%100 habotai ipek astar",
     "care": "Gentle hand wash at 30°C or dry clean.",
     "careTr": "30°C hassas elde yıkama veya kuru temizleme.",
     "slug": "elbise003-couture-dress"
   },
   {
     "id": "mdl-prod-1791785220112",
-    "name": "WHITE CLASSIC",
-    "nameTr": "BEYAZ KLASIK",
+    "name": "L'Ivoire Classic Blazer",
+    "nameTr": "L'Ivoire Klasik Blazer Ceket",
     "category": "blazers",
     "badge": "SIGNATURE",
     "isHero": true,
@@ -168,8 +186,8 @@ const PRODUCTS_DATA = [
     "secondaryImage": "assets/images/uploaded_1791786960676_Screenshot_30.jpg",
     "colors": [
       {
-        "name": "Noir",
-        "hex": "#111111"
+        "name": "Ivoire",
+        "hex": "#EEE8DC"
       }
     ],
     "sizes": [
@@ -179,17 +197,23 @@ const PRODUCTS_DATA = [
       "40",
       "42"
     ],
-    "description": "A tailored classic blazer in crisp white, crafted with canvassed construction and luminous tonal buttons. A commanding wardrobe cornerstone for every season.",
-    "descriptionTr": "Saf beyazın zamansız zarafetiyle tasarlanmış klasik terzi işi blazer ceket. Akıcı kumaş dokusu, kusursuz telalı kalıbı ve sedef tonlu düğme detaylarıyla gardırobun vazgeçilmezi.",
-    "fabric": "%100 Saf Anadolu Yünü",
+    "description": "A classic tailored blazer in ivory, cut from fluid wool on a canvassed pattern. A wardrobe cornerstone for every season.",
+    "descriptionTr": "Fildişi tonunun zamansız zarafetiyle tasarlanmış klasik terzi işi blazer ceket. Akıcı kumaş dokusu ve telalı kalıbıyla gardırobun vazgeçilmezi.",
+    "fabric": "100% Pure Anatolian Wool",
     "fabricTr": "%100 Saf Anadolu Yünü",
     "fit": "Tailored structured fit.",
     "fitTr": "Kalıplı terzi formu.",
     "details": [
-      "Maison De Loup Atelier özel üretimi"
+      "Classic notch lapel",
+      "Flap side pockets",
+      "Canvassed tailoring",
+      "Made by Maison De Loup Atelier"
     ],
     "detailsTr": [
-      "Maison De Loup Atelier özel üretimi"
+      "Klasik çentik yaka",
+      "Kapaklı yan cepler",
+      "Telalı terzi kalıbı",
+      "Maison De Loup Atelier üretimi"
     ],
     "images": [
       "assets/images/uploaded_1791792318446_Gemini_Generated_Image_1pmn0n1pmn0n1pmn.jpg",
@@ -198,8 +222,8 @@ const PRODUCTS_DATA = [
       "assets/images/uploaded_1791786969864_Screenshot_32.jpg",
       "assets/images/uploaded_1791792329245_Screenshot_29.jpg"
     ],
-    "lining": "100% Bemberg Cupro Silk Monogram Lining",
-    "liningTr": "%100 Bemberg Cupro İpek Jakarlı Astar",
+    "lining": "100% Bemberg cupro jacquard lining",
+    "liningTr": "%100 Bemberg kupro jakarlı astar",
     "care": "Specialist dry clean only. Steam iron.",
     "careTr": "Yalnızca uzman kuru temizleme. Buharlı ütüleme önerilir.",
     "slug": "white-classic-blazer"
@@ -235,11 +259,11 @@ const PRODUCTS_DATA = [
       "42"
     ],
     "description": "The definitive silhouette of Maison De Loup Atelier. Sculpted sharp shoulders, double-breasted horn button closure, and floating canvas construction. Designed in Türkiye, crafted from 100% Anatolian virgin wool in our Istanbul atelier.",
-    "descriptionTr": "Maison De Loup Atelier'nin imza silüeti. Keskin omuz yapısı, kruvaze kemik düğme kapaması ve telalı terzilik işçiliği. %100 saf Anadolu yününden İstanbul atölyemizde özenle üretildi.",
-    "fabric": "100% Virgin Wool / Lining: 100% Cupro Silk",
-    "fabricTr": "%100 Saf Yün / Astar: %100 Kupro İpek",
+    "descriptionTr": "Maison De Loup Atelier'nin imza silüeti. Keskin omuz yapısı, kemik düğmeli kruvaze kapama ve telalı terzilik işçiliği. %100 saf Anadolu yününden İstanbul atölyemizde özenle üretildi.",
+    "fabric": "100% Virgin Wool",
+    "fabricTr": "%100 Saf Yün",
     "fit": "Tailored structured fit. True to size. For an oversized look, size up.",
-    "fitTr": "Kalıplı terzi formu. Kendi bedeninizde tercih edebilirsiniz. Oversize kullanım için bir beden büyük önerilir.",
+    "fitTr": "Kalıplı terzi formu. Kendi bedeninizi tercih edebilirsiniz; oversize görünüm için bir beden büyük önerilir.",
     "details": [
       "Peak lapel with hand-finished pick stitching",
       "Signature horn buttons with engraved MDL monogram",
@@ -247,13 +271,13 @@ const PRODUCTS_DATA = [
       "Dry clean only by luxury garment specialist"
     ],
     "detailsTr": [
-      "El dikişi finisajlı sivri yaka (Peak lapel)",
-      "MDL monogram işlemeli kemik düğmeler",
-      "İç cep detayı ve kapaklı yan cepler",
-      "Yalnızca özel kuru temizleme"
+      "El dikişi detaylı sivri yaka",
+      "MDL monogramlı kemik düğmeler",
+      "İç göğüs cebi ve kapaklı yan cepler",
+      "Yalnızca kuru temizleme"
     ],
-    "lining": "100% Bemberg Cupro Silk Italian Canvassed Lining",
-    "liningTr": "%100 Bemberg Cupro İpek & İtalyan Telalı Astar",
+    "lining": "100% Bemberg cupro lining, Italian canvas",
+    "liningTr": "%100 Bemberg kupro astar, İtalyan telası",
     "care": "Specialist dry clean only. Cool iron on reverse.",
     "careTr": "Yalnızca uzman kuru temizleme. Düşük ısıda tersten ütüleyiniz.",
     "slug": "noir-atelier-blazer"
@@ -288,11 +312,11 @@ const PRODUCTS_DATA = [
       "40"
     ],
     "description": "Architectural tailoring celebrating feminine poise. Cinched waist contour with reinforced canvas, tortoiseshell buttons, and patch flap pockets. A contemporary interpretation of classic power dressing.",
-    "descriptionTr": "Zarif kadınsı formu vurgulayan mimari terzilik. Beli kavrayan kum saati kesim, kaplumbağa kabuğu desenli düğmeler ve kapaklı cepler. Güçlü duruşun zamansız ifadesi.",
-    "fabric": "95% Virgin Wool, 5% Cashmere / Lining: 100% Viscose",
-    "fabricTr": "%95 Saf Yün, %5 Kaşmir / Astar: %100 Viskon",
+    "descriptionTr": "Kadınsı formu vurgulayan mimari terzilik. Beli kavrayan kum saati kesim, kaplumbağa kabuğu desenli düğmeler ve kapaklı cepler. Güçlü duruşun zamansız ifadesi.",
+    "fabric": "95% Virgin Wool, 5% Cashmere",
+    "fabricTr": "%95 Saf Yün, %5 Kaşmir",
     "fit": "Fitted waist silhouette. Fits true to size.",
-    "fitTr": "Beli oturan kalıp. Tam bedeninizi tercih ediniz.",
+    "fitTr": "Bele oturan kalıp. Kendi bedeninizi tercih ediniz.",
     "details": [
       "Notch collar with sculpted lapel rolls",
       "Tortoiseshell resin buttons",
@@ -300,13 +324,13 @@ const PRODUCTS_DATA = [
       "Made in Istanbul atelier"
     ],
     "detailsTr": [
-      "Kavisli terzi yaka kesimi",
-      "Özel desenli reçine düğmeler",
-      "Rahat hareket sağlayan çift arka yırtmaç",
-      "İstanbul atölyelerinde üretilmiştir"
+      "Kavisli çentik yaka",
+      "Kaplumbağa kabuğu desenli reçine düğmeler",
+      "Rahat hareket için çift arka yırtmaç",
+      "İstanbul atölyemizde üretilmiştir"
     ],
     "lining": "100% Fine Viscose Tailored Breathable Lining",
-    "liningTr": "%100 İnce Viskon Terzilik Astarı",
+    "liningTr": "%100 viskon terzi astarı",
     "care": "Specialist dry clean only. Cool iron on reverse.",
     "careTr": "Yalnızca uzman kuru temizleme. Düşük ısıda tersten ütüleyiniz.",
     "slug": "sculpted-hourglass-wool-blazer"
@@ -342,9 +366,9 @@ const PRODUCTS_DATA = [
       "42"
     ],
     "description": "Spun from heavyweight Turkish virgin wool with a brush finish. Impeccable double-breasted crossover, sharp masculine-inspired shoulders, and rich warm camel tone.",
-    "descriptionTr": "Fırçalanmış dokulu saf Türk yününden dokundu. Kruvaze kesim, maskülen esintili keskin vatkalar ve zengin sıcak deve tüyü tonu.",
-    "fabric": "100% Fine Wool / Lining: 100% Bemberg Cupro",
-    "fabricTr": "%100 Saf Yün / Astar: %100 Bemberg Kupro",
+    "descriptionTr": "Fırçalanmış dokulu saf Türk yününden üretildi. Sivri yaka, maskülen esintili keskin vatkalar ve zengin, sıcak bir camel tonu.",
+    "fabric": "100% Fine Wool",
+    "fabricTr": "%100 Saf Yün",
     "fit": "Relaxed tailored cut. Designed for layering over fine knitwear.",
     "fitTr": "Rahat terzi kesimi. İnce trikolar üzerine giyilmeye uygundur.",
     "details": [
@@ -354,13 +378,13 @@ const PRODUCTS_DATA = [
       "Signature wolf embroidery inside internal facing"
     ],
     "detailsTr": [
-      "İnce melanj camel dokuma",
+      "İnce melanj camel kumaş",
       "El dikimi doğal boynuz düğmeler",
-      "Açılabilir fonksiyonel kol düğmeleri",
-      "İç cep astarında gizli kurt arması işlemesi"
+      "Açılır ilikli kol düğmeleri",
+      "İç pervazda kurt arması nakışı"
     ],
-    "lining": "100% Bemberg Cupro Silk Half-Canvassed Lining",
-    "liningTr": "%100 Bemberg Cupro İpek & Yarı Telalı Terzi Astarı",
+    "lining": "100% Bemberg cupro lining, half-canvassed",
+    "liningTr": "%100 Bemberg kupro, yarı telalı terzi astarı",
     "care": "Specialist dry clean only. Do not wash.",
     "careTr": "Yalnızca uzman kuru temizleme. Su ile temas ettirmeyiniz.",
     "slug": "peak-lapel-camel-wool-blazer"
@@ -391,9 +415,9 @@ const PRODUCTS_DATA = [
       "40"
     ],
     "description": "A showstopping hybrid of black-tie tailoring and modern eveningwear. Lustrous silk satin peak lapels contrast against matte wool twill, fastened with satin-covered buttons.",
-    "descriptionTr": "Smokin terziliği ile modern gece zarafetinin kusursuz buluşması. Mat yün dimi kumaş üzerine parlak ipek saten sivri yaka ve saten kaplı düğmeler.",
-    "fabric": "Wool Barathia / Lapel: 100% Mulberry Silk Satin",
-    "fabricTr": "Barathia Yün / Yaka: %100 Dut İpeği Saten",
+    "descriptionTr": "Smokin terziliği ile modern gece zarafetinin buluşması. Mat yün barathea üzerinde parlak ipek saten sivri yaka ve saten kaplı düğmeler.",
+    "fabric": "Wool Barathea, Lapel: 100% Mulberry Silk Satin",
+    "fabricTr": "Barathea Yün, Yaka: %100 Dut İpeği Saten",
     "fit": "Structured mini dress length. Tailored close to the body.",
     "fitTr": "Kalıplı mini boy elbise. Vücuda zarifçe oturan terzi formu.",
     "details": [
@@ -404,12 +428,12 @@ const PRODUCTS_DATA = [
     ],
     "detailsTr": [
       "Kontrast ipek saten sivri yaka",
-      "Saten kaplama düğmeler",
-      "Vücudu şekillendiren mimari prenses dikişleri",
-      "Tok duruş sağlayan çift kat astar"
+      "Saten kaplı düğmeler",
+      "Vücudu şekillendiren prenses dikişleri",
+      "Tok duruş için çift kat astar"
     ],
     "lining": "100% Mulberry Silk Habotai Lining",
-    "liningTr": "%100 Saf Dut İpeği Habotai Astar",
+    "liningTr": "%100 dut ipeği habotai astar",
     "care": "Specialist dry clean only. Cool iron on reverse.",
     "careTr": "Yalnızca uzman kuru temizleme. Düşük ısıda tersten ütüleyiniz.",
     "slug": "architectural-tuxedo-blazer-dress"
@@ -417,7 +441,7 @@ const PRODUCTS_DATA = [
   {
     "id": "mdl-trs-01",
     "name": "Pleated Wide-Leg Virgin Wool Trousers",
-    "nameTr": "Pili Detaylı Geniş Paça Yün Pantolon",
+    "nameTr": "Çift Pilili Geniş Paça Yün Pantolon",
     "category": "trousers",
     "badge": "ESSENTIAL",
     "isHero": false,
@@ -445,7 +469,7 @@ const PRODUCTS_DATA = [
       "42"
     ],
     "description": "Masterfully draped high-waisted trousers with deep forward double pleats. Perfectly calibrated to pool slightly over leather loafers or stilettos.",
-    "descriptionTr": "Yüksek bel, derin çift pili detaylı ve akıcı dökümlü yün pantolon. Loafer ve topuklu ayakkabılarla kusursuz oran sunmak için tasarlandı.",
+    "descriptionTr": "Yüksek bel, derin çift pilili ve akıcı dökümlü yün pantolon. Loafer ve topuklu ayakkabılarla kusursuz bir oran için tasarlandı.",
     "fabric": "100% Lightweight Virgin Wool Worsted",
     "fabricTr": "%100 Hafif Kamgarn Yün",
     "fit": "High waist with relaxed wide leg. Floor-skimming length.",
@@ -457,13 +481,13 @@ const PRODUCTS_DATA = [
       "Dry clean recommended"
     ],
     "detailsTr": [
-      "Gizli fermuar ve terzi kopçası kapama",
-      "Kemer köprüleri ve yan cepler",
-      "Kaymayı önleyen terzi tipi iç bel kuşağı",
+      "Gizli fermuar ve kanca kopça kapama",
+      "Kemer köprüleri ve derin yan cepler",
+      "Kaymayı önleyen terzi işi iç bel bandı",
       "Kuru temizleme önerilir"
     ],
     "lining": "Half-lined to the knee with 100% Cupro",
-    "liningTr": "Dize kadar %100 Cupro yarım astar",
+    "liningTr": "Dize kadar %100 kupro yarım astar",
     "care": "Specialist dry clean only. Medium iron with press cloth.",
     "careTr": "Yalnızca uzman kuru temizleme. Ütü bezi ile orta ısıda ütüleyiniz.",
     "slug": "pleated-wide-leg-wool-trousers"
@@ -471,7 +495,7 @@ const PRODUCTS_DATA = [
   {
     "id": "mdl-shr-01",
     "name": "L'Oversize Crisp Cotton Poplin Shirt",
-    "nameTr": "L'Oversize Poplin Pamuk Gömlek",
+    "nameTr": "L'Oversize Pamuk Poplin Gömlek",
     "category": "shirts",
     "badge": "BESTSELLER",
     "isHero": false,
@@ -502,7 +526,7 @@ const PRODUCTS_DATA = [
     "fabric": "100% Turkish Aegean Organic Cotton Poplin",
     "fabricTr": "%100 Ege Organik Pamuk Poplin",
     "fit": "Voluminous oversized cut. Choose your usual size.",
-    "fitTr": "Dökümlü ve rahat oversize form. Normal bedeninizi seçiniz.",
+    "fitTr": "Dökümlü ve rahat oversize kalıp. Kendi bedeninizi seçiniz.",
     "details": [
       "Mother-of-pearl buttons",
       "Concealed front button placket",
@@ -511,9 +535,9 @@ const PRODUCTS_DATA = [
     ],
     "detailsTr": [
       "Doğal sedef düğmeler",
-      "Gizli ön ilikleme patı",
-      "Geniş mimari manşetler",
-      "Etek ucu kavisli rahat form"
+      "Gizli patlı ön kapama",
+      "Uzatılmış manşetler",
+      "Kavisli etek ucu; içe veya dışa giyilebilir"
     ],
     "lining": "Unlined bespoke single-needle construction",
     "liningTr": "Astarsız, tek iğne ince terzi dikişi",
@@ -524,7 +548,7 @@ const PRODUCTS_DATA = [
   {
     "id": "mdl-top-01",
     "name": "Fine-Gauge Ribbed Knit Boatneck Top",
-    "nameTr": "İnce Triko Kayık Yaka Uzun Kollu Üst",
+    "nameTr": "İnce Örgü Kayık Yaka Triko Bluz",
     "category": "tops",
     "badge": "DNA ACCESSIBLE",
     "isHero": false,
@@ -551,11 +575,11 @@ const PRODUCTS_DATA = [
       "L"
     ],
     "description": "Spun from ultra-fine Merino wool for a second-skin feel. Flattering boat neckline designed specifically to sit under Maison De Loup Atelier tailored blazers without bulk.",
-    "descriptionTr": "Ekstra ince Merinos yününden dokunan ikinci ten hissi veren triko. Maison De Loup Atelier blazer ceketlerinin yakasıyla kusursuz uyum sağlayan kayık yaka formu.",
+    "descriptionTr": "Ekstra ince merinos yününden örülen, ikinci ten hissi veren triko. Maison De Loup Atelier blazer ceketlerinin yakasıyla kusursuz uyum sağlayan kayık yaka.",
     "fabric": "85% Extra-Fine Merino Wool, 15% Silk",
     "fabricTr": "%85 İnce Merinos Yünü, %15 İpek",
     "fit": "Body-skimming fit with stretch recovery.",
-    "fitTr": "Vücudu zarifçe saran esnek dokuma.",
+    "fitTr": "Vücudu zarifçe saran esnek örgü.",
     "details": [
       "Seamless tubular knit side construction",
       "Ribbed cuffs and hem",
@@ -563,13 +587,13 @@ const PRODUCTS_DATA = [
       "Hand wash cold or dry clean"
     ],
     "detailsTr": [
-      "Dikişsiz yuvarlak örgü yan yapı",
-      "İnce ribanalı manşetler",
+      "Yan dikişsiz tüp örgü",
+      "Ribanalı manşet ve etek ucu",
       "Kaşındırmayan yumuşak tuşe",
       "Elde soğuk yıkama veya kuru temizleme"
     ],
     "lining": "Unlined seamless fine luxury knitwear",
-    "liningTr": "Astarsız, dikişsiz ekstra ince lüks triko dokuma",
+    "liningTr": "Astarsız; dikişsiz, ekstra ince örgü",
     "care": "Gentle hand wash cold with wool detergent. Dry flat.",
     "careTr": "Soğuk suda yün şampuanı ile elde nazikçe yıkayınız. Sererek kurutunuz.",
     "slug": "fine-gauge-ribbed-knit-top"
@@ -577,7 +601,7 @@ const PRODUCTS_DATA = [
   {
     "id": "mdl-skt-01",
     "name": "High-Slit Pleated Silk-Blend Maxi Skirt",
-    "nameTr": "Yırtmaçlı Pili Detaylı İpek Maxi Etek",
+    "nameTr": "Yırtmaçlı Pilili İpek Maksi Etek",
     "category": "skirts",
     "badge": "LIMITED RUN",
     "isHero": false,
@@ -600,11 +624,11 @@ const PRODUCTS_DATA = [
       "40"
     ],
     "description": "Permanent sunray pleating with an audacious high leg slit. Accented with contrast vegan leather yoke detailing. Pairs exceptionally with tailored structured blazers.",
-    "descriptionTr": "Kalıcı güneş pili detayı ve cesur yüksek yırtmaç. Kontrast deri biyelerle güçlendirilmiş bel formu. Blazer ceketlerle kontrast yakalamak için ideal silüet.",
+    "descriptionTr": "Kalıcı güneş pili ve cesur yüksek yırtmaç. Kontrast deri biyelerle güçlendirilmiş bel. Blazer ceketlerle kontrast bir kombin için ideal silüet.",
     "fabric": "70% Silk Crepe de Chine, 30% Fine Viscose",
-    "fabricTr": "%70 İpek Krep Düşin, %30 Viskon",
+    "fabricTr": "%70 İpek Krep Döşin, %30 Viskon",
     "fit": "High waist, flowy maxi length. Swings dynamically in motion.",
-    "fitTr": "Yüksek bel, akıcı maksi boy. Adımlarla dans eden dökümlü form.",
+    "fitTr": "Yüksek bel, akıcı maksi boy. Her adımda hareket eden dökümlü form.",
     "details": [
       "Dramatic thigh-high walking slit",
       "Structured leather-accented waistband",
@@ -612,13 +636,13 @@ const PRODUCTS_DATA = [
       "Dry clean only"
     ],
     "detailsTr": [
-      "Yüksek hareket yırtmacı",
-      "Deri detaylı formlu bel bandı",
+      "Yüksek yırtmaç",
+      "Deri biyeli bel bandı",
       "Gizli yan fermuar",
-      "Kuru temizleme"
+      "Yalnızca kuru temizleme"
     ],
     "lining": "100% Breathable Silk-Feel Viscose Slip Lining",
-    "liningTr": "%100 İpek Dokulu Nefes Alan Viskon İç Astar",
+    "liningTr": "İpeksi dokulu, nefes alan %100 viskon astar",
     "care": "Specialist dry clean recommended. Cool iron.",
     "careTr": "Uzman kuru temizleme önerilir. Düşük ısıda ütüleyiniz.",
     "slug": "high-slit-pleated-silk-skirt"

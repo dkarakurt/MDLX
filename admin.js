@@ -80,12 +80,12 @@ async function loadAdminData() {
       announcementTextEN: "Designed in Türkiye — Made for the World • Worldwide Express Delivery",
       heroTitle: "MAISON DE LOUP ATELIER",
       heroSubTR: "THE ART OF THE BLAZER",
-      heroProvTR: "Designed in Türkiye<br>Made for the world.",
+      heroProvTR: "Türkiye'de tasarlandı,<br>dünya için yaratıldı.",
       heroSlide1: "assets/images/uploaded_1791785047520_Gemini_Generated_Image_wpltxzwpltxzwplt.jpg",
       heroSlide2: "assets/images/product_blazer_noir.jpg",
       heroSlide3: "assets/images/product_blazer_ecru.jpg",
       sigPretitleTR: "HERO CREATION",
-      sigTitleTR: "MODERN WOMENSWEAR",
+      sigTitleTR: "MODERN KADIN GİYİMİ",
       sigDescTR: "Zamansız silüetler. Modern tavır.",
       sigLinkTR: "ÜRÜNLERİ İNCELE",
       sigImage: "assets/images/uploaded_1791788751605_Gemini_Generated_Image_fn3h8jfn3h8jfn3h.jpg",
@@ -97,7 +97,7 @@ async function loadAdminData() {
       wolfTextTR: "Maison de Loup, 'Kurdun Evi' anlamına gelir. Özgürlük, güç, bağımsızlık ve yol göstericiliği temsil eden kurt sembolünden ilham alan Maison De Loup Atelier, Türk tasarımını global moda dünyasıyla buluşturan modern ve zamansız bir kadın giyim markasıdır.",
       storyVisionTR: "Maison de Loup… Fransızca karşılığıyla “Kurdun Evi.”\n\nMarkanın çıkış noktası, kurdun Türk kültüründeki güçlü ve sembolik anlamından ilham alıyor. Kurt; özgürlüğü, gücü, bağımsızlığı ve yol göstericiliği temsil ediyor. Biz bu güçlü sembolü, modern ve global bir moda markasının kimliğine dönüştürmek istiyoruz.",
       storyMissionTR: "Türk tasarım kültüründen ve yerel üretim gücünden beslenerek; çağdaş tasarım anlayışını yüksek kalite, özgünlük ve erişilebilirlik ile buluşturmak.",
-      storyFounderTR: "Yaklaşık 20 yılı aşkın tekstil ve moda sektöründeki deneyimim, Maison De Loup Atelier’nin en güçlü yapı taşlarından biri olacak."
+      storyFounderTR: "20 yılı aşkın tekstil ve moda sektöründeki deneyimim, Maison De Loup Atelier’nin en güçlü yapı taşlarından biri olacak."
     };
   }
 }
@@ -449,7 +449,7 @@ async function saveAllChanges(notify = true) {
 
   // 2. The House of the Wolf (Split Sağ Kolon)
   adminContent.wolfTitleTR = document.getElementById('textWolfTitle')?.value || "KURDUN EVİ — THE HOUSE OF THE WOLF";
-  adminContent.wolfLinkTR = document.getElementById('textWolfLink')?.value || "HİKAYEMİZ";
+  adminContent.wolfLinkTR = document.getElementById('textWolfLink')?.value || "HİKÂYEMİZ";
   adminContent.wolfTextTR = document.getElementById('textWolfStoryTR')?.value || adminContent.wolfTextTR;
 
   // 3. Hero & Tepe Banner
